@@ -1,41 +1,88 @@
-# WEB PORTFOLIO
-기업형 웹(PC), 반응형 웹, React SPA 웹앱 포트폴리오입니다.<br>
-기획 및 디자인부터 마크업(프로그래밍)까지 100% 기여하였습니다. <br>
+# QUIETLY BOLD.
 
-## 🔗 PORTFOLIO URL
-* 기업형 웹 프로젝트(해태)
-    + http://bbeunbin.mycafe24.com/
-* 반응형 웹 프로젝트(박물관) 
-    + http://bbeunbin.mycafe24.com/media/
-* React SPA 프로젝트(기상청)
-    + https://react-project-3c3bd.web.app/
-* 프로필 및 포트폴리오 링크
-    + http://bbeunbin.mycafe24.com/profile/
+**HONG SEOKWOO — Service Planning · UI/UX Planning · UX Consulting**
 
+> Thoughts before Form.
 
-### ⚒️ SKILLS
-* HTML
-* CSS(less/sass)
-* JavaScript(ES6), JQuery, TypeScript, (Ajax & Json)
-* React
-* PHP / My-SQL
-* Firebase(firestore database & hosting) 
-* Git & Github
-* Photoshop/Illustrator/Figma
+화면보다 먼저, 문제를 봅니다.
 
-### ⚠️ 웹 표준 / 웹 접근성
-* W3C 마크업검사 및 css검사 완료 
-* 웹 접근성검사(K-WAH) 완료 
-* 크로스브라우징 (크롬, 사파리, 엣지, 파이어폭스, 오페라) 테스트 완료
-* 시멘틱 마크업, 아웃라인 정돈
-* img tag(alt), a tag(title), table(scope, thead, tbody) 등 태그 속성을 활용해 접근성 향상
+정부24와 정부디지털지갑 구축사업에서 서비스 기획, 화면설계, UX 리서치와 컨설팅을 경험했습니다. 복잡한 정보를 어떻게 정리할지, 사용자가 어디에서 불편을 겪는지 살피는 일에 관심이 있습니다.
 
-### 🖥️ UIUX
-1. 기업이 추구하는 분위기에 맞게 메인컬러, 포인트컬러, 레이아웃 구성
-2. 기존 원하는 정보를 바로 찾기 어려운 점을 개선하여 UI 구현
-3. 일부 텍스트내용이 이미지처리되어있는 점을 개선하여 접근성을 높임
-4. 메인 이벤트, 객실 소개 등을 앞에 배치하고 바로가기 버튼을 삽입하여 사용자 접근성을 높임
-5. 자바스크립트, 제이쿼리를 사용하여 기존 사이트보다 인터렉티브한 UI 구현
-6. 글씨 명도가 낮아 가독성이 저하되는 점을 개선하여 명도대비 수치를 준수하여 포인트컬러 활용
+기획한 화면이 실제로 어떻게 동작하는지 이해하고 싶어 디자인과 웹 퍼블리싱까지 작업 범위를 넓혔습니다. 정보 구조와 사용자 흐름을 설계하고, Figma로 시안을 제작한 뒤 HTML·CSS·JavaScript로 직접 구현합니다.
 
+**[View Portfolio](https://hkt5980.mycafe24.com/profile)**
 
+---
+
+## 01 / Selected Work
+
+기존 서비스의 문제를 분석하는 단계부터 화면설계, 디자인, 웹 구현, 검수와 배포까지 직접 진행한 개인 리뉴얼 프로젝트입니다.
+
+| Project | Type | Live Site |
+| :--- | :--- | :--- |
+| **Kumho E&C — Desktop** | 적응형 PC 웹 | [View project](https://hkt5980.mycafe24.com/) |
+| **Kumho E&C — Mobile** | 적응형 모바일 웹 | [View project](https://hkt5980.mycafe24.com/mobile/) |
+| **Blue Note Records** | 반응형 웹 | [View project](https://hkt5980.mycafe24.com/media/) |
+
+### Kumho E&C — Desktop
+
+**화면보다 구조가 먼저.**
+
+기존 사이트의 정보 구조를 분석하고 사업실적과 아테라 브랜드를 찾기 쉽도록 IA와 내비게이션을 재구성했습니다. 메인 히어로, 사업분야 탐색, 브랜드 오버레이도 정보의 우선순위에 맞춰 설계하고 구현했습니다.
+
+### Kumho E&C — Mobile
+
+**작아진 건 화면뿐.**
+
+PC 사이트를 축소하는 대신 모바일 환경에 맞는 별도의 적응형 웹사이트를 제작했습니다. 메뉴 검색, 상·하위 메뉴를 구분한 햄버거 메뉴, 사업분야 스와이프 카드 등을 활용해 터치 환경에 맞는 탐색 흐름을 설계했습니다.
+
+### Blue Note Records
+
+**Structured Improvisation — 질서 속의 즉흥성.**
+
+재즈의 역사와 아티스트, 앨범을 탐색할 수 있는 음악 아카이브를 기획했습니다. PC·태블릿·모바일에서 콘텐츠의 수량과 배치를 다르게 구성하고, 앨범 커버 인터랙션과 Spotify 플레이리스트 연동을 구현했습니다. 다크·라이트 모드와 한·영 전환은 독립적으로 선택할 수 있도록 설계했습니다.
+
+---
+
+## 02 / In Practice
+
+공공 디지털 서비스 분야에서 수행한 실무 경험입니다.
+
+| Focus | Scope |
+| :--- | :--- |
+| **Service Planning** | 정부24·정부디지털지갑 연계 서비스의 메뉴 구조, 기능 및 콘텐츠 기획 |
+| **UI/UX Planning** | 사용자 흐름 정의, 인앱 연계 화면설계, 웹·앱 고객센터 UX 개선 |
+| **UX Research & Consulting** | FGI·사용성 테스트 결과 분석, 안티패턴 진단, 개선안 및 요구사항 정리 |
+| **Benchmarking** | OECD 디지털정부평가를 바탕으로 해외 정부 서비스 비교·분석 및 자체 개선 방향 제안 |
+
+실무 포트폴리오는 보안과 비밀유지 사항을 고려해 일부 내용을 비식별화하거나 일반화했습니다. 공개 가능한 수행 역할과 기획 과정은 [개인 포트폴리오](https://quietlybold.com/)에서 확인할 수 있습니다.
+
+---
+
+## 03 / Expertise & Tools
+
+| Discipline | Skills & Tools |
+| :--- | :--- |
+| **Planning & Research** | IA, 사이트맵, 사용자 흐름, 요구사항 정의, 화면설계서, FGI, 사용성 테스트, 벤치마킹 |
+| **UI/UX Design** | Figma, 와이어프레임, 프로토타입, 디자인 시안, 반응형·적응형 UI 설계 |
+| **Visual Design** | Adobe Photoshop, Illustrator, InDesign, Lightroom |
+| **Web Publishing** | HTML5, CSS3, JavaScript, jQuery, AJAX·JSON |
+| **Implementation & Integration** | GNUBOARD, Naver Maps API, Spotify 연동, 웹 호스팅 및 배포 |
+| **Currently Learning** | SQLD 준비 — 데이터 모델링 및 SQL 조회, 비즈니스 영어 |
+
+---
+
+## 04 / Web Quality
+
+웹 표준과 접근성은 구현이 끝난 뒤에만 확인하는 항목이 아닙니다. 화면설계 단계부터 함께 고려합니다.
+
+- **Web Standards** — 시맨틱 마크업, 제목 위계 및 문서 구조 정리, W3C 마크업·CSS 유효성 점검
+- **Accessibility** — 이미지 대체 텍스트, 명확한 링크와 정보 구조, WCAG 2.2 AA 기준의 텍스트 색상 대비 검토
+- **Cross-browser & Device** — 브라우저 호환성, 화면 크기별 콘텐츠 배치 및 주요 인터랙션 점검
+- **Responsive & Adaptive** — 동일 화면의 비례 축소보다 기기별 정보량, 탐색 방식과 가독성을 고려한 설계
+
+---
+
+*Serious about the work. Not so much about myself.*
+
+[Portfolio](https://hkt5980.mycafe24.com/profile) · [Email](mailto:hkt5980@gmail.com)
