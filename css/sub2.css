@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* SUB 02 / ARTISTS — 기존 common.css의 폰트·컬러 변수 사용 */
+.artists_page #content { width: 100%; overflow: clip; }
+.aw_container { width: 90%; max-width: 1800px; margin: 0 auto; }
+.aw_eyebrow { font-family: var(--font-family-en); font-size: var(--font-label-small-size); font-weight: 700; letter-spacing: .08em; color: var(--color-main-01); }
+/* 일반 페이지 흐름: 스크롤 고정 없이, 카드만 버튼을 누를 때 교체합니다. */
+.aw_wheel_section { position: relative; height: auto; padding: 120px 0 135px; background: var(--color-overlay-main); }
+.aw_wheel_sticky { position: relative; display: flex; flex-direction: column; width: 100%; height: auto; overflow: hidden; padding: 0; }
+.aw_wheel_header { flex: none; }
+.aw_wheel_header .eyebrow, .aw_directory .eyebrow {
+    display: block;
+    font-family: var(--font-family-en);
+    font-size: var(--font-label-small-size);
+    font-weight: 700;
+    line-height: var(--line-height-body);
+    letter-spacing: .08em;
+    color: var(--color-main-01);
+}
+.aw_wheel_header .title { display: block; margin-top: 12px; font-family: var(--font-family-display); font-size: var(--font-display-small-size); font-weight: 700; line-height: var(--line-height-display); }
+.aw_wheel_header> p:last-child {
+    margin-top: 12px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-font-03);
+    font-size: var(--font-label-small-size);
+    letter-spacing: .025em;
+}
+.aw_wheel_stage { position: relative; flex: none; height: clamp(580px, 67vh, 780px); width: 100%; perspective: 1600px; touch-action: pan-y; cursor: grab; }
+.aw_wheel_stage.is_dragging { cursor: grabbing; user-select: none; }
+.aw_cards { position: relative; width: 100%; height: 100%; }
+.aw_card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: min(70vw, 1220px);
+    height: min(56vh, 620px);
+    background: var(--color-surface-02);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    list-style: none;
+    box-shadow: 0 26px 55px rgba(0, 0, 0, .34);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .55s cubic-bezier(.22, 1, .36, 1), opacity .32s ease, visibility .32s;
+}
+.aw_card.is-active { visibility: visible; }
+.aw_card.is-adjacent { filter: brightness(.75); }
+.aw_card[aria-hidden="true"] { pointer-events: none; }
+.aw_card_inner { border-radius: 12px; display: grid; grid-template-columns: 46% 54%; gap: 0; width: 100%; height: 100%; overflow: hidden; }
+.aw_photo { height: 100%; padding: 40px; overflow: hidden; }
+.aw_photo img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); border-radius: 6px; }
+.aw_card_content { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 9% 10% 8% 6%; }
+.aw_card_kicker { color: var(--color-main-01); font-size: var(--font-label-medium-size); font-weight: 700; }
+.aw_card_kicker.piano { color: var(--color-main-01); }
+.aw_card_kicker.sax { color: var(--color-sub-01); }
+.aw_card_kicker.trumpet { color: var(--color-point-01); }
+.aw_card_kicker.other { color: var(--color-point-02); }
+.aw_card_content .aw_artist_name { display: block; margin-top: 26px; font-size: var(--font-display-medium-size); line-height: var(--line-height-display); font-weight: 700; overflow-wrap: normal; }
+.aw_card_rule { display: block; margin: 26px 0 20px; width: 72%; border-top: 1px solid var(--color-border); }
+.aw_card_content p { max-width: 510px; color: var(--color-font-02); font-size: var(--font-body-medium-size); line-height: var(--line-height-body); }
+.aw_card_content .aw_description_short { display: none; }
+:root:lang(ko) .aw_card_content p { word-break: keep-all; }
+.aw_card_role { margin-top: 28px; color: var(--color-sub-01); font-size: var(--font-label-small-size); font-weight: 700; letter-spacing: .1em; }
+.aw_card_link { display: flex; gap: 15px; align-items: center; width: max-content; margin-top: 22px; font-family: var(--font-family-display); font-size: var(--font-label-large-size); }
+.aw_card_link:hover { color: var(--color-main-01); }
+.aw_wheel_controls {
+    display: grid;
+    grid-template-columns: minmax(190px, 1fr) minmax(0, 2.5fr) auto;
+    align-items: center;
+    gap: 20px;
+    flex: none;
+    min-height: 82px;
+    padding: 0 20px;
+    background: transparent;
+    border-top: 1px solid var(--color-border);
+}
+.aw_wheel_toolbar { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.aw_move { flex-shrink: 0; width: 35px; height: 38px; border: 1px solid var(--color-border); background: transparent; }
+.aw_move:hover, .aw_move:focus-visible { background: var(--color-main-01); color: var(--color-on-brand); }
+.aw_move:disabled { opacity: .28; cursor: default; }
+.aw_move:disabled:hover { background: transparent; color: inherit; }
+.aw_current_name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-label-small-size); font-weight: 700; }
+.aw_progress { display: flex; justify-content: space-between; align-items: center; gap: 5px; }
+.aw_progress li { flex: 1; }
+.aw_progress_button { display: grid; place-items: center; width: 100%; height: 40px; border: 0; background: none; }
+.aw_progress_button span { display: block; width: 75%; height: 3px; background: var(--color-font-03); opacity: .65; transition: background .2s, opacity .2s, width .2s; }
+.aw_progress_button[aria-pressed="true"] span { width: 100%; background: var(--color-point-01); opacity: 1; }
+.aw_progress_button:hover span { background: var(--color-point-02); opacity: 1; }
+.aw_fraction { font-size: var(--font-label-medium-size); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.aw_directory { background: var(--color-overlay-main); padding: 115px 0 135px; }
+.aw_directory .title { display: block; margin-top: 22px; font-size: var(--font-display-large-size); font-weight: 700; line-height: var(--line-height-display); }
+.aw_directory_description { margin-top: 25px; color: var(--color-font-02); font-size: var(--font-body-medium-size); }
+:root:lang(ko) .aw_english_break { display: none; }
+.aw_roster_grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 80px; padding-top: 36px; border-top: 1px solid var(--color-border); }
+.aw_roster_group .aw_instrument {
+    display: block;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-family-en);
+    font-size: var(--font-label-medium-size);
+    font-weight: 700;
+}
+.aw_roster_group .piano { color: var(--color-main-01); }
+.sax { color: var(--color-sub-01); }
+.trumpet { color: var(--color-point-01); }
+.other { color: var(--color-point-02); }
+.aw_roster_group li { margin-top: 18px; }
+.aw_roster_group button { display: flex; flex-direction: column; gap: 4px; width: 100%; padding: 5px 0; border: none; background: none; text-align: left; }
+.aw_roster_group button span:first-child { font-size: var(--font-body-medium-size); font-weight: 600; }
+.aw_roster_role { color: var(--color-font-03); font-size: var(--font-label-small-size); }
+.aw_roster_group button:hover span:first-child { color: var(--color-main-01); }
+/* 반응형 시안은 추후 세부 조정하되 사용·탐색은 가능하게 유지합니다. */
+/* PC는 긴 설명을 사용함. 태블릿·모바일은 기존 설명을 유지함 */
+.artists_page #content { background: transparent; }
+.aw_intro_description { max-width: 740px; margin-bottom: 25px; color: var(--color-font-02); font-size: var(--font-body-large-size); line-height: var(--line-height-body); }
+.aw_intro_count { margin-bottom: 45px; font-size: var(--font-label-small-size); color: var(--color-font-03); }
+/* 작은 화면은 강제 줄바꿈을 풀고 본문 폭을 좁혀 배치함 */
+.aw_copy_keep { white-space: nowrap; }
+.aw_wheel_stage { height: 820px; }
+.aw_card { width: 80%; max-width: 1220px; height: 720px; }
+.aw_card_content { padding: 30px; }
+.aw_card_content .aw_artist_name { margin-top: 16px; font-size: var(--font-display-small-size); }
+.aw_card_rule { margin: 20px 0; }
+.aw_card_role { margin-top: 20px; }
+.aw_card_link { margin-top: 16px; }
+/* 일반 PC */
+@media screen and (max-width: 1280px) {
+    .aw_wheel_section, .aw_directory { padding: 90px 0; }
+    .aw_wheel_stage { height: 800px; }
+    .aw_card { width: 86%; height: 700px; }
+    .aw_card_content { padding: 24px; }
+    .aw_photo { padding: 32px; }
+    .aw_wheel_controls { grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr) auto; gap: 16px; }
+}
+/* 일반 태블릿 */
+@media screen and (max-width: 1024px) {
+    .aw_photo { padding: 28px; }
+    .aw_card_content .aw_description_pc { display: none; }
+    .aw_card_content .aw_description_short { display: block; }
+    .aw_card { width: 82vw; height: min(53vh, 530px); }
+    .aw_card_content .aw_artist_name { font-size: var(--font-display-small-size); }
+    .aw_card_content { padding-right: 8%; }
+    .aw_roster_grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .aw_directory_description { width: 90%; max-width: 540px; margin-right: auto; margin-left: auto; line-height: var(--line-height-body); text-align: center; }
+    .aw_directory_description .aw_english_break { display: none; }
+    :root:lang(ko) .aw_directory_description { word-break: keep-all; }
+    .aw_wheel_section, .aw_directory { padding: 70px 0; }
+    .aw_wheel_stage { height: 700px; }
+    .aw_card { width: 86%; height: 580px; }
+    .aw_card_content { padding: 24px; }
+    .aw_card_content .aw_artist_name { font-size: var(--font-display-xsmall-size); }
+    .aw_photo { padding: 28px; }
+    .aw_card_content p { font-size: var(--font-body-medium-size); }
+    .aw_card_kicker { font-size: var(--font-label-small-size); }
+}
+/* 소형 태블릿 */
+@media screen and (max-width: 768px) {
+    .aw_wheel_stage { height: 700px; }
+    .aw_card { width: 90%; height: 580px; }
+    .aw_card_inner { grid-template-columns: 44% 56%; }
+    .aw_card_content { padding: 20px; }
+    .aw_photo { padding: 24px; }
+    .aw_card_role { margin-top: 16px; }
+    .aw_card_link { margin-top: 16px; font-size: var(--font-label-medium-size); }
+    .aw_wheel_controls { grid-template-columns: 1fr auto; gap: 8px; padding: 12px; }
+    .aw_progress { grid-column: 1 / -1; grid-row: 2; }
+    .aw_wheel_toolbar { grid-column: 1; grid-row: 1; }
+    .aw_fraction { grid-column: 2; grid-row: 1; }
+    .aw_progress_button { height: 24px; }
+    .aw_roster_grid { column-gap: 24px; row-gap: 40px; }
+    .aw_roster_group button { align-items: center; text-align: center; }
+}
+/* 모바일 */
+@media screen and (max-width: 640px) {
+    .aw_wheel_section { padding: 78px 0 85px; }
+    .aw_wheel_stage { height: min(660px, 80vh); min-height: 420px; }
+    .aw_wheel_header .title { font-size: var(--font-h3-size); }
+    .aw_wheel_header> p:last-child { font-size: var(--font-label-small-size); }
+    .aw_card { width: 84vw; height: min(62vh, 530px); }
+    .aw_card_inner { display: flex; flex-direction: column; }
+    .aw_photo { width: 100%; height: 53%; padding: 20px; }
+    .aw_card_content { padding: 14px 18px 18px; flex: 1; justify-content: flex-start; }
+    .aw_card_kicker { font-size: var(--font-label-small-size); }
+    .aw_card_content .aw_artist_name { font-size: var(--font-h3-size); margin-top: 8px; }
+    .aw_card_rule { margin: 9px 0; }
+    .aw_card_content p { font-size: var(--font-body-small-size); line-height: var(--line-height-label); }
+    .aw_card_role, .aw_card_link { display: none; }
+    .aw_wheel_controls { grid-template-columns: 1fr auto; gap: 6px; padding: 5px 10px; min-height: 64px; }
+    .aw_progress { grid-column: 1 / -1; grid-row: 2; }
+    .aw_progress_button { height: 15px; }
+    .aw_wheel_toolbar { grid-column: 1; grid-row: 1; }
+    .aw_fraction { grid-column: 2; grid-row: 1; font-size: var(--font-label-small-size); }
+    .aw_directory { padding: 75px 0; }
+    .aw_directory .title { font-size: var(--font-display-medium-size); }
+    .aw_roster_grid { grid-template-columns: 1fr 1fr; column-gap: 15px; row-gap: 34px; margin-top: 40px; }
+    .aw_roster_group button { align-items: center; text-align: center; }
+    .aw_roster_group button span:first-child { font-size: var(--font-body-small-size); }
+    .aw_roster_grid { grid-template-columns: 1fr; }
+    .aw_directory_description { max-width: 290px; }
+    .aw_wheel_section, .aw_directory { padding: 60px 0; }
+    .aw_wheel_stage { height: 680px; min-height: 0; }
+    .aw_card { width: 86%; height: 580px; }
+    .aw_card_inner { display: flex; }
+    .aw_photo { flex-shrink: 0; height: 50%; padding: 24px; }
+    .aw_card_content { padding: 12px 24px 24px; }
+    .aw_card_content .aw_artist_name { font-size: var(--font-h3-size); line-height: var(--line-height-heading); }
+    .aw_card_content p { font-size: var(--font-body-medium-size); line-height: var(--line-height-body); }
+    .aw_card_kicker { font-size: var(--font-label-small-size); }
+    .aw_roster_grid { grid-template-columns: 1fr; }
+    .aw_directory_description { width: 100%; max-width: 360px; padding: 0 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .aw_card, .aw_progress_button span { transition: none !important; }
+}

@@ -1,0 +1,488 @@
+/* 와이드 PC */
+/* PC QR 팝업: 이미지 위에 실제 닫기 버튼과 체크박스 배치함 */
+.notice_popup { position: absolute; top: 150px; right: 5%; z-index: 90; width: 500px; }
+.notice_popup[hidden] { display: none; }
+.notice_popup_image { display: block; width: 500px; height: 268px; }
+.notice_popup_close { position: absolute; top: 10px; right: 10px; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 0; background: transparent; }
+.notice_popup_close img { display: block; width: 20px; height: 20px; }
+.notice_popup_controls { position: absolute; top: 242px; left: 0; width: 100%; height: 26px; color-scheme: light; }
+.notice_popup_controls input { position: absolute; top: 8px; left: 176px; z-index: 1; width: 13px; height: 13px; margin: 0; accent-color: var(--color-main-01); }
+.notice_popup_controls label { position: absolute; top: 0; left: 174px; width: 170px; height: 26px; cursor: pointer; }
+.video_box { position: absolute; width: 100%; height: 100%; overflow: hidden; }
+#videoBg { position: fixed; top: 0; left: 0; z-index: -100; width: 100%; height: 100%; object-fit: cover; transform: none; }
+#imgBg { position: fixed; top: 0; left: 0; z-index: -100; display: none; width: 100%; height: 100%; object-fit: cover; transform: none; }
+.down {
+    position: absolute;
+    left: 50%;
+    bottom: 9%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 160px;
+    margin: 0;
+    padding: 7px 16px;
+    transform: translateX(-50%);
+    color: var(--color-white);
+    font-family: var(--font-family-body);
+}
+.down_copy {
+    display: block;
+    font-size: var(--font-label-medium-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-shadow: 0 1px 4px var(--color-shadow);
+}
+:root:lang(ko) .down_copy { letter-spacing: 0; }
+.down_track { position: relative; display: block; width: 2px; height: 64px; background: var(--color-font-03); }
+.down_thumb {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 12px;
+    border-radius: 2px;
+    background: var(--color-white);
+    animation: down_scroll 2.3s ease-in-out infinite;
+}
+.down_grip { display: block; width: 12px; height: 2px; background: var(--color-main-01); }
+@keyframes down_scroll {
+    0% { transform: translate(-50%, 0); opacity: 0; }
+    12% { transform: translate(-50%, 0); opacity: 1; }
+    74% { transform: translate(-50%, 48px); opacity: 1; }
+    90%, 100% { transform: translate(-50%, 52px); opacity: 0; }
+}
+.down:hover .down_grip, .down:focus-visible .down_grip { background: var(--color-sub-01); }
+#content { width: 100%; min-height: 3000px; margin: 0; color: var(--color-font-01); background: transparent; }
+/* 영상이 비치는 영역은 반투명 배경 적용함 */
+.about, .artists, .gallery { background: var(--color-overlay-main); }
+/* 앨범·플레이리스트·영상 영역은 불투명 배경 적용함 */
+.albums, .playlists, .videos { background: var(--color-background); }
+/* 메인 ABOUT 영역 */
+.about { padding: 75px 0 0; }
+.about_inner { display: flex; justify-content: space-between; width: 90%; margin: 0 auto; padding-bottom: 120px; border-bottom: 1px solid var(--color-header-divider); }
+.about_text { width: 45%; }
+.about h3 { font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); color: var(--color-font-01); }
+.about .eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-body-large-size);
+    font-weight: 700;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.about_description { width: 87%; margin-top: 100px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); font-weight: 500; }
+.about_description p + p { margin-top: 30px; }
+.about_copy_short { display: none; }
+.about .more_link { margin-top: 65px; }
+.about .more_link_mobile { display: none; }
+.about_images { display: flex; align-items: flex-start; justify-content: space-between; width: 47%; margin-top: 60px; }
+.about_record, .about_artists { overflow: hidden; border: 1px solid var(--color-font-03); }
+.about_record { width: 65%; height: 450px; }
+.about_artists { width: 30%; height: 240px; margin-top: 320px; }
+.about_record img, .about_artists img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* 메인 ARTISTS 영역: PC 시안 기준 */
+.artists { padding: 50px 0 0; overflow: hidden; }
+.artists_inner { width: 90%; margin: 0 auto; }
+.artists h3 { font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); }
+.artists .eyebrow { display: block; margin-bottom: 20px; font-family: var(--font-family-body); font-size: var(--font-label-large-size); line-height: var(--line-height-label); color: var(--color-main-01); }
+.artists_description { margin-top: 25px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.artists_controls { display: flex; justify-content: flex-end; margin: 25px 0 35px; }
+.artists_pause {
+    min-width: 90px;
+    padding: 8px 15px;
+    border: 5px solid var(--color-point-01);
+    font-size: var(--font-label-small-size);
+    line-height: var(--line-height-label);
+    background: transparent;
+    border-radius: 5px;
+    transition: all .3s ease-out;
+}
+/* 마우스 환경에서만 회전 효과 적용함 */
+/* 터치 중에만 기울이고 손을 떼면 원래대로 돌아옴 */
+.artists_pause:active { color: var(--color-sub-01); transform: rotate(8deg); }
+.artist_row { width: 100%; overflow: hidden; }
+.artist_row + .artist_row { margin-top: 20px; }
+.artist_track { position: relative; left: 0; display: flex; }
+.artist_list { display: flex; flex-shrink: 0; }
+.artist_list li { width: 280px; margin-right: 20px; }
+.artist_list .artist_card { position: relative; width: 280px; height: 280px; overflow: hidden; }
+.artist_list img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.artist_list .artist_info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 8px 15px; background: var(--color-overlay-main); }
+.artist_name { display: block; font-family: var(--font-family-display); font-size: var(--font-label-large-size); font-weight: 500; line-height: var(--line-height-heading); color: var(--color-font-01); }
+.artist_caption { display: block; margin-top: 5px; font-size: var(--font-label-small-size); line-height: var(--line-height-label); color: var(--color-font-02); }
+.artists_bottom { padding: 80px 0; border-bottom: 1px solid var(--color-header-divider); }
+/* 메인 ALBUMS 영역 */
+.albums { padding-top: 60px; overflow: hidden; }
+.albums_inner { width: 90%; margin: 0 auto; }
+.albums h3 { font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); }
+.albums .eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-label-large-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.albums_description { width: 42%; margin: 35px 0 70px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.album_stage { height: 500px; margin-top: 20px; }
+.album_list { height: 500px; }
+.album_stage .swiper-wrapper { transition-timing-function: ease-in-out; }
+.album_list li { position: relative; width: 500px; height: 500px; transform-origin: center center; }
+.album_list .album_outside { visibility: hidden; }
+.album_card { position: relative; display: block; width: 100%; padding: 0; border: 0; background: transparent; }
+.album_card img { display: block; width: 100%; height: auto; }
+/* 뒤쪽 커버는 검은 딤드로 어둡게 하고 선택한 커버만 밝게 표시함 */
+.album_card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--color-black); opacity: 0.9; transition: opacity 0.6s ease; pointer-events: none; }
+.album_list .swiper-slide-active .album_card::after { opacity: 0; }
+/* 같은 커버를 뒤집고 흐리게 표시해 반사 효과 적용함 */
+.album_reflection { height: 120px; margin-top: 6px; overflow: hidden; opacity: 0.15; }
+.album_reflection img { display: block; width: 100%; height: auto; transform: scaleY(-1); }
+.album_controls { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; }
+.album_info { display: flex; flex-direction: column; width: 80%; text-align: center; }
+.album_title { order: 0; font-family: var(--font-family-display); font-size: var(--font-display-xsmall-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-heading); }
+.album_artist { order: 1; margin-top: 15px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.album_prev, .album_next { width: 50px; height: 50px; padding: 0; border: 0; background: transparent; font-size: var(--font-h3-size); }
+.album_prev:hover, .album_next:hover { color: var(--color-point-01); }
+.album_pagination { order: 2; display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 8px; margin-top: 15px; }
+.album_dot { display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 12px; height: 32px; padding: 0; border: 0; background: transparent; transition: width .3s ease; }
+.album_dot span { display: block; width: 100%; height: 12px; border-radius: 8px; background: var(--color-font-03); transition: background-color .3s; }
+.album_dot.active { width: 36px; }
+.album_dot.active span { background: var(--color-point-01); }
+:root[data-theme="light"] .album_dot.active span { background: var(--color-sub-01); }
+.albums_bottom { margin-top: 65px; padding-bottom: 40px; border-bottom: 1px solid var(--color-header-divider); }
+/* 메인 PLAYLISTS 영역 */
+.playlists { padding-top: 70px; }
+.playlists_inner { width: 90%; margin: 0 auto; }
+.playlists h3 { font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); }
+.playlists .eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-label-medium-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.playlists_description { width: 50%; margin-top: 35px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.playlist_intro_short { display: none; }
+.playlist_content { display: flex; align-items: stretch; gap: 60px; margin-top: 50px; }
+.playlist_feature { flex-shrink: 0; width: 40%; max-width: 480px; min-width: 0; }
+.playlist_detail { display: none; }
+.playlist_detail.active { display: flex; flex-direction: column; height: 100%; }
+.playlist_cover { display: block; width: 340px; max-width: 100%; height: auto; }
+.playlist_title {
+    display: block;
+    margin-top: 30px;
+    font-family: var(--font-family-display);
+    font-size: var(--font-h5-size);
+    font-weight: var(--font-display-weight);
+    line-height: var(--line-height-heading);
+}
+.playlist_description { min-height: 0; margin-top: auto; padding-top: 16px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+/* 소개와 목록이 같은 배경 위에서 이어지도록 구성함 */
+.playlist_panel { display: flex; flex-direction: column; flex: 1; margin-left: 320px; min-width: 0; padding: 0; color: var(--color-font-01); }
+.playlist_panel_title { display: block; font-family: var(--font-family-display); font-size: var(--font-h3-size); font-weight: var(--font-display-weight); line-height: var(--line-height-heading); }
+.playlist_panel_caption { margin-top: 12px; font-size: var(--font-label-small-size); line-height: var(--line-height-label); color: var(--color-font-02); }
+.playlist_list { display: flex; flex-direction: column; flex: 1; margin-top: 25px; }
+.playlist_list li { display: flex; flex: 1; }
+.playlist_list li.active { display: none; }
+.playlist_button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-height: 145px;
+    padding: 24px 12px;
+    border: 0;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid var(--color-font-03);
+    background: transparent;
+    color: var(--color-font-01);
+    text-align: left;
+    transition: border-color .3s;
+}
+.playlist_button.active, .playlist_button:hover { border-left-color: var(--color-main-01); }
+.playlist_button:focus-visible { outline-offset: -3px; }
+.playlist_button img { flex-shrink: 0; width: 96px; height: 96px; object-fit: cover; }
+.playlist_item_text { display: block; min-width: 0; }
+.playlist_item_text strong { display: block; font-family: var(--font-family-display); font-size: var(--font-label-large-size); font-weight: 500; line-height: var(--line-height-label); }
+.playlist_button.active strong { color: var(--color-main-01); }
+.playlist_item_description { display: block; margin-top: 6px; font-size: var(--font-label-medium-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.playlists_bottom { padding: 30px 0 55px; border-bottom: 1px solid var(--color-header-divider); }
+/* 메인 VIDEOS 영역 */
+.videos { padding-top: 70px; }
+.videos_inner { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 80px; width: 90%; margin: 0 auto; }
+.videos h3 { grid-column: 1 / -1; font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); }
+.videos .eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-label-medium-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.videos_description_short { display: none; }
+.videos_description { grid-column: 2; min-width: 0; margin-top: 30px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); word-break: keep-all; }
+.videos_content { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, 1fr); align-items: start; gap: 80px; margin-top: 35px; }
+.video_stage { min-width: 0; }
+.video_focus {
+    display: block;
+    margin-bottom: 16px;
+    font-family: var(--font-family-en);
+    font-size: var(--font-label-small-size);
+    font-weight: 700;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.video_list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; min-width: 0; padding-top: 36px; }
+.video_list .video_title { font-size: var(--font-label-large-size); }
+.video_list .video_description { font-size: var(--font-label-small-size); }
+.videos_bottom { grid-column: 1 / -1; padding: 35px 0 55px; border-bottom: 1px solid var(--color-header-divider); }
+/* 메인 GALLERY 영역 */
+.gallery { padding-top: 70px; }
+.gallery_inner { width: 90%; margin: 0 auto; }
+.gallery h3 { font-size: var(--font-display-medium-size); font-weight: var(--font-display-strong-weight); line-height: var(--line-height-display); }
+.gallery .eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-label-medium-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.gallery_description { width: 70%; margin-top: 35px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); word-break: keep-all; }
+.gallery_intro_short { display: none; }
+.gallery_list { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 250px; gap: 10px; margin-top: 55px; grid-template-areas: 'a a a b b b' 'a a a c d d' 'e f f f d d' 'g g h i i i'; }
+.gallery_list li { min-width: 0; min-height: 0; }
+.gallery_list li:nth-child(1) { grid-area: a; }
+.gallery_list li:nth-child(2) { grid-area: b; }
+.gallery_list li:nth-child(3) { grid-area: c; }
+.gallery_list li:nth-child(4) { grid-area: d; }
+.gallery_list li:nth-child(5) { grid-area: e; }
+.gallery_list li:nth-child(6) { grid-area: f; }
+.gallery_list li:nth-child(7) { grid-area: g; }
+.gallery_list li:nth-child(8) { grid-area: h; }
+.gallery_list li:nth-child(9) { grid-area: i; }
+.gallery_list .gallery_tablet { display: none; }
+.gallery_list li:nth-child(10) { grid-area: b; }
+.gallery_list li:nth-child(11) { grid-area: d; }
+.gallery_list li:nth-child(12) { grid-area: h; }
+.gallery_image { width: 100%; height: 100%; overflow: hidden; }
+.gallery_image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.gallery_image:hover img { transform: scale(1.05); }
+.gallery_list li:nth-child(1) img, .gallery_list li:nth-child(7) img, .gallery_list li:nth-child(9) img { object-position: center top; }
+.gallery_list li:nth-child(2) img { object-position: center 40%; }
+.gallery_list li:nth-child(5) img { object-position: center 25%; }
+.gallery_list li:nth-child(6) img { object-position: center center; }
+.gallery_caption { display: none; }
+.gallery_bottom { padding: 65px 0 55px; border-bottom: 1px solid var(--color-header-divider); }
+.gallery_list { grid-auto-rows: 200px; }
+.album_stage { height: 560px; }
+.album_list { height: 400px; }
+.album_list li { width: 400px; height: 400px; }
+/* 일반 PC */
+@media screen and (max-width: 1280px) {
+    .gallery_list { grid-auto-rows: 170px; }
+    .about { padding-top: 60px; }
+    .about_inner { padding-bottom: 80px; }
+    .about_description { width: 100%; margin-top: 50px; }
+    .about .more_link { margin-top: 35px; }
+    .about_record { height: 350px; }
+    .about_artists { height: 200px; margin-top: 220px; }
+    .album_stage { height: 500px; }
+    .album_list { height: 360px; }
+    .album_list li { width: 360px; height: 360px; }
+    .playlist_content { gap: 40px; }
+    .playlist_panel { margin-left: 60px; }
+    .playlist_cover { width: 320px; }
+}
+/* 일반 태블릿 */
+@media screen and (max-width: 1024px) {
+    .notice_popup { display: none; }
+    .gallery { padding-top: 40px; }
+    .gallery h3 { font-size: var(--font-display-small-size); }
+    .gallery .eyebrow { font-size: var(--font-label-small-size); }
+    .gallery_description { width: 100%; margin-top: 30px; font-size: var(--font-body-medium-size); }
+    .gallery_list { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 160px; gap: 10px; margin-top: 40px; grid-template-areas: 'a a d d' 'a a d d' 'b c d d' 'e f f f' 'e g g h' 'i i i i' 'i i i i'; }
+    .gallery_bottom { padding: 40px 0; }
+    .videos { padding-top: 40px; }
+    .videos_inner { grid-template-columns: 1fr; }
+    .videos h3 { font-size: var(--font-display-small-size); }
+    .videos .eyebrow { font-size: var(--font-label-small-size); }
+    .videos_description { grid-column: 1; font-size: var(--font-body-medium-size); }
+    .videos_content { grid-template-columns: 1fr; gap: 35px; }
+    .video_list { padding-top: 0; }
+    .playlists { padding-top: 40px; }
+    .playlists h3 { font-size: var(--font-display-small-size); }
+    .playlists .eyebrow { font-size: var(--font-label-small-size); }
+    .playlists_description { width: 90%; margin-top: 30px; font-size: var(--font-body-medium-size); }
+    .playlist_content { gap: 35px; margin-top: 50px; }
+    .playlist_cover { width: 300px; }
+    .playlist_title { margin-top: 24px; }
+    .playlist_description { font-size: var(--font-body-medium-size); }
+    .playlist_panel_title { font-size: var(--font-h5-size); }
+    .playlist_panel { margin-left: 0; }
+    .playlist_list { margin-top: 20px; }
+    .playlist_button { min-height: 120px; gap: 15px; padding: 20px 8px; }
+    .playlist_button img { width: 72px; height: 72px; }
+    .playlist_item_text strong { font-size: var(--font-label-small-size); }
+    .playlist_item_description { font-size: var(--font-label-small-size); }
+    .albums { padding-top: 30px; }
+    .albums h3 { font-size: var(--font-display-small-size); }
+    .albums .eyebrow { margin-bottom: 15px; font-size: var(--font-label-small-size); }
+    .albums_description { width: 70%; margin-top: 30px; font-size: var(--font-body-medium-size); }
+    .album_stage { height: 400px; }
+    .album_list { height: 280px; }
+    .album_list li { width: 280px; height: 280px; }
+    .album_reflection { height: 90px; }
+    .album_title { font-size: var(--font-h3-size); }
+    .album_artist { font-size: var(--font-body-medium-size); }
+    .albums_bottom { margin-top: 25px; padding-bottom: 30px; }
+    .about { padding-top: 40px; }
+    .about_inner { padding-bottom: 60px; }
+    .about_text { width: 45%; }
+    .about h3 { font-size: var(--font-display-small-size); }
+    .about .eyebrow { margin-bottom: 30px; font-size: var(--font-label-small-size); }
+    .about_description { width: 100%; margin-top: 30px; font-size: var(--font-body-medium-size); font-weight: 400; }
+    .about .more_link { margin-top: 60px; }
+    .about_images { position: relative; display: block; width: 47%; min-height: 450px; margin-top: 90px; }
+    .about_record { width: 80%; height: 310px; }
+    .about_artists { position: absolute; top: 270px; right: 0; width: 36%; height: 175px; margin-top: 0; }
+    .gallery_list li:nth-child(2), .gallery_list li:nth-child(4), .gallery_list li:nth-child(8) { display: none; }
+    .gallery_list .gallery_tablet { display: block; }
+    .gallery_list li:nth-child(11) img { object-position: center center; }
+    .gallery_list li:nth-child(12) img { object-position: center 30%; }
+    .playlist_panel { margin-left: 0; }
+    .playlist_feature { width: 40%; min-width: 0; }
+    .playlist_cover { width: 100%; max-width: 300px; }
+    .about_inner { gap: 30px; }
+}
+/* 소형 태블릿 */
+@media screen and (max-width: 768px) {
+    .gallery { padding-top: 64px; }
+    .gallery h3 { font-size: var(--font-display-medium-size); }
+    .gallery .eyebrow { margin-bottom: 24px; }
+    .gallery_description { margin-top: 24px; }
+    .gallery_intro_full { display: none; }
+    .gallery_intro_short { display: block; }
+    .gallery_list { grid-template-columns: 1fr; grid-auto-rows: auto; grid-template-areas: 'a' 'b' 'c'; gap: 24px; margin-top: 24px; }
+    .gallery_list li:nth-child(n+4) { display: none; }
+    .gallery_image { height: 270px; }
+    .gallery_list li:first-child .gallery_image { height: 330px; }
+    .gallery_caption { display: block; margin-top: 12px; }
+    .gallery_caption strong { font-size: var(--font-label-medium-size); font-weight: 500; line-height: var(--line-height-label); }
+    .gallery_caption p { margin-top: 8px; font-size: var(--font-label-small-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+    .gallery_bottom { padding: 30px 0 64px; border-bottom: 0; }
+    .videos { padding-top: 64px; }
+    .videos h3 { font-size: var(--font-display-medium-size); }
+    .videos .eyebrow { margin-bottom: 24px; }
+    .videos_description { margin-top: 24px; }
+    .videos_description_full { display: none; }
+    .videos_description_short { display: block; }
+    .videos_content { margin-top: 30px; }
+    .video_list { gap: 25px 15px; }
+    .video_list .video_title { font-size: var(--font-label-medium-size); }
+    .videos_bottom { padding: 24px 0 64px; border-bottom: 0; }
+    .playlists { padding-top: 64px; }
+    .playlists h3 { font-size: var(--font-display-medium-size); }
+    .playlists .eyebrow { margin-bottom: 24px; }
+    .playlists_description { width: 100%; margin-top: 24px; }
+    .playlist_intro_full { display: none; }
+    .playlist_intro_short { display: block; }
+    .playlist_content { flex-direction: column; gap: 30px; margin-top: 24px; }
+    .playlist_detail.active { height: auto; }
+    .playlist_feature, .playlist_panel { width: 100%; max-width: none; }
+    .playlist_panel { flex: initial; }
+    .playlist_cover { width: 100%; max-width: 420px; margin: 0 auto; }
+    .playlist_title { font-size: var(--font-h4-size); }
+    .playlist_description { margin-top: 16px; padding-top: 0; }
+    .playlist_panel_title { font-size: var(--font-h4-size); }
+    .playlist_button { min-height: 100px; text-align: center; }
+    .playlist_button img { width: 64px; height: 64px; }
+    .playlist_item_text { flex: 1; }
+    .playlist_item_description { display: none; }
+    .playlists_bottom { padding: 24px 0 64px; border-bottom: 0; }
+    .down { bottom: 8%; gap: 11px; }
+    .down_track { height: 52px; }
+    .down_thumb { animation-name: down_scroll_mobile; }
+    @keyframes down_scroll_mobile {
+        0% { transform: translate(-50%, 0); opacity: 0; }
+        12% { transform: translate(-50%, 0); opacity: 1; }
+        74% { transform: translate(-50%, 36px); opacity: 1; }
+        90%, 100% { transform: translate(-50%, 40px); opacity: 0; }
+    }
+    .artists_controls { justify-content: center; }
+    .albums { padding-top: 64px; }
+    .albums h3 { font-size: var(--font-display-medium-size); text-align: center; }
+    .albums .eyebrow { margin-bottom: 24px; }
+    .album_label_extra, .albums_description { display: none; }
+    .album_stage { width: 74%; max-width: 420px; height: auto; margin: 65px auto 0; }
+    .album_list { height: auto; }
+    .album_list li { width: 100%; height: auto; }
+    .album_reflection { height: 140px; }
+    .album_controls { justify-content: center; margin-top: 24px; }
+    .album_info { width: 100%; }
+    .album_title { font-size: var(--font-h4-size); }
+    .album_artist { order: 2; margin-top: 0; font-size: var(--font-label-small-size); }
+    .album_prev, .album_next { display: none; }
+    .album_pagination { order: 1; gap: 6px; margin: 12px 0; }
+    .album_dot { width: 8px; }
+    .album_dot span { height: 8px; }
+    .album_dot.active { width: 24px; }
+    .albums_bottom { margin-top: 25px; padding-bottom: 64px; border-bottom: 0; text-align: center; }
+    .about { padding-top: 64px; }
+    .about_inner { flex-direction: column; padding-bottom: 64px; border-bottom: 0; }
+    .about_text, .about_description, .about_images { width: 100%; }
+    .about h3 { font-size: var(--font-display-medium-size); }
+    .about .eyebrow { margin-bottom: 24px; font-size: var(--font-label-small-size); font-weight: 500; }
+    .about_description { margin-top: 24px; }
+    .about_copy_full { display: none; }
+    .about_description .about_copy_short { display: block; margin-top: 0; }
+    .about_description .about_copy_short + .about_copy_short { margin-top: 24px; }
+    .about_text .more_link { display: none; }
+    .about_images { position: static; min-height: 0; margin-top: 24px; }
+    .about_record { width: 100%; height: 360px; border: 0; }
+    .about_artists { display: none; }
+    .about .more_link_mobile { display: inline-flex; margin-top: 12px; }
+    .gallery_list li:nth-child(2) { display: block; }
+    .gallery_list .gallery_tablet { display: none; }
+    .playlist_cover { max-width: 360px; }
+    .gallery_description, .videos_description, .playlists_description, .artists_description { max-width: 600px; margin-right: auto; margin-left: auto; }
+}
+/* 모바일 */
+@media screen and (max-width: 640px) {
+    .gallery_image { height: 220px; }
+    .gallery_list li:first-child .gallery_image { height: 250px; }
+    .playlist_description { display: none; }
+    .video_description { display: none; }
+    .gallery_image { height: 200px; }
+    .gallery_list li:first-child .gallery_image { height: 220px; }
+    .about { padding-top: 40px; }
+    .about_inner { padding-bottom: 40px; }
+    .about_record { height: 240px; }
+    .artists_description { font-size: var(--font-body-medium-size); }
+    .gallery_image { height: 220px; }
+    .gallery_list li:first-child .gallery_image { height: 250px; }
+    .about_record { height: 260px; }
+    .playlist_cover { max-width: 320px; }
+    .album_stage { width: 80%; max-width: 340px; }
+    .album_pagination { gap: 4px; }
+    .video_list { gap: 24px 12px; }
+}
+@media (hover: hover) and (pointer: fine) {
+    .artists_pause:hover { color: var(--color-sub-01); transform: rotate(8deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .down_thumb { animation: none; transform: translate(-50%, 24px); opacity: 1; }
+}

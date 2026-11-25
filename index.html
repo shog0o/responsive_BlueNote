@@ -1,0 +1,930 @@
+<!DOCTYPE HTML>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            // 같은 탭에서 스플래시를 이미 봤는지 확인함
+            var splashSeen = false;
+            try {
+                splashSeen = sessionStorage.getItem('blueNoteSplashSeen') === 'done';
+            } catch (e) {}
+            // 최초 진입 때만 본문 표시 전에 스플래시 배경을 준비함
+            if (!splashSeen && window.matchMedia('(max-width: 1024px)').matches &&
+                !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.classList.add('splash_pending');
+                // 공통 스크립트를 불러오지 못해도 화면 가림 해제함
+                setTimeout(function() {
+                    document.documentElement.classList.remove('splash_pending');
+                }, 8000);
+            }
+        
+        </script>
+        <title>Blue Note Records</title>
+        <!-- 링크 공유 시 표시할 제목·설명·썸네일 설정함 -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Blue Note Records">
+        <meta property="og:description" content="블루노트레코즈의 음악과 아티스트를 만나보세요.">
+        <meta property="og:image" content="https://hkt5980.mycafe24.com/media/images/main/gallery/gall_07.jpg">
+        <meta property="og:image:alt" content="miles davis">
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+        <link rel="apple-touch-startup-image" href="./startup.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link href="./css/aos.css?v=20261118-3" rel="stylesheet">
+        <link rel="stylesheet" href="./css/common.css?v=20261118-aos4">
+        <link rel="stylesheet" href="./css/layout.css?v=20261116-format1">
+        <script src="https://kit.fontawesome.com/41c9e9a1a8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- PC 전용 QR 안내 팝업 -->
+        <div id="showimage" class="notice_popup" role="region" aria-label="모바일 사이트 QR 안내" hidden>
+            <img
+                class="notice_popup_image" src="./qr_popup.png" width="500" height="268" alt="Blue Note Records mobile edition. Scan the QR code with your phone to open the mobile website."
+                data-ko-alt="블루노트 레코드 모바일 에디션. 휴대전화로 QR 코드를 촬영하면 모바일 웹사이트로 연결됩니다."
+            >
+            <button class="notice_popup_close" type="button" aria-label="QR 안내 닫기">
+                <img src="./close.svg" alt="" width="20" height="20">
+            </button>
+            <div class="notice_popup_controls">
+                <input type="checkbox" name="Notice" id="noticeToday">
+                <label for="noticeToday"><span class="hidden">오늘은 더 이상 이 창을 열지 않음.</span></label>
+            </div>
+        </div>
+        <!-- 로고 착지 후 원이 커지며 메인 화면으로 전환함 -->
+        <div id="splashScreen" class="splash_screen" hidden>
+            <div class="splash_logo">
+                <img src="./images/common/logo_blue.svg" alt="" width="430" height="142">
+                <span class="splash_circle"></span>
+            </div>
+        </div>
+        <!--
+        번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다. 예: <span data-ko="소개">ABOUT</span> 자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다. 이미지
+        설명은 alt에 영어, data-ko-alt에 한글을 작성합니다.
+        -->
+        <div id="skipNav">
+            <a href="#content" data-ko="본문 바로가기">Skip to content</a>
+            <a href="#gnb" data-ko="메뉴 바로가기">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <div class="video_box">
+                <video autoplay loop muted playsinline id="videoBg"></video>
+                <img src="./images/back.jpg" id="imgBg" alt="">
+                <a class="down" href="#content"> <span class="down_copy" data-ko="아래로 스크롤">SCROLL DOWN</span> <span class="down_track" aria-hidden="true"><span class="down_thumb"><span class="down_grip"></span></span></span> </a>
+            </div>
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button class="menu_open menu_ham" type="button" aria-controls="gnb" aria-expanded="false" aria-label="Open menu">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav id="gnb" aria-labelledby="gnbTitle">
+                        <h2 id="gnbTitle" class="hidden" data-ko="네비게이션영역">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div class="header_options" role="group" aria-label="Theme and language settings">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button class="theme_toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                            <span class="theme_track" aria-hidden="true"></span>
+                            <span class="theme_thumb" aria-hidden="true"><span class="theme_grip"></span></span>
+                        </button>
+                        <span class="options_divider" aria-hidden="true"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div class="language_options" role="group" aria-label="Language">
+                            <div class="language_buttons">
+                                <button class="language_button" type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">
+                                    EN
+                                </button>
+                                <button class="language_button" type="button" data-language="ko" lang="ko" aria-label="한국어" aria-pressed="false">
+                                    KR
+                                </button>
+                            </div>
+                            <span class="language_marker" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <h2 class="hidden" data-ko="본문콘텐츠영역">
+                        Main content
+                    </h2>
+                    <section class="about">
+                        <div class="about_inner">
+                            <div class="about_text">
+                                <h3 data-aos="fade-up">
+                                    <span class="eyebrow" data-ko="01 / 레이블 소개">01 / ABOUT THE LABEL</span>
+                                    <span class="section_title" data-ko="모든 음에 깃든 재즈의 유산.">A LEGACY IN EVERY NOTE.</span>
+                                </h3>
+                                <div class="about_description" data-aos="fade-right">
+                                    <p class="about_copy_full" data-ko="1939년 설립된 블루노트 레코드는 세대를 거쳐 재즈의 역사를 만들어 왔습니다. 혁신적인 초기 음반부터 오늘날의 새로운 앨범까지, 기존의 틀에 도전하며 자신만의 사운드를 만들어가는 아티스트들과 함께하고 있습니다.">
+                                        Founded in 1939, Blue Note Records has helped shape the history of jazz for generations. From pioneering recordings to contemporary releases, the label continues to champion artists who challenge conventions and create their own sound.
+                                    </p>
+                                    <p class="about_copy_full" data-ko="블루노트는 단순한 음반 레이블을 넘어 독자적인 음악과 시각적 정체성을 구축해 왔습니다. 생동감 있는 사진과 대담한 타이포그래피, 예술적 자유를 향한 정신은 오늘날에도 블루노트를 정의하는 핵심 가치로 이어지고 있습니다.">
+                                        More than a catalogue of recordings, Blue Note represents a distinct visual and musical identity. Expressive photography, bold typography, and a commitment to artistic freedom remain at the heart of the label today.
+                                    </p>
+                                    <!-- 모바일 시안에서는 짧은 소개문을 표시합니다. 한글은 data-ko에서 수정합니다. -->
+                                    <p class="about_copy_short" data-ko="1939년 설립된 블루노트 레코드는 혁신적인 음반과 독창적인 시각 디자인을 통해 여러 세대에 걸쳐 재즈의 역사를 만들어 왔습니다.">
+                                        Founded in 1939, Blue Note Records shaped generations of jazz through groundbreaking recordings and a distinctive visual identity.
+                                    </p>
+                                    <p class="about_copy_short" data-ko="끊임없는 실험과 예술적 자유를 추구해 온 블루노트의 음악은 시대를 넘어 사랑받고 있습니다. 아티스트의 개성을 담아낸 사진과 앨범 커버 역시 음악만큼이나 깊은 영향력을 남기고 있습니다.">
+                                        The label's story is one of experimentation, artistic freedom and timeless sound. Its photographs and album covers remain as influential as the music itself.
+                                    </p>
+                                </div>
+                                <a href="./sub1.html?num=1" class="more_link"> <span data-ko="블루노트 더 알아보기">DISCOVER OUR STORY</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                            </div>
+                            <div class="about_images">
+                                <div class="about_record">
+                                    <img src="./images/main/about_01.jpg" alt="A close-up of a Blue Note record and a tonearm on a turntable" data-ko-alt="턴테이블 위 블루노트 음반과 톤암을 가까이 담은 모습">
+                                </div>
+                                <div class="about_artists">
+                                    <img src="./images/main/about_02.jpg" alt="Blue-tinted jazz musicians arranged in vertical strips against black" data-ko-alt="검은 바탕에 세로 조각으로 배치한 푸른색 재즈 음악가들의 콜라주">
+                                </div>
+                            </div>
+                            <!-- 모바일에서는 이미지 아래의 링크만 표시합니다. -->
+                            <a href="./sub1.html?num=1" class="more_link more_link_mobile"> <span data-ko="블루노트 더 알아보기">DISCOVER OUR STORY</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                        </div>
+                    </section>
+
+                    <section class="artists">
+                        <div class="artists_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow" data-ko="02 / 아티스트">02 / ARTISTS</span>
+                                <span class="section_title" data-ko="서로 다른 음율, 블루노트의 이름으로.">THE SOUND OF BLUE NOTE.</span>
+                            </h3>
+                            <p class="artists_description" data-ko="재즈의 선구자부터 오늘날의 혁신가까지, 블루노트의 사운드를 만들어 온 아티스트들을 만나보세요." data-aos="fade"> From jazz pioneers to contemporary innovators, discover the artists who define the sound of Blue Note. </p>
+                            <div class="artists_controls">
+                                <button class="artists_pause" type="button" aria-pressed="false">
+                                    <span data-ko="멈춤">PAUSE</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="artist_row artist_row_left">
+                            <div class="artist_track">
+                                <ul class="artist_list">
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/miles_davis.jpg" alt="Miles Davis seated with one knee raised, playing the trumpet" width="280" height="280" data-ko-alt="한쪽 무릎을 세우고 앉아 트럼펫을 연주하는 마일스 데이비스">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">MILES DAVIS</span>
+                                                <span class="artist_caption" data-ko="트럼펫 연주자">TRUMPETER</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Herbie_Hancock.jpg" alt="Herbie Hancock looking over his shoulder while seated at a piano" width="280" height="280" data-ko-alt="피아노 앞에 앉아 어깨 너머를 바라보는 허비 행콕">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">HERBIE HANCOCK</span>
+                                                <span class="artist_caption" data-ko="피아니스트">PIANIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Norah_Jones.jpg" alt="Norah Jones smiling at a piano microphone" width="280" height="280" data-ko-alt="피아노 앞 마이크를 향해 미소 짓는 노라 존스">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">NORAH JONES</span>
+                                                <span class="artist_caption" data-ko="보컬리스트">VOCALIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Art_Blakey.jpg" alt="Art Blakey playing drums beneath a large cymbal" width="280" height="280" data-ko-alt="커다란 심벌 아래에서 드럼을 연주하는 아트 블레이키">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">ART BLAKEY</span>
+                                                <span class="artist_caption" data-ko="드러머">DRUMMER</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Grant_Green.jpg" alt="Grant Green smiling while holding an electric guitar" width="280" height="280" data-ko-alt="일렉트릭 기타를 들고 미소 짓는 그랜트 그린">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">GRANT GREEN</span>
+                                                <span class="artist_caption" data-ko="기타리스트">GUITARIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Wayne_Shorter.jpg" alt="Wayne Shorter holding a saxophone against a dark background" width="280" height="280" data-ko-alt="어두운 배경 앞에서 색소폰을 들고 있는 웨인 쇼터">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">WAYNE SHORTER</span>
+                                                <span class="artist_caption" data-ko="색소포니스트">SAXOPHONIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Ron_Carter.jpg" alt="Ron Carter smiling beside the neck of his double bass" width="280" height="280" data-ko-alt="더블베이스의 넥 곁에서 미소 짓는 론 카터">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">RON CARTER</span>
+                                                <span class="artist_caption" data-ko="베이시스트">BASSIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Horace_Silver.jpg" alt="Horace Silver smiling behind a piano" width="280" height="280" data-ko-alt="피아노 뒤에서 미소 짓는 호레이스 실버">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">HORACE SILVER</span>
+                                                <span class="artist_caption" data-ko="피아니스트">PIANIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Bud_Powell.jpg" alt="Bud Powell seated at a piano and looking toward the camera" width="280" height="280" data-ko-alt="피아노 앞에 앉아 카메라 쪽을 바라보는 버드 파월">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">BUD POWELL</span>
+                                                <span class="artist_caption" data-ko="피아니스트">PIANIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Lou_Donaldson.jpg" alt="Lou Donaldson standing with his saxophone on a dark stage" width="280" height="280" data-ko-alt="어두운 무대에서 색소폰을 들고 서 있는 루 도널드슨">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">LOU DONALDSON</span>
+                                                <span class="artist_caption" data-ko="색소포니스트">SAXOPHONIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="artist_row artist_row_right">
+                            <div class="artist_track">
+                                <ul class="artist_list">
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Thelonious_Monk.jpg" alt="Thelonious Monk pointing to the side while seated at a piano" width="280" height="280" data-ko-alt="피아노 앞에 앉아 옆을 가리키는 셀로니어스 몽크">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">THELONIOUS MONK</span>
+                                                <span class="artist_caption" data-ko="피아니스트">PIANIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Lee_Morgan.jpg" alt="Lee Morgan leaning forward while playing the trumpet" width="280" height="280" data-ko-alt="몸을 앞으로 기울여 트럼펫을 연주하는 리 모건">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">LEE MORGAN</span>
+                                                <span class="artist_caption" data-ko="트럼펫 연주자">TRUMPETER</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Dexter_Gordon.jpg" alt="Dexter Gordon smiling with his saxophone" width="280" height="280" data-ko-alt="색소폰을 들고 미소 짓는 덱스터 고든">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">DEXTER GORDON</span>
+                                                <span class="artist_caption" data-ko="색소포니스트">SAXOPHONIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Robert_Glasper.jpg" alt="Robert Glasper framing his face with both hands" width="280" height="280" data-ko-alt="양손으로 얼굴 주위에 프레임을 만드는 로버트 글래스퍼">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">ROBERT GLASPER</span>
+                                                <span class="artist_caption" data-ko="피아니스트">PIANIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Joe_Henderson.jpg" alt="Joe Henderson lifting his saxophone toward an overhead microphone" width="280" height="280" data-ko-alt="머리 위 마이크를 향해 색소폰을 들어 연주하는 조 헨더슨">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">JOE HENDERSON</span>
+                                                <span class="artist_caption" data-ko="색소포니스트">SAXOPHONIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Gregory_Porter.jpg" alt="Gregory Porter smiling in a dark suit, bow tie and cap" width="280" height="280" data-ko-alt="어두운 정장과 나비넥타이, 모자를 착용하고 미소 짓는 그레고리 포터">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">GREGORY PORTER</span>
+                                                <span class="artist_caption" data-ko="보컬리스트">VOCALIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Freddie_Hubbard.jpg" alt="Freddie Hubbard raising his trumpet during a performance" width="280" height="280" data-ko-alt="공연 중 트럼펫을 들어 올려 연주하는 프레디 허버드">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">FREDDIE HUBBARD</span>
+                                                <span class="artist_caption" data-ko="트럼펫 연주자">TRUMPETER</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Tony_Williams.jpg" alt="Tony Williams holding drumsticks beneath a studio microphone" width="280" height="280" data-ko-alt="스튜디오 마이크 아래에서 드럼스틱을 든 토니 윌리엄스">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">TONY WILLIAMS</span>
+                                                <span class="artist_caption" data-ko="드러머">DRUMMER</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Paul_Chambers.jpg" alt="Paul Chambers leaning into his double bass" width="280" height="280" data-ko-alt="더블베이스에 몸을 기울여 연주하는 폴 체임버스">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">PAUL CHAMBERS</span>
+                                                <span class="artist_caption" data-ko="베이시스트">BASSIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="artist_card">
+                                            <img src="./images/main/artist/Kenny_Burrell.jpg" alt="Kenny Burrell holding a hollow-body guitar and looking to the side" width="280" height="280" data-ko-alt="할로우바디 기타를 들고 옆을 바라보는 케니 버렐">
+                                            <div class="artist_info">
+                                                <span class="artist_name" lang="en">KENNY BURRELL</span>
+                                                <span class="artist_caption" data-ko="기타리스트">GUITARIST</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="artists_inner artists_bottom">
+                            <a class="more_link" href="./sub2.html?num=2"> <span data-ko="아티스트 더 알아보기">EXPLORE OUR ARTISTS</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                        </div>
+                    </section>
+
+                    <section class="albums">
+                        <div class="albums_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow"> <span data-ko="03 / 앨범">03 / ALBUMS</span> <span class="album_label_extra" lang="en"> · BLUE NOTE RECORDS</span> </span>
+                                <span class="section_title" data-ko="음반에 담긴 블루노트의 시간.">THE SOUND ON RECORD.</span>
+                            </h3>
+                            <p class="albums_description" data-ko="어떤 음반은 재즈의 방향을 바꾸고, 또 어떤 음반은 새로운 목소리를 세상에 소개했습니다. 음악과 상징적인 커버 아트가 함께 전하는 블루노트의 이야기를, 사랑받는 클래식부터 오늘날의 작품까지 만나보세요." data-aos="fade">
+                                Some records changed the direction of jazz. Others introduced new voices to the world. Together, their music and iconic cover art tell the evolving story of Blue Note, from its celebrated classics to the present day.
+                            </p>
+                            <!-- 가운데 카드를 기준으로 좌우 앨범을 겹쳐 배치함 -->
+                            <div class="album_stage swiper-container">
+                                <ul class="album_list swiper-wrapper">
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="GO!" data-artist="DEXTER GORDON" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_4112.jpg" alt="GO! — DEXTER GORDON" data-ko-alt="GO! — DEXTER GORDON 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4112.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="BLUE TRAIN" data-artist="JOHN COLTRANE" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_1577.jpg" alt="BLUE TRAIN — JOHN COLTRANE" data-ko-alt="BLUE TRAIN — JOHN COLTRANE 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_1577.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="COME AWAY WITH ME" data-artist="NORAH JONES" aria-pressed="false">
+                                            <img src="./images/main/album/NJBN_32088.webp" alt="COME AWAY WITH ME — NORAH JONES" data-ko-alt="COME AWAY WITH ME — NORAH JONES 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/NJBN_32088.webp" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="MOANIN&#39;" data-artist="ART BLAKEY &amp; THE JAZZ MESSENGERS" aria-pressed="true">
+                                            <img src="./images/main/album/BLP_4003.jpg" alt="MOANIN&#39; — ART BLAKEY &amp; THE JAZZ MESSENGERS" data-ko-alt="MOANIN&#39; — ART BLAKEY &amp; THE JAZZ MESSENGERS 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4003.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="SOMETHIN&#39; ELSE" data-artist="CANNONBALL ADDERLEY" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_1595.jpg" alt="SOMETHIN&#39; ELSE — CANNONBALL ADDERLEY" data-ko-alt="SOMETHIN&#39; ELSE — CANNONBALL ADDERLEY 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_1595.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="COOL STRUTTIN&#39;" data-artist="SONNY CLARK" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_1588.jpg" alt="COOL STRUTTIN&#39; — SONNY CLARK" data-ko-alt="COOL STRUTTIN&#39; — SONNY CLARK 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_1588.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="LIQUID SPIRIT" data-artist="GREGORY PORTER" aria-pressed="false">
+                                            <img src="./images/main/album/GPBN_3743154.webp" alt="LIQUID SPIRIT — GREGORY PORTER" data-ko-alt="LIQUID SPIRIT — GREGORY PORTER 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/GPBN_3743154.webp" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="VOLUME 1" data-artist="MILES DAVIS" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_1501.jpg" alt="VOLUME 1 — MILES DAVIS" data-ko-alt="VOLUME 1 — MILES DAVIS 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_1501.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="TIME WAITS" data-artist="BUD POWELL" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_1598.jpg" alt="TIME WAITS — BUD POWELL" data-ko-alt="TIME WAITS — BUD POWELL 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_1598.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="THE SIDEWINDER" data-artist="LEE MORGAN" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_4157.jpg" alt="THE SIDEWINDER — LEE MORGAN" data-ko-alt="THE SIDEWINDER — LEE MORGAN 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4157.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="OUT TO LUNCH!" data-artist="ERIC DOLPHY" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_4163.jpg" alt="OUT TO LUNCH! — ERIC DOLPHY" data-ko-alt="OUT TO LUNCH! — ERIC DOLPHY 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4163.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="MAIDEN VOYAGE" data-artist="HERBIE HANCOCK" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_4195.jpg" alt="MAIDEN VOYAGE — HERBIE HANCOCK" data-ko-alt="MAIDEN VOYAGE — HERBIE HANCOCK 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4195.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="GENIUS OF MODERN MUSIC, VOL. 1" data-artist="THELONIOUS MONK" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_5002.jpg" alt="GENIUS OF MODERN MUSIC, VOL. 1 — THELONIOUS MONK" data-ko-alt="GENIUS OF MODERN MUSIC, VOL. 1 — THELONIOUS MONK 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_5002.jpg" alt="">
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <button class="album_card" type="button" data-title="HUB-TONES" data-artist="FREDDIE HUBBARD" aria-pressed="false">
+                                            <img src="./images/main/album/BLP_4115.webp" alt="HUB-TONES — FREDDIE HUBBARD" data-ko-alt="HUB-TONES — FREDDIE HUBBARD 앨범 커버">
+                                        </button>
+                                        <div class="album_reflection" aria-hidden="true">
+                                            <img src="./images/main/album/BLP_4115.webp" alt="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="album_controls">
+                                <button class="album_prev" type="button">
+                                    <span class="hidden" data-ko="이전 앨범">Previous album</span>
+                                    <span aria-hidden="true">←</span>
+                                </button>
+                                <div class="album_info" aria-live="polite" aria-atomic="false">
+                                    <strong class="album_title" lang="en">MOANIN&#39;</strong>
+                                    <div class="album_pagination" role="group" aria-label="Albums">
+                                        <button class="album_dot" type="button" aria-label="GO!" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="BLUE TRAIN" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="COME AWAY WITH ME" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="MOANIN&#39;" aria-pressed="true">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="SOMETHIN&#39; ELSE" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="COOL STRUTTIN&#39;" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="LIQUID SPIRIT" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="VOLUME 1" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="TIME WAITS" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="THE SIDEWINDER" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="OUT TO LUNCH!" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="MAIDEN VOYAGE" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="GENIUS OF MODERN MUSIC, VOL. 1" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                        <button class="album_dot" type="button" aria-label="HUB-TONES" aria-pressed="false">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <p class="album_artist" lang="en">ART BLAKEY &amp; THE JAZZ MESSENGERS</p>
+                                </div>
+                                <button class="album_next" type="button">
+                                    <span class="hidden" data-ko="다음 앨범">Next album</span>
+                                    <span aria-hidden="true">→</span>
+                                </button>
+                            </div>
+                            <div class="albums_bottom">
+                                <a class="more_link" href="./sub3.html?num=3"> <span data-ko="모든 앨범 보기">BROWSE ALL ALBUMS</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="playlists">
+                        <div class="playlists_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow" data-ko="04 / 플레이리스트">04 / PLAYLISTS</span>
+                                <span class="section_title" data-ko="취향을 따라 만나는 블루노트.">LISTEN TO THE LEGACY.</span>
+                            </h3>
+                            <p class="playlists_description" data-aos="fade">
+                                <span class="playlist_intro_full" data-ko="시대를 초월한 재즈 명곡과 숨겨진 보석 같은 곡부터 기분에 맞는 새로운 음악까지, 블루노트의 다양한 사운드를 플레이리스트로 만나보세요. 여러 세대의 음악을 탐험하고 뜻밖의 취향을 발견하며, 일상에 어울리는 음악을 찾아보세요."> From timeless jazz classics and hidden gems to fresh selections for every mood, our playlists bring together the many sounds of Blue Note. Explore music across generations, discover unexpected favourites, and find the perfect soundtrack for wherever the day takes you. </span> <span class="playlist_intro_short" data-ko="시대를 초월한 재즈 명곡부터 새로운 발견까지, 당신의 하루에 어울리는 음악을 찾아보세요."> From timeless jazz classics to fresh discoveries, find the perfect soundtrack for your day. </span>
+                            </p>
+                            <div class="playlist_content">
+                                <!-- 선택한 플레이리스트의 이미지와 긴 설명 표시함 -->
+                                <div class="playlist_feature" aria-live="polite">
+                                    <div class="playlist_detail active" aria-hidden="false">
+                                        <img class="playlist_cover" src="./images/main/playlist/playlist_01.jpg" alt="BLUE NOTE: CLASSIC HITS" width="400" height="400">
+                                        <strong class="playlist_title" lang="en">BLUE NOTE: CLASSIC HITS</strong>
+                                        <p class="playlist_description" data-ko="블루노트만의 독창적인 사운드를 완성한 전설적인 녹음과 명연주들. 여러 세대에 걸쳐 사랑받아온 재즈의 대표 명곡들을 만나보세요.">
+                                            Explore the timeless recordings and legendary performances that shaped the unmistakable Blue Note sound. A perfect introduction to the classics that defined generations of jazz.
+                                        </p>
+                                    </div>
+                                    <div class="playlist_detail" aria-hidden="true">
+                                        <img class="playlist_cover" src="./images/main/playlist/playlist_02.jpg" alt="HARD BOP" width="400" height="400">
+                                        <strong class="playlist_title" lang="en">HARD BOP</strong>
+                                        <p class="playlist_description" data-ko="비밥의 혁신적인 연주에 블루스와 가스펠의 깊은 감성이 더해진 하드밥. 강렬한 리듬과 자유로운 즉흥연주가 만들어내는 생동감 넘치는 사운드를 경험해 보세요.">
+                                            Feel the vibrant energy of hard bop, where bebop meets the soulful spirit of blues and gospel. Discover powerful rhythms, bold improvisations, and unforgettable grooves.
+                                        </p>
+                                    </div>
+                                    <div class="playlist_detail" aria-hidden="true">
+                                        <img class="playlist_cover" src="./images/main/playlist/playlist_03.jpg" alt="JAZZ VOCALS" width="400" height="400">
+                                        <strong class="playlist_title" lang="en">JAZZ VOCALS</strong>
+                                        <p class="playlist_description" data-ko="서정적인 발라드부터 소울풀한 무대까지, 재즈에 생명력을 불어넣는 매력적인 목소리들. 블루노트 보컬리스트들이 전하는 따뜻한 감성과 깊이 있는 이야기를 만나보세요.">
+                                            Discover the expressive voices that bring jazz to life, from intimate ballads to soulful performances. Experience the warmth, emotion, and storytelling of Blue Note's finest vocalists.
+                                        </p>
+                                    </div>
+                                    <div class="playlist_detail" aria-hidden="true">
+                                        <img class="playlist_cover" src="./images/main/playlist/playlist_04.jpg" alt="MOST SAMPLED" width="400" height="400">
+                                        <strong class="playlist_title" lang="en">MOST SAMPLED</strong>
+                                        <p class="playlist_description" data-ko="블루노트의 전설적인 녹음을 통해 재즈와 힙합이 이어지는 순간을 발견해 보세요. 수많은 프로듀서와 아티스트에게 영감을 준 오리지널 리듬과 멜로디를 만날 수 있습니다.">
+                                            Trace the connection between jazz and hip-hop through the iconic recordings of Blue Note. Discover the original grooves, rhythms, and melodies that inspired generations of producers and artists.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="playlist_panel">
+                                    <strong class="playlist_panel_title" lang="en">THE LISTENING ROOM</strong>
+                                    <p class="playlist_panel_caption" data-ko="엄선한 플레이리스트 / 블루노트 사운드">CURATED PLAYLISTS / BLUE NOTE SOUND</p>
+                                    <!-- 메인에서는 4개만 사용함. 선택한 1개를 제외한 3개를 목록에 표시함 -->
+                                    <ul class="playlist_list">
+                                        <li class="active">
+                                            <button class="playlist_button active" type="button" aria-pressed="true">
+                                                <img src="./images/main/playlist/playlist_01.jpg" alt="" width="68" height="68">
+                                                <span class="playlist_item_text">
+                                                    <strong lang="en"><span class="playlist_number">1</span> / BLUE NOTE: CLASSIC HITS</strong> <span class="playlist_item_description" data-ko="블루노트의 전설들이 남긴 시대를 초월한 재즈 명곡들."> Essential recordings and timeless classics from the legends of Blue Note. </span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="playlist_button" type="button" aria-pressed="false">
+                                                <img src="./images/main/playlist/playlist_02.jpg" alt="" width="68" height="68">
+                                                <span class="playlist_item_text">
+                                                    <strong lang="en"><span class="playlist_number">1</span> / HARD BOP</strong> <span class="playlist_item_description" data-ko="소울풀한 리듬과 블루스의 감성이 어우러진 강렬한 하드밥 사운드."> Soulful rhythms, blues-inspired melodies, and the electrifying energy of hard bop. </span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="playlist_button" type="button" aria-pressed="false">
+                                                <img src="./images/main/playlist/playlist_03.jpg" alt="" width="68" height="68">
+                                                <span class="playlist_item_text">
+                                                    <strong lang="en"><span class="playlist_number">2</span> / JAZZ VOCALS</strong> <span class="playlist_item_description" data-ko="블루노트의 매력적인 보컬리스트들이 들려주는 잊을 수 없는 목소리."> Distinctive voices and unforgettable performances from Blue Note's finest jazz vocalists. </span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="playlist_button" type="button" aria-pressed="false">
+                                                <img src="./images/main/playlist/playlist_04.jpg" alt="" width="68" height="68">
+                                                <span class="playlist_item_text">
+                                                    <strong lang="en"><span class="playlist_number">3</span> / MOST SAMPLED</strong> <span class="playlist_item_description" data-ko="수많은 힙합 아티스트들이 샘플링한 블루노트의 전설적인 명곡들."> Discover the legendary Blue Note recordings sampled by generations of hip-hop artists. </span>
+                                                </span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="playlists_bottom">
+                                <a class="more_link" href="./sub4.html?num=4"> <span data-ko="모든 플레이리스트 보기">EXPLORE ALL PLAYLISTS</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="videos">
+                        <div class="videos_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow" data-ko="05 / 영상">05 / VIDEOS</span>
+                                <span class="section_title" data-ko="음악이 펼쳐지는 순간.">LIVE IN THE MOMENT.</span>
+                            </h3>
+                            <p class="videos_description videos_description_full" data-ko="라이브 무대를 가득 채우는 열기부터 녹음실에서 포착한 섬세한 순간까지. 아티스트들의 생생한 연주와 음악이 만들어지는 과정을 영상으로 만나보세요. 소리만으로는 전해지지 않는 표정과 호흡, 무대 안팎의 이야기를 통해 블루노트의 또 다른 매력을 발견할 수 있습니다." data-aos="fade">
+                                Experience the energy of live performances, the creative atmosphere of recording sessions, and the moments that bring musicians together. From the stage to the studio, explore the performances and stories that reveal another side of Blue Note and the artists who shape its sound.
+                            </p>
+                            <p class="videos_description videos_description_short" data-ko="라이브 무대의 열기부터 아티스트들의 진솔한 이야기, 음악이 탄생하는 녹음실의 순간까지. 블루노트의 음악을 더욱 생생하게 만나보세요." data-aos="fade">
+                                Experience the music through live performances, intimate interviews and moments inside the recording studio.
+                            </p>
+                            <div class="videos_content">
+                                <div id="videoStage" class="video_stage">
+                                    <span class="video_focus" lang="en">IN FOCUS</span>
+                                    <div class="video_player video_media" data-video-index="0">
+                                    </div>
+                                    <div class="video_stage_info" aria-live="polite" aria-atomic="true">
+                                        <span class="video_category" lang="en">LIVE SESSION</span>
+                                        <strong class="video_title" lang="en">Norah Jones: Tiny Desk Concert</strong>
+                                        <p class="video_description"></p>
+                                    </div>
+                                </div>
+                                <ul class="video_list">
+                                </ul>
+                            </div>
+                            <div class="videos_bottom">
+                                <a class="more_link" href="./sub5.html?num=5"> <span data-ko="모든 영상 보기">SEE ALL VIDEOS</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gallery">
+                        <div class="gallery_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow" data-ko="06 / 갤러리">06 / GALLERY</span>
+                                <span class="section_title" data-ko="사진으로 남은 재즈의 시간.">BLUE NOTE, IN FOCUS.</span>
+                            </h3>
+                            <p class="gallery_description" data-aos="fade">
+                                <span class="gallery_intro_full" data-ko="재즈의 역사는 음반뿐 아니라 한 장의 사진에도 남아 있습니다. 연주에 몰입한 아티스트의 표정, 녹음실의 긴장감, 무대 밖에서 마주한 뜻밖의 순간까지. 블루노트가 기록해 온 생생한 장면들을 통해 음악 너머에 담긴 이야기와 그 시대의 분위기를 만나보세요."> Every great recording leaves more than a sound. It leaves faces, places, and moments worth remembering. Explore the portraits, studio sessions, and candid photographs that reveal the visual history of Blue Note, capturing the personalities and creative spirit that have shaped jazz across generations. </span> <span class="gallery_intro_short" data-ko="위대한 녹음은 소리 이상의 것을 남깁니다. 인물 사진과 스튜디오 세션을 통해 블루노트의 시각적 역사를 만나보세요."> Every great recording leaves more than a sound. Explore portraits, studio sessions and the visual history of Blue Note. </span>
+                            </p>
+                            <!-- 수업 예제의 grid-template-areas로 모자이크 배치함 -->
+                            <ul class="gallery_list">
+                                <li>
+                                    <div class="gallery_image">
+                                        <img
+                                            src="./images/main/gallery/gall_05.jpg" alt="A drummer playing between a snare drum and cymbals in black and white" data-ko-alt="흑백으로 담긴 스네어 드럼과 심벌 사이에서 연주하는 드러머" loading="lazy"
+                                            width="540" height="355"
+                                        >
+                                    </div>
+                                    <div class="gallery_caption">
+                                        <strong lang="en">01 / LIVE MOMENT</strong>
+                                        <p data-ko="연주자의 표정에 담긴 무대의 생동감.">The energy of a performance, captured in a smile.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_15.jpg" alt="A pianist bending close to the keys in a dark room" data-ko-alt="어두운 방에서 건반 가까이 몸을 숙인 피아니스트" loading="lazy" width="1600" height="944">
+                                    </div>
+                                    <div class="gallery_caption">
+                                        <strong lang="en">02 / AT THE PIANO</strong>
+                                        <p data-ko="건반 위에 머무는 깊은 몰입의 순간.">A quiet moment of concentration at the piano.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img
+                                            src="./images/main/gallery/gall_03.jpg" alt="A musician writing musical notation beneath the words Be-bop on a chalkboard" data-ko-alt="칠판의 Be-bop 글씨 아래에 악보를 적는 음악가" loading="lazy"
+                                            width="960" height="819"
+                                        >
+                                    </div>
+                                    <div class="gallery_caption">
+                                        <strong lang="en">03 / BEHIND THE MUSIC</strong>
+                                        <p data-ko="음악을 나누고 새로운 아이디어를 만드는 시간.">Sharing music and shaping new ideas.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img
+                                            src="./images/main/gallery/gall_13.jpg" alt="A musician wearing sunglasses, seen through circular metal railings" data-ko-alt="원형 금속 난간 너머로 보이는 선글라스를 쓴 음악가" loading="lazy"
+                                            width="1080" height="1350"
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_02.jpg" alt="A trumpeter practising in front of a dressing-room mirror" data-ko-alt="대기실 거울 앞에서 트럼펫을 연습하는 연주자" loading="lazy" width="491" height="727">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img
+                                            src="./images/main/gallery/gall_07.jpg" alt="A trumpeter in a sleeveless top performing against a dark background" data-ko-alt="어두운 배경 앞에서 민소매 차림으로 트럼펫을 연주하는 음악가" loading="lazy"
+                                            width="474" height="266"
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_09.jpg" alt="Two men listening beside reel-to-reel recording equipment" data-ko-alt="릴 테이프 녹음 장비 곁에서 음악을 듣는 두 사람" loading="lazy" width="1000" height="600">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_06.jpg" alt="Blue-tinted saxophonists leaning into a performance" data-ko-alt="푸른색으로 표현한 색소폰 연주자들의 공연" loading="lazy" width="500" height="500">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_08.jpg" alt="A vibraphonist playing with mallets on a dimly lit stage" data-ko-alt="어두운 무대에서 말렛으로 비브라폰을 연주하는 음악가" loading="lazy" width="1200" height="675">
+                                    </div>
+                                </li>
+                                <!-- 태블릿에서는 세로 사진을 포함한 다른 구성으로 교체함 -->
+                                <li class="gallery_tablet">
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_01.jpg" alt="A pianist looking down at the keyboard in a poster-lined room" data-ko-alt="포스터가 붙은 방에서 건반을 내려다보는 피아니스트" loading="lazy" width="989" height="980">
+                                    </div>
+                                </li>
+                                <li class="gallery_tablet">
+                                    <div class="gallery_image">
+                                        <img
+                                            src="./images/main/gallery/gall_14.jpg" alt="A musician seated on a street post beneath city lights at night" data-ko-alt="도시의 야간 조명 아래 거리의 기둥에 걸터앉은 음악가" loading="lazy"
+                                            width="1080" height="1350"
+                                        >
+                                    </div>
+                                </li>
+                                <li class="gallery_tablet">
+                                    <div class="gallery_image">
+                                        <img src="./images/main/gallery/gall_12.jpg" alt="A seated double bassist resting an arm on his upright instrument" data-ko-alt="세워 둔 더블베이스에 팔을 기대고 앉아 있는 연주자" loading="lazy" width="798" height="800">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="gallery_bottom">
+                                <a class="more_link" href="./sub6.html?num=6"> <span data-ko="갤러리 더 보기">VIEW THE COMPLETE GALLERY</span> <span class="go_stamp" aria-hidden="true">GO!</span> </a>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며, Blue Note Records의 공식 웹사이트가 아닙니다. 사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" target="_blank" rel="noopener noreferrer" title="Spotify (새 창)">
+                                <i class="fa-brands fa-spotify" aria-hidden="true"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" target="_blank" rel="noopener noreferrer" title="Apple Music (새 창)">
+                                <i class="fa-brands fa-apple" aria-hidden="true"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" target="_blank" rel="noopener noreferrer" title="Twitter (새 창)">
+                                <i class="fa-brands fa-twitter" aria-hidden="true"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" target="_blank" rel="noopener noreferrer" title="Facebook (새 창)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" target="_blank" rel="noopener noreferrer" title="Instagram (새 창)">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" target="_blank" rel="noopener noreferrer" title="YouTube (새 창)">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <nav class="section_nav" aria-label="Section navigation">
+            <h2 class="hidden" data-ko="섹션 이동">
+                Section navigation
+            </h2>
+            <ul>
+                <li class="active">
+                    <button type="button" data-target=".video_box" aria-current="location">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="처음으로">HOME</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".about">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="소개">ABOUT</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".artists">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="아티스트">ARTISTS</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".albums">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="앨범">ALBUMS</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".playlists">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="플레이리스트">PLAYLISTS</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".videos">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="영상">VIDEOS</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" data-target=".gallery">
+                        <span class="section_equalizer" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="section_name" data-ko="갤러리">GALLERY</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/aos.js?v=20261118-2"></script>
+        <script src="./js/common.js?v=20261118-aos4"></script>
+        <script src="./js/video.js?v=20261106-2"></script>
+        <script src="./js/artists.js"></script>
+        <script src="./js/albums.js?v=20261111-25"></script>
+        <script src="./js/playlists.js?v=20261105-4"></script>
+    </body>
+</html>

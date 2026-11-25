@@ -1,0 +1,204 @@
+@charset "utf-8";
+/* 긴 히어로 제목도 화면 안에 들어오게 크기를 맞춤 */
+.playlists_page { --font-about-hero-size: 11rem; }
+.playlists_page #content { width: 100%; color: var(--color-font-01); background: transparent; }
+.listening_room { padding: 90px 0 100px; background: var(--color-overlay-main); }
+.listen_inner { width: 90%; max-width: 1800px; margin: 0 auto; }
+.listening_room .eyebrow {
+    display: block;
+    margin-bottom: 28px;
+    font-family: var(--font-family-body);
+    font-size: var(--font-label-medium-size);
+    line-height: var(--line-height-label);
+    color: var(--color-main-01);
+}
+.listening_room .title { display: block; font-size: var(--font-display-medium-size); line-height: var(--line-height-display); word-break: keep-all; }
+.listen_intro { max-width: 850px; margin-top: 28px; font-size: var(--font-body-large-size); line-height: var(--line-height-body); color: var(--color-font-02); word-break: keep-all; }
+.listen_intro_tablet, .listen_intro_mobile { display: none; }
+.listen_choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 45px; }
+.listen_choices li { min-width: 0; }
+.listen_choice {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-surface-01);
+    color: var(--color-font-01);
+    text-align: left;
+}
+.listen_choice img { flex-shrink: 0; width: 72px; height: 72px; object-fit: cover; }
+.listen_choice_copy { min-width: 0; }
+.listen_choice_number { display: block; margin-bottom: 6px; font-size: var(--font-label-small-size); line-height: var(--line-height-label); color: var(--color-font-03); }
+.listen_choice strong { display: block; font-family: var(--font-family-display); font-size: var(--font-h5-size); line-height: var(--line-height-heading); }
+.listen_choice.active { border-color: var(--color-main-01); background: var(--color-surface-02); }
+.listen_choice.active .listen_choice_number, .listen_choice:hover .listen_choice_number { color: var(--color-sub-01); }
+/* 막대 위의 글자는 선택한 플레이리스트 제목을 표시함 */
+.listen_visualizer { margin-top: 30px; padding-top: 28px; }
+.listen_equalizer { display: flex; align-items: flex-end; gap: 10px; height: 120px; }
+.listen_equalizer_bar { position: relative; flex: 1; min-width: 0; height: 20%; animation-name: none; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.listen_visualizer:not(.is_playing) .listen_equalizer_bar { height: 20%; animation: none; }
+.listen_visualizer.is_playing .listen_equalizer_bar { animation-name: listenWave; }
+@keyframes listenWave {
+    0%, 100% { height: 24%; }
+    25% { height: 65%; }
+    50% { height: 38%; }
+    75% { height: 82%; }
+}
+.listen_equalizer_bar span { position: absolute; inset: 0; background: color-mix(in srgb, var(--color-main-01), var(--color-point-01) var(--bar-mix, 0%)); opacity: .85; }
+.listen_equalizer_bar::after {
+    content: attr(data-letter);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 6px;
+    font-family: var(--font-family-display);
+    font-size: var(--font-label-large-size);
+    font-weight: 500;
+    line-height: var(--line-height-label);
+    color: var(--color-font-02);
+    text-align: center;
+    white-space: pre;
+}
+/* 피그마의 커버·소개문·플레이어 3열 패널 */
+.listen_stage { margin-top: 0; padding: 0 30px 10px; border-top: 5px solid var(--color-main-01); background: var(--color-surface-01); }
+.listen_station { padding: 25px 0; border-bottom: 1px solid var(--color-border); font-size: var(--font-label-medium-size); line-height: var(--line-height-label); color: var(--color-sub-01); }
+.listen_stage_body { display: grid; grid-template-columns: 1fr 1.1fr 2.05fr; align-items: start; gap: 40px; padding: 36px 0 26px; min-height: 492px; box-sizing: border-box; }
+.listen_artwork, .listen_details, .listen_playback { min-width: 0; }
+.listen_cover { display: block; width: 100%; height: auto; }
+.listen_artwork_caption { margin-top: 10px; font-size: .75rem; line-height: var(--line-height-display); color: var(--color-font-03); }
+.listen_title { display: block; margin-top: -9px; font-family: var(--font-family-display); font-size: var(--font-display-small-size); line-height: var(--line-height-display); }
+.listen_title::after { content: ''; display: block; width: 160px; height: 5px; margin-top: 25px; background: var(--color-point-01); }
+.listen_subtitle {
+    margin-top: 24px;
+    font-size: var(--font-body-medium-size);
+    font-weight: 700;
+    line-height: var(--line-height-heading);
+    color: var(--color-font-01);
+    word-break: keep-all;
+    text-wrap: pretty;
+}
+.listen_description_tablet, .listen_description_mobile { display: none; }
+.listen_description {
+    margin-top: 16px;
+    font-size: var(--font-body-medium-size);
+    line-height: var(--line-height-body);
+    color: var(--color-font-02);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+.listen_footer { padding-top: 12px; border-top: 1px solid var(--color-border); font-size: var(--font-label-small-size); line-height: var(--line-height-label); color: var(--color-font-02); }
+.listen_player_area { margin: 0; }
+.listen_player { min-height: 367px; }
+.listen_player iframe { display: block; width: 100%; height: 367px; border: 0; border-radius: 12px; }
+.listen_player_empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 367px;
+    padding: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface-02);
+    text-align: center;
+}
+.listen_player_empty> i, .listen_player_empty> svg { font-size: var(--font-display-small-size); color: var(--color-font-03); }
+.listen_player_empty strong { font-family: var(--font-family-display); font-size: var(--font-h4-size); line-height: var(--line-height-heading); }
+.listen_player_empty p { font-size: var(--font-label-small-size); line-height: var(--line-height-body); color: var(--color-font-02); }
+.listen_player[hidden], .listen_player_empty[hidden] { display: none; }
+.listen_services { display: grid; grid-template-columns: minmax(0, 1fr) repeat(2, minmax(0, 216px)); align-items: center; gap: 30px; width: 100%; margin-top: 20px; }
+.listen_services_label { margin: 0; font-size: var(--font-label-medium-size); font-weight: 700; color: var(--color-font-02); }
+.listen_services a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+    height: 48px;
+    padding: 4px 16px;
+    border: 0;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--color-border), transparent), var(--color-black);
+    box-shadow: inset 0 0 0 1px var(--color-border);
+    transition: box-shadow .2s ease, background-color .2s ease;
+}
+.listen_services a:hover { box-shadow: inset 0 0 0 1px var(--color-font-03); }
+.listen_services a[aria-disabled="true"] { cursor: default; }
+.listen_services a[aria-disabled="true"]:hover { opacity: 1; }
+.listen_services img { display: block; flex-shrink: 1; width: 100px; max-width: 75%; height: auto; }
+.listen_service_arrow { flex-shrink: 0; font-size: var(--font-h6-size); line-height: var(--line-height-label); color: var(--color-white); opacity: .65; }
+/* 일반 PC */
+@media screen and (max-width: 1280px) {
+    .playlists_page { --font-about-hero-size: 9rem; }
+    .listen_stage { padding-right: 24px; padding-left: 24px; }
+    .listen_stage_body { gap: 24px; }
+    .listen_title { font-size: var(--font-h3-size); }
+    .listen_services { gap: 12px; grid-template-columns: 80px repeat(2, minmax(0, 1fr)); }
+    .listen_services a { padding: 4px 10px; gap: 8px; }
+    .listen_choice { gap: 14px; }
+    .listen_choice strong { font-size: var(--font-h6-size); }
+}
+/* 일반 태블릿 */
+@media screen and (max-width: 1024px) {
+    .listen_description_pc { display: none; }
+    .listen_description_tablet { display: block; }
+    .listen_intro_pc { display: none; }
+    .listen_intro_tablet { display: block; }
+    .playlists_page { --font-about-hero-size: 6.5rem; }
+    .listening_room { padding: 65px 0 75px; }
+    .listen_choices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .listen_equalizer { height: 100px; gap: 6px; }
+    .listen_stage_body { grid-template-columns: 1fr 1.4fr; min-height: 0; gap: 30px; }
+    .listen_playback { grid-column: 1 / -1; }
+    .listen_choice strong { font-size: var(--font-h5-size); }
+}
+/* 소형 태블릿 */
+@media screen and (max-width: 768px) {
+    .listen_title::after { margin-right: auto; margin-left: auto; }
+    .playlists_page { --font-about-hero-size: 4.5rem; }
+    .listen_intro { margin: 24px auto 0; }
+    .listen_choices { margin-top: 30px; }
+    .listen_choice { padding: 12px; gap: 12px; }
+    .listen_choice img { width: 56px; height: 56px; }
+    .listen_choice strong { font-size: var(--font-label-large-size); }
+    .listen_stage_body { gap: 24px; }
+    .listen_artwork { width: 100%; }
+    .listen_artwork_caption { display: none; }
+    .listen_title { font-size: var(--font-h3-size); }
+    .listen_description { max-width: 580px; margin-right: auto; margin-left: auto; }
+}
+/* 모바일 */
+@media screen and (max-width: 640px) {
+    .listen_description_tablet { display: none; }
+    .listen_description_mobile { display: block; }
+    .listen_intro_tablet { display: none; }
+    .listen_intro_mobile { display: block; }
+    .playlists_page { --font-about-hero-size: 3.5rem; }
+    .listening_room { padding: 55px 0 65px; }
+    .listening_room .title { font-size: var(--font-h2-size); }
+    .listen_intro { font-size: var(--font-body-medium-size); }
+    .listen_choices { display: flex; gap: 12px; padding-bottom: 12px; overflow-x: auto; scroll-snap-type: x mandatory; }
+    .listen_choices li { flex: 0 0 220px; scroll-snap-align: start; }
+    .listen_choice strong { font-size: var(--font-label-large-size); }
+    .listen_stage { padding-right: 16px; padding-left: 16px; }
+    .listen_visualizer { margin-top: 20px; padding-top: 22px; }
+    .listen_equalizer { height: 80px; gap: 3px; }
+    .listen_equalizer_bar::after { font-size: .75rem; }
+    .listen_stage_body { grid-template-columns: 1fr; padding-top: 24px; }
+    .listen_station { padding: 20px 0; }
+    .listen_title { margin-top: 0; }
+    .listen_artwork { max-width: 280px; margin: 0 auto; }
+    .listen_services { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .listen_services_label { grid-column: 1 / -1; margin-right: 0; text-align: center; }
+    .listen_services a { min-height: 48px; padding: 4px 10px; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .listen_visualizer.is_playing .listen_equalizer_bar { animation: none; }
+}

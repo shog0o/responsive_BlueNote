@@ -1,0 +1,568 @@
+<!DOCTYPE HTML>
+<html data-theme="dark" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Albums | Blue Note Records</title>
+        <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="./app_icon.png" rel="apple-touch-icon-precomposed">
+        <link href="./startup.png" rel="apple-touch-startup-image">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+        <link href="./css/swiper.min.css" rel="stylesheet">
+        <link href="./css/common.css?v=20261117-nav1024" rel="stylesheet">
+        <link href="./css/sub3_1.css?v=20261117-previous" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/41c9e9a1a8.js"></script>
+    </head>
+
+    <body class="albums_page">
+        <!--
+        번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다. 예: <span data-ko="소개">ABOUT</span> 자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다. 이미지
+        설명은 alt에 영어, data-ko-alt에 한글을 작성합니다.
+        -->
+        <div id="skipNav">
+            <a data-ko="본문 바로가기" href="#content">Skip to content</a>
+            <a data-ko="메뉴 바로가기" href="#gnb">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button aria-controls="gnb" aria-expanded="false" aria-label="Open menu" class="menu_open menu_ham" type="button">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav aria-labelledby="gnbTitle" id="gnb">
+                        <h2 class="hidden" data-ko="네비게이션영역" id="gnbTitle">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3" aria-current="page">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div aria-label="Theme and language settings" class="header_options" role="group">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button aria-label="Switch to light mode" aria-pressed="false" class="theme_toggle" type="button">
+                            <span aria-hidden="true" class="theme_track"></span>
+                            <span aria-hidden="true" class="theme_thumb"><span class="theme_grip"></span></span>
+                        </button>
+                        <span aria-hidden="true" class="options_divider"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div aria-label="Language" class="language_options" role="group">
+                            <div class="language_buttons">
+                                <button aria-label="English" aria-pressed="true" class="language_button" data-language="en" lang="en" type="button">
+                                    EN
+                                </button>
+                                <button aria-label="한국어" aria-pressed="false" class="language_button" data-language="ko" lang="ko" type="button">
+                                    KR
+                                </button>
+                            </div>
+                            <span aria-hidden="true" class="language_marker"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <!-- SUB 03 / ALBUMS: 기존 #content 안에 섹션만 추가 -->
+                    <div class="sub_hero">
+                        <img class="sub_hero_image sub_hero_desktop" src="./images/sub/sub3_big.jpg" alt="A blue-toned city skyline across the water at night" data-ko-alt="물 건너로 펼쳐진 푸른빛의 도시 야경">
+                        <img class="sub_hero_image sub_hero_mobile" src="./images/sub/sub3_small.jpg" alt="Two musicians working together at a piano in a black-and-white studio scene" data-ko-alt="흑백으로 담긴 스튜디오에서 피아노 앞에 함께 있는 두 음악가">
+                        <div class="sub_hero_copy">
+                            <h2 lang="en">
+                                ALBUMS
+                            </h2>
+                            <p lang="en">THE RECORD WALL.</p>
+                        </div>
+                    </div>
+                    <section aria-labelledby="rw_wall_heading" class="rw_wall_section">
+                        <div class="rw_container">
+                            <h3 id="rw_wall_heading">
+                                <span class="eyebrow" data-ko="01 / 레코드 컬렉션">01 / THE COLLECTION</span>
+                                <span class="title" data-ko="음반에 담긴 또 하나의 예술.">THE ART OF THE RECORD.</span>
+                            </h3>
+                            <p class="rw_intro_text rw_intro_pc" data-ko="음악을 듣기 전, 먼저 눈에 들어오는 건 앨범 커버입니다. 블루노트의 대담한 타이포그래피와 인상적인 사진은 음악만큼이나 강렬한 인상을 남겼습니다. 음반 한 장 한 장에는 그 시대의 감각과 블루노트만의 개성이 담겨 있습니다.">
+                                Long before a track plays, a record sleeve makes its first impression. Blue Note's bold typography and striking photography became as recognizable as the music itself. Each cover captures a different moment in the label's history.
+                            </p>
+                            <p class="rw_intro_text rw_intro_tablet" data-ko="블루노트의 대담한 타이포그래피와 인상적인 사진은 음악만큼이나 강렬한 인상을 남겼습니다. 음반 한 장 한 장에는 시대의 감각과 블루노트만의 개성이 담겨 있습니다.">
+                                Blue Note's bold typography and striking photography made its album covers as memorable as the music itself. Each sleeve captures the spirit of its time and the label's distinctive identity.
+                            </p>
+                            <p class="rw_intro_text rw_intro_mobile" data-ko="블루노트의 앨범 커버는 단순한 디자인을 넘어, 그 시대의 음악과 감각을 담아낸 또 하나의 작품입니다.">
+                                More than album covers, Blue Note's iconic designs tell stories of music, creativity, and the times that shaped them.
+                            </p>
+                            <div class="rw_display_wall">
+                                <ul class="rw_display_grid">
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="BLUE TRAIN album artwork" data-ko-alt="BLUE TRAIN 앨범 커버" loading="eager" src="./images/main/album/BLP_1577.jpg"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>BLP 1577</small> <strong lang="en">BLUE TRAIN</strong> <span lang="en">JOHN COLTRANE</span> </span>
+                                        </div>
+                                    </li>
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="COOL STRUTTIN' album artwork" data-ko-alt="COOL STRUTTIN' 앨범 커버" loading="eager" src="./images/main/album/BLP_1588.jpg"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>BLP 1588</small> <strong lang="en">COOL STRUTTIN'</strong> <span lang="en">SONNY CLARK</span> </span>
+                                        </div>
+                                    </li>
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="SOMETHIN' ELSE album artwork" data-ko-alt="SOMETHIN' ELSE 앨범 커버" loading="eager" src="./images/main/album/BLP_1595.jpg"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>BLP 1595</small> <strong lang="en">SOMETHIN' ELSE</strong> <span lang="en">CANNONBALL ADDERLEY</span> </span>
+                                        </div>
+                                    </li>
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="MOANIN' album artwork" data-ko-alt="MOANIN' 앨범 커버" loading="lazy" src="./images/main/album/BLP_4003.jpg"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>BLP 4003</small> <strong lang="en">MOANIN'</strong> <span lang="en">ART BLAKEY &amp; THE JAZZ MESSENGERS</span> </span>
+                                        </div>
+                                    </li>
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="GO! album artwork" data-ko-alt="GO! 앨범 커버" loading="lazy" src="./images/main/album/BLP_4112.jpg"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>BLP 4112</small> <strong lang="en">GO!</strong> <span lang="en">DEXTER GORDON</span> </span>
+                                        </div>
+                                    </li>
+                                    <li class="rw_display_item">
+                                        <div class="rw_record">
+                                            <span class="rw_sleeve"> <img alt="COME AWAY WITH ME album artwork" data-ko-alt="COME AWAY WITH ME 앨범 커버" loading="lazy" src="./images/main/album/NJBN_32088.webp"> </span>
+                                            <span aria-hidden="true" class="rw_shelf_bar"></span>
+                                            <span class="rw_record_meta"> <small>32088</small> <strong lang="en">COME AWAY WITH ME</strong> <span lang="en">NORAH JONES</span> </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="rw_detail_heading" class="rw_detail_section" id="record_detail">
+                        <div class="rw_container">
+                            <p class="rw_eyebrow" data-ko="02 / 선택한 음반">02 / IN FOCUS</p>
+                            <h3 data-ko="음반을 조금 더 가까이." id="rw_detail_heading">
+                                PULL A RECORD CLOSER.
+                            </h3>
+                            <div class="rw_detail_layout">
+                                <div class="rw_detail_visual">
+                                    <div aria-hidden="true" class="rw_vinyl">
+                                        <span class="rw_vinyl_label"><img src="./images/main/album/BLP_4003.jpg" alt=""></span>
+                                    </div>
+                                    <img alt="MOANIN' album artwork" class="rw_detail_cover" data-ko-alt="MOANIN' 앨범 커버" height="1200" src="./images/main/album/BLP_4003.jpg" width="1200">
+                                </div>
+                                <div class="rw_detail_content">
+                                    <p class="rw_detail_label" data-ko="선택한 음반 / 04 OF 14">SELECTED RECORD / 04 OF 14</p>
+                                    <h4 class="rw_detail_title" lang="en">
+                                        MOANIN'
+                                    </h4>
+                                    <p class="rw_detail_artist" lang="en">ART BLAKEY &amp; THE JAZZ MESSENGERS</p>
+                                    <div class="rw_detail_specs">
+                                        <span class="rw_detail_year">1958</span>
+                                        <span class="rw_detail_cat">BLP 4003</span>
+                                    </div>
+                                    <p class="rw_detail_description rw_detail_description_pc" data-ko="아트 블레이키의 폭발적인 드럼과 재즈 메신저스의 탄탄한 합주가 만들어낸 하드밥의 대표작입니다. 가스펠의 감성이 묻어나는 타이틀곡부터 힘찬 리듬의 Blues March까지, 밴드의 뜨거운 에너지가 앨범 전체를 이끌어갑니다.">
+                                        Art Blakey’s powerful drumming and the Jazz Messengers’ sharp ensemble playing give Moanin’ its unmistakable drive. From its gospel-tinged title track to Blues March, the album captures hard bop at its most spirited and infectious.
+                                    </p>
+                                    <p class="rw_detail_description rw_detail_description_tablet" data-ko="아트 블레이키의 폭발적인 드럼과 재즈 메신저스의 생동감 넘치는 합주가 빛납니다. 하드밥의 전성기를 상징하는 대표작입니다.">
+                                        Art Blakey’s explosive drumming drives the Jazz Messengers through soulful melodies and powerful rhythms. A defining recording of the hard bop era.
+                                    </p>
+                                    <p class="rw_detail_description rw_detail_description_mobile" data-ko="강렬한 드럼과 가스펠의 감성이 어우러진 하드밥의 대표작입니다."> Powerful drums and gospel-inspired melodies define this essential hard bop recording. </p>
+                                    <div class="rw_detail_controls">
+                                        <button class="rw_detail_prev" type="button">
+                                            <span aria-hidden="true">←</span>
+                                            <span data-ko="이전 음반">PREVIOUS</span>
+                                        </button>
+                                        <span class="rw_detail_position" lang="en" aria-live="polite">04 / 14</span>
+                                        <button class="rw_detail_next" type="button">
+                                            <span data-ko="다음 음반">NEXT RECORD</span>
+                                            <span aria-hidden="true">→</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="rw_catalog_heading" class="rw_catalog_section" id="record_catalog">
+                        <div class="rw_container">
+                            <p class="rw_eyebrow" data-ko="03 / 전체 음반">03 / THE FULL SELECTION</p>
+                            <h3 data-ko="레코드 인덱스." id="rw_catalog_heading">
+                                THE RECORD INDEX.
+                            </h3>
+                            <p class="rw_catalog_intro" data-ko="선정된 블루노트 음반 14장을 카탈로그 번호와 함께 살펴보세요."> Fourteen selected recordings from the Blue Note catalogue. </p>
+                            <ol class="rw_catalog_grid">
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="0" data-title="GO!" data-artist="DEXTER GORDON"
+                                        data-cat="BLP 4112" data-year="1962" data-file="./images/main/album/BLP_4112.jpg"
+                                        data-description-en="Dexter Gordon’s warm tenor tone and relaxed phrasing bring a natural swing to this classic session. Lively bebop and tender ballads reveal his distinctive musical personality."
+                                        data-description-ko="덱스터 고든의 풍부한 음색과 여유로운 스윙이 돋보이는 앨범입니다. 경쾌한 비밥부터 서정적인 발라드까지 그의 개성을 느낄 수 있습니다."
+                                        data-description-pc-en="Dexter Gordon’s warm tenor tone and unhurried phrasing give Go! its easy confidence. Backed by a tightly swinging quartet, he moves from lively bebop lines to tender ballads without ever losing the conversational feel of his playing."
+                                        data-description-pc-ko="덱스터 고든 특유의 넉넉한 음색과 여유로운 프레이징이 돋보이는 앨범입니다. 경쾌한 비밥부터 서정적인 발라드까지 자연스럽게 넘나들며, 마치 이야기를 들려주듯 편안하고 깊이 있는 연주를 선보입니다."
+                                        data-description-mobile-en="Warm tenor tones and effortless swing capture the essence of Dexter Gordon."
+                                        data-description-mobile-ko="덱스터 고든 특유의 넉넉한 음색과 여유로운 스윙을 담은 명반입니다."
+                                    >
+                                        <span class="rw_catalog_number">01</span>
+                                        <span class="rw_catalog_text"><strong lang="en">GO!</strong><span lang="en">DEXTER GORDON</span></span>
+                                        <span class="rw_catalog_id">BLP 4112</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="1" data-title="BLUE TRAIN" data-artist="JOHN COLTRANE"
+                                        data-cat="BLP 1577" data-year="1957" data-file="./images/main/album/BLP_1577.jpg"
+                                        data-description-en="John Coltrane leads a powerful hard bop session with Lee Morgan and Curtis Fuller. Fierce improvisation meets deep blues feeling throughout the album."
+                                        data-description-ko="존 콜트레인과 리 모건, 커티스 풀러가 함께한 하드밥의 명반입니다. 강렬한 즉흥연주와 깊은 블루스의 감성이 어우러집니다."
+                                        data-description-pc-en="John Coltrane’s powerful tenor saxophone leads this unforgettable hard bop session. With Lee Morgan and Curtis Fuller alongside him, Blue Train balances fierce improvisation, deep blues feeling, and moments of striking lyricism."
+                                        data-description-pc-ko="존 콜트레인의 강렬한 테너 색소폰을 중심으로 하드밥의 에너지가 폭발하는 작품입니다. 리 모건과 커티스 풀러가 함께한 탄탄한 앙상블 속에서 거침없는 즉흥연주와 블루스의 깊은 감성이 조화를 이룹니다."
+                                        data-description-mobile-en="Coltrane’s powerful tenor saxophone captures the energy and soul of hard bop."
+                                        data-description-mobile-ko="존 콜트레인의 강렬한 색소폰으로 하드밥의 진수를 느낄 수 있는 작품입니다."
+                                    >
+                                        <span class="rw_catalog_number">02</span>
+                                        <span class="rw_catalog_text"><strong lang="en">BLUE TRAIN</strong><span lang="en">JOHN COLTRANE</span></span>
+                                        <span class="rw_catalog_id">BLP 1577</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="2" data-title="COME AWAY WITH ME"
+                                        data-artist="NORAH JONES" data-cat="32088" data-year="2002" data-file="./images/main/album/NJBN_32088.webp"
+                                        data-description-en="Norah Jones blends gentle piano and warm vocals with jazz, country, and soul. Her debut album finds beauty in simplicity and quiet intimacy."
+                                        data-description-ko="노라 존스의 부드러운 목소리에 재즈와 컨트리, 소울의 감성이 자연스럽게 녹아 있습니다. 담백한 연주만으로도 깊은 여운을 남기는 데뷔 앨범입니다."
+                                        data-description-pc-en="Norah Jones brought a quieter kind of intimacy to Blue Note with Come Away with Me. Her soft vocals and graceful piano blend jazz, country, and soul, creating songs that feel personal, unhurried, and quietly memorable."
+                                        data-description-pc-ko="노라 존스의 부드러운 목소리와 담백한 피아노 연주가 따뜻하게 어우러지는 데뷔 앨범입니다. 재즈와 컨트리, 소울의 감성을 자연스럽게 녹여내며, 일상의 조용한 순간을 떠올리게 하는 편안한 음악을 들려줍니다."
+                                        data-description-mobile-en="Warm vocals and gentle piano create an intimate blend of jazz, country, and soul."
+                                        data-description-mobile-ko="따뜻한 목소리와 부드러운 피아노가 어우러진 노라 존스의 데뷔 앨범입니다."
+                                    >
+                                        <span class="rw_catalog_number">03</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">COME AWAY WITH ME</strong> <span lang="en">NORAH JONES</span> </span>
+                                        <span class="rw_catalog_id">32088</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="true" aria-haspopup="dialog" aria-controls="trackModal" data-album="3" data-title="MOANIN'"
+                                        data-artist="ART BLAKEY &amp; THE JAZZ MESSENGERS" data-cat="BLP 4003" data-year="1958" data-file="./images/main/album/BLP_4003.jpg"
+                                        data-description-en="Art Blakey’s explosive drumming drives the Jazz Messengers through soulful melodies and powerful rhythms. A defining recording of the hard bop era."
+                                        data-description-ko="아트 블레이키의 폭발적인 드럼과 재즈 메신저스의 생동감 넘치는 합주가 빛납니다. 하드밥의 전성기를 상징하는 대표작입니다."
+                                        data-description-pc-en="Art Blakey’s powerful drumming and the Jazz Messengers’ sharp ensemble playing give Moanin’ its unmistakable drive. From its gospel-tinged title track to Blues March, the album captures hard bop at its most spirited and infectious."
+                                        data-description-pc-ko="아트 블레이키의 폭발적인 드럼과 재즈 메신저스의 탄탄한 합주가 만들어낸 하드밥의 대표작입니다. 가스펠의 감성이 묻어나는 타이틀곡부터 힘찬 리듬의 Blues March까지, 밴드의 뜨거운 에너지가 앨범 전체를 이끌어갑니다."
+                                        data-description-mobile-en="Powerful drums and gospel-inspired melodies define this essential hard bop recording."
+                                        data-description-mobile-ko="강렬한 드럼과 가스펠의 감성이 어우러진 하드밥의 대표작입니다."
+                                    >
+                                        <span class="rw_catalog_number">04</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">MOANIN'</strong> <span lang="en">ART BLAKEY &amp; THE JAZZ MESSENGERS</span> </span>
+                                        <span class="rw_catalog_id">BLP 4003</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="4" data-title="SOMETHIN' ELSE"
+                                        data-artist="CANNONBALL ADDERLEY" data-cat="BLP 1595" data-year="1958" data-file="./images/main/album/BLP_1595.jpg"
+                                        data-description-en="Cannonball Adderley and Miles Davis share a remarkable musical chemistry. Their contrasting sounds bring depth and elegance to classics such as Autumn Leaves."
+                                        data-description-ko="캐넌볼 애덜리의 풍부한 색소폰과 마일스 데이비스의 절제된 트럼펫이 조화를 이룹니다. Autumn Leaves에서 두 거장의 섬세한 호흡을 느낄 수 있습니다."
+                                        data-description-pc-en="Cannonball Adderley’s warm alto saxophone meets Miles Davis’s cool, restrained trumpet in a session built on remarkable chemistry. Their interpretations of Autumn Leaves and the title track move between quiet tension and expressive swing."
+                                        data-description-pc-ko="캐넌볼 애덜리의 풍부한 알토 색소폰과 마일스 데이비스의 절제된 트럼펫이 절묘한 조화를 이룹니다. Autumn Leaves를 비롯한 수록곡에서는 두 음악가의 섬세한 호흡과 여유로운 스윙, 깊은 감정 표현을 만날 수 있습니다."
+                                        data-description-mobile-en="Cannonball Adderley and Miles Davis meet in a timeless session of elegance and swing."
+                                        data-description-mobile-ko="캐넌볼 애덜리와 마일스 데이비스의 절묘한 호흡이 빛나는 명반입니다."
+                                    >
+                                        <span class="rw_catalog_number">05</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">SOMETHIN' ELSE</strong> <span lang="en">CANNONBALL ADDERLEY</span> </span>
+                                        <span class="rw_catalog_id">BLP 1595</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="5" data-title="COOL STRUTTIN'" data-artist="SONNY CLARK"
+                                        data-cat="BLP 1588" data-year="1958" data-file="./images/main/album/BLP_1588.jpg"
+                                        data-description-en="Sonny Clark’s fluid piano and blues-infused melodies set the tone for this classic hard bop session. Relaxed phrasing meets a deeply swinging rhythm section."
+                                        data-description-ko="소니 클락의 유려한 피아노와 블루스풍 멜로디가 매력적인 앨범입니다. 여유로운 연주 속에서도 하드밥 특유의 생동감이 살아 있습니다."
+                                        data-description-pc-en="Sonny Clark’s fluid piano lines set the mood for a relaxed yet deeply swinging hard bop session. With Art Farmer and Jackie McLean out front, Cool Struttin’ blends bluesy feeling, graceful melodies, and crisp ensemble interplay."
+                                        data-description-pc-ko="소니 클락의 유려한 피아노 연주와 여유로운 스윙이 매력적인 앨범입니다. 아트 파머와 재키 맥린이 함께 만들어내는 선명한 멜로디에 블루스의 감성이 더해져, 편안하면서도 생동감 넘치는 하드밥을 들려줍니다."
+                                        data-description-mobile-en="Fluid piano lines and bluesy grooves make this a timeless hard bop classic."
+                                        data-description-mobile-ko="유려한 피아노 선율과 블루스의 감성이 어우러진 하드밥 명반입니다."
+                                    >
+                                        <span class="rw_catalog_number">06</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">COOL STRUTTIN'</strong> <span lang="en">SONNY CLARK</span> </span>
+                                        <span class="rw_catalog_id">BLP 1588</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="6" data-title="LIQUID SPIRIT"
+                                        data-artist="GREGORY PORTER" data-cat="3743154" data-year="2013" data-file="./images/main/album/GPBN_3743154.webp"
+                                        data-description-en="Gregory Porter’s rich baritone connects jazz with soul and gospel. Heartfelt ballads and lively grooves give the album its warmth and energy."
+                                        data-description-ko="그레고리 포터의 깊은 바리톤 음색에 재즈와 소울, 가스펠의 감성이 담겨 있습니다. 진솔한 발라드와 경쾌한 리듬이 앨범의 매력을 더합니다."
+                                        data-description-pc-en="Gregory Porter’s rich baritone voice brings warmth and energy to Liquid Spirit. Drawing from jazz, soul, and gospel, the songs move between heartfelt ballads and lively grooves, connecting classic influences with a distinctly modern voice."
+                                        data-description-pc-ko="그레고리 포터의 깊고 풍부한 바리톤 음색이 앨범 전체를 따뜻하게 채웁니다. 재즈와 소울, 가스펠을 바탕으로 진솔한 발라드와 경쾌한 리듬을 넘나들며, 전통과 현대적인 감각이 공존하는 음악을 선보입니다."
+                                        data-description-mobile-en="Gregory Porter brings jazz, soul, and gospel together through his rich baritone voice."
+                                        data-description-mobile-ko="풍부한 바리톤 음색으로 재즈와 소울의 매력을 전하는 앨범입니다."
+                                    >
+                                        <span class="rw_catalog_number">07</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">LIQUID SPIRIT</strong> <span lang="en">GREGORY PORTER</span> </span>
+                                        <span class="rw_catalog_id">3743154</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="7" data-title="VOLUME 1" data-artist="MILES DAVIS"
+                                        data-cat="BLP 1501" data-year="1956" data-file="./images/main/album/BLP_1501.jpg"
+                                        data-description-en="These early Blue Note recordings capture Miles Davis developing his distinctive trumpet sound. His restrained phrasing stands out against the energy of bebop."
+                                        data-description-ko="마일스 데이비스가 자신만의 음악 세계를 만들어가던 시기의 녹음집입니다. 활기찬 비밥 연주 속에서 그의 절제된 표현력이 돋보입니다."
+                                        data-description-pc-en="These early Blue Note sessions reveal Miles Davis already developing the clarity and restraint that would define his sound. His trumpet lines cut through lively bebop arrangements with quiet authority, leaving a lasting impression without unnecessary notes."
+                                        data-description-pc-ko="마일스 데이비스가 자신만의 음악적 색깔을 만들어가던 초기 연주를 담은 앨범입니다. 생동감 넘치는 비밥 연주 속에서도 불필요한 음을 덜어내는 절제된 표현이 돋보이며, 훗날 그의 음악을 특징짓는 감각을 엿볼 수 있습니다."
+                                        data-description-mobile-en="Early bebop recordings reveal the emergence of Miles Davis’s unmistakable trumpet sound."
+                                        data-description-mobile-ko="마일스 데이비스만의 음악적 개성이 드러나기 시작한 초기 녹음집입니다."
+                                    >
+                                        <span class="rw_catalog_number">08</span>
+                                        <span class="rw_catalog_text"><strong lang="en">VOLUME 1</strong><span lang="en">MILES DAVIS</span></span>
+                                        <span class="rw_catalog_id">BLP 1501</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="8" data-title="TIME WAITS" data-artist="BUD POWELL"
+                                        data-cat="BLP 1598" data-year="1958" data-file="./images/main/album/BLP_1598.jpg"
+                                        data-description-en="Bud Powell’s agile piano drives this expressive trio session. Inventive melodies and rhythmic freedom reveal the brilliance of bebop piano."
+                                        data-description-ko="버드 파월의 유려한 피아노와 자유로운 리듬이 돋보이는 트리오 앨범입니다. 비밥 피아노 특유의 긴장감과 깊이를 함께 느낄 수 있습니다."
+                                        data-description-pc-en="Bud Powell’s agile piano leads this trio session with remarkable drive and invention. His quick melodic turns and rhythmic surprises show the language of bebop in full motion, while quieter moments reveal the expressive depth behind his virtuosity."
+                                        data-description-pc-ko="버드 파월의 뛰어난 기교와 자유로운 음악적 상상력이 담긴 피아노 트리오 앨범입니다. 빠르게 펼쳐지는 선율과 예측하기 어려운 리듬 속에서도 섬세한 감정이 살아 있어, 비밥 피아노의 깊이와 매력을 함께 느낄 수 있습니다."
+                                        data-description-mobile-en="Bud Powell’s inventive playing captures the brilliance and freedom of bebop piano."
+                                        data-description-mobile-ko="버드 파월의 뛰어난 기교와 자유로운 비밥 피아노를 담은 작품입니다."
+                                    >
+                                        <span class="rw_catalog_number">09</span>
+                                        <span class="rw_catalog_text"><strong lang="en">TIME WAITS</strong><span lang="en">BUD POWELL</span></span>
+                                        <span class="rw_catalog_id">BLP 1598</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="9" data-title="THE SIDEWINDER" data-artist="LEE MORGAN"
+                                        data-cat="BLP 4157" data-year="1964" data-file="./images/main/album/BLP_4157.jpg"
+                                        data-description-en="Lee Morgan’s bright trumpet rides an unforgettable blues-based groove. Bold improvisation and infectious rhythms make this a Blue Note classic."
+                                        data-description-ko="리 모건의 선명한 트럼펫과 블루스를 바탕으로 한 그루브가 인상적입니다. 경쾌한 리듬과 거침없는 즉흥연주가 앨범을 이끌어갑니다."
+                                        data-description-pc-en="Lee Morgan turns a playful, blues-based groove into one of Blue Note’s most recognizable recordings. The Sidewinder moves with irresistible momentum, pairing his bright trumpet sound with confident solos and a rhythm section built to swing."
+                                        data-description-pc-ko="리 모건의 선명한 트럼펫과 중독성 있는 그루브가 돋보이는 블루노트의 대표적인 음반입니다. 블루스를 바탕으로 한 경쾌한 리듬과 활기찬 즉흥연주가 어우러져, 듣는 순간 자연스럽게 몸을 움직이게 만드는 에너지를 전합니다."
+                                        data-description-mobile-en="Bright trumpet lines and irresistible grooves define Lee Morgan’s signature recording."
+                                        data-description-mobile-ko="리 모건의 강렬한 트럼펫과 중독성 있는 그루브가 빛나는 명반입니다."
+                                    >
+                                        <span class="rw_catalog_number">10</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">THE SIDEWINDER</strong> <span lang="en">LEE MORGAN</span> </span>
+                                        <span class="rw_catalog_id">BLP 4157</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="10" data-title="OUT TO LUNCH!" data-artist="ERIC DOLPHY"
+                                        data-cat="BLP 4163" data-year="1964" data-file="./images/main/album/BLP_4163.jpg"
+                                        data-description-en="Eric Dolphy explores unfamiliar musical territory through bold melodies and unconventional rhythms. His adventurous playing challenges the boundaries of jazz."
+                                        data-description-ko="에릭 돌피의 독특한 선율과 예측할 수 없는 리듬이 돋보이는 작품입니다. 익숙한 재즈의 틀을 벗어난 대담한 실험 정신을 느낄 수 있습니다."
+                                        data-description-pc-en="Eric Dolphy takes jazz in unexpected directions on Out to Lunch!, weaving bold melodies and offbeat rhythms into a sound all his own. Bass clarinet, alto saxophone, and flute meet a daring ensemble that makes every turn feel surprising."
+                                        data-description-pc-ko="에릭 돌피의 대담한 실험 정신이 고스란히 담긴 작품입니다. 베이스 클라리넷과 알토 색소폰, 플루트를 넘나들며 독특한 선율과 불규칙한 리듬을 펼쳐냅니다. 익숙한 재즈의 틀에서 벗어나 새로운 소리를 탐구하는 즐거움이 살아 있습니다."
+                                        data-description-mobile-en="Bold improvisation and unconventional rhythms push jazz into unexpected territory."
+                                        data-description-mobile-ko="독창적인 선율과 대담한 실험으로 재즈의 경계를 넓힌 작품입니다."
+                                    >
+                                        <span class="rw_catalog_number">11</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">OUT TO LUNCH!</strong> <span lang="en">ERIC DOLPHY</span> </span>
+                                        <span class="rw_catalog_id">BLP 4163</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="11" data-title="MAIDEN VOYAGE"
+                                        data-artist="HERBIE HANCOCK" data-cat="BLP 4195" data-year="1965" data-file="./images/main/album/BLP_4195.jpg"
+                                        data-description-en="Inspired by the sea, Herbie Hancock creates an atmospheric world of flowing harmonies. Spacious arrangements allow each musician to explore freely."
+                                        data-description-ko="바다에서 영감을 얻은 허비 행콕의 아름다운 화성이 돋보입니다. 여백을 살린 연주 속에서 악기들이 자유롭게 대화를 나눕니다."
+                                        data-description-pc-en="Herbie Hancock builds a world of space and atmosphere on Maiden Voyage. Inspired by the sea, its flowing harmonies and memorable themes give each musician room to explore, creating a subtle but adventurous conversation between piano and horns."
+                                        data-description-pc-ko="바다를 모티브로 펼쳐지는 허비 행콕의 섬세하고 아름다운 음악 세계를 담았습니다. 물결처럼 흐르는 화성과 여백을 살린 연주 속에서 각 악기가 자연스럽게 대화를 나누며, 고요함과 긴장감이 공존하는 독특한 분위기를 만들어냅니다."
+                                        data-description-mobile-en="Ocean-inspired harmonies and spacious melodies reveal Hancock’s musical imagination."
+                                        data-description-mobile-ko="바다를 닮은 화성과 여백으로 허비 행콕의 음악적 상상력을 담아낸 작품입니다."
+                                    >
+                                        <span class="rw_catalog_number">12</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">MAIDEN VOYAGE</strong> <span lang="en">HERBIE HANCOCK</span> </span>
+                                        <span class="rw_catalog_id">BLP 4195</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="12" data-title="GENIUS OF MODERN MUSIC, VOL. 1"
+                                        data-artist="THELONIOUS MONK" data-cat="BLP 5002" data-year="1951" data-file="./images/main/album/BLP_5002.jpg"
+                                        data-description-en="Thelonious Monk reshapes familiar jazz forms with angular melodies and unexpected harmonies. These early recordings capture his unmistakably original musical voice."
+                                        data-description-ko="델로니어스 멍크의 독특한 화성과 예측할 수 없는 리듬이 담긴 초기 녹음집입니다. 기존의 틀에 얽매이지 않는 그만의 음악 세계가 펼쳐집니다."
+                                        data-description-pc-en="Thelonious Monk’s early Blue Note recordings reveal a musical imagination unlike any other. Angular melodies, unexpected pauses, and playful dissonance give familiar jazz forms a new shape, capturing the unmistakable voice of a true original."
+                                        data-description-pc-ko="텔로니어스 멍크의 독창적인 음악 세계를 만날 수 있는 초기 녹음집입니다. 독특한 화성과 예상 밖의 리듬, 의도적인 여백이 어우러져 기존 재즈에서는 듣기 어려웠던 새로운 표현을 만들어냅니다. 멍크만의 개성이 선명하게 드러나는 작품입니다."
+                                        data-description-mobile-en="Unusual harmonies and playful rhythms reveal the originality of Thelonious Monk."
+                                        data-description-mobile-ko="독특한 화성과 자유로운 리듬으로 멍크만의 음악 세계를 보여주는 녹음집입니다."
+                                    >
+                                        <span class="rw_catalog_number">13</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">GENIUS OF MODERN MUSIC, VOL. 1</strong> <span lang="en">THELONIOUS MONK</span> </span>
+                                        <span class="rw_catalog_id">BLP 5002</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button
+                                        class="rw_catalog_button" type="button" aria-pressed="false" aria-haspopup="dialog" aria-controls="trackModal" data-album="13" data-title="HUB-TONES" data-artist="FREDDIE HUBBARD"
+                                        data-cat="BLP 4115" data-year="1962" data-file="./images/main/album/BLP_4115.webp"
+                                        data-description-en="Freddie Hubbard’s brilliant trumpet moves between fiery improvisation and lyrical expression. An inventive ensemble brings out the depth of his musical personality."
+                                        data-description-ko="프레디 허버드의 화려한 트럼펫과 서정적인 표현력이 공존하는 앨범입니다. 대담한 즉흥연주 속에서 그의 뛰어난 음악적 감각이 드러납니다."
+                                        data-description-pc-en="Freddie Hubbard’s brilliant trumpet playing gives Hub-Tones its spark, moving between fiery improvisation and lyrical restraint. Supported by Herbie Hancock and a responsive quintet, the album reveals both his technical command and expressive musical imagination."
+                                        data-description-pc-ko="프레디 허버드의 화려한 트럼펫 연주와 뛰어난 음악적 감각이 빛나는 앨범입니다. 허비 행콕이 참여한 퀸텟의 탄탄한 연주를 바탕으로 폭발적인 즉흥연주와 서정적인 표현을 넘나들며, 허버드만의 강렬한 개성을 드러냅니다."
+                                        data-description-mobile-en="Freddie Hubbard balances brilliant trumpet technique with expressive improvisation."
+                                        data-description-mobile-ko="화려한 기교와 대담한 즉흥연주가 돋보이는 프레디 허버드의 명반입니다."
+                                    >
+                                        <span class="rw_catalog_number">14</span>
+                                        <span class="rw_catalog_text"> <strong lang="en">HUB-TONES</strong> <span lang="en">FREDDIE HUBBARD</span> </span>
+                                        <span class="rw_catalog_id">BLP 4115</span>
+                                        <span aria-hidden="true" class="rw_catalog_arrow">↗</span>
+                                    </button>
+                                </li>
+                            </ol>
+                            <p class="rw_catalog_foot" data-ko="14장의 음반 / 블루노트 레코즈">14 RECORDS / BLUE NOTE RECORDS</p>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며, Blue Note Records의 공식 웹사이트가 아닙니다. 사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" rel="noopener noreferrer" target="_blank" title="Spotify (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-spotify"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" rel="noopener noreferrer" target="_blank" title="Apple Music (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-apple"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" rel="noopener noreferrer" target="_blank" title="Twitter (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-twitter"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" rel="noopener noreferrer" target="_blank" title="Facebook (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-facebook"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" rel="noopener noreferrer" target="_blank" title="Instagram (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-instagram"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" rel="noopener noreferrer" target="_blank" title="YouTube (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-youtube"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <!-- 전체 앨범 목록에서 선택한 음반의 수록곡을 보여줌 -->
+        <div id="trackModal" class="rw_track_modal" hidden>
+            <div class="rw_track_dialog" role="dialog" aria-modal="true" aria-labelledby="trackModalTitle">
+                <div class="rw_track_header">
+                    <span class="rw_track_eyebrow" lang="en">BLUE NOTE / RECORD INDEX</span>
+                    <button class="rw_track_close" type="button" aria-label="Close tracklist">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="rw_track_body">
+                    <div class="rw_track_summary">
+                        <img class="rw_track_cover" src="./images/main/album/BLP_4003.jpg" alt="" width="400" height="400">
+                        <div class="rw_track_info">
+                            <p class="rw_track_catalog" lang="en">BLP 4003</p>
+                            <strong id="trackModalTitle" class="rw_track_title" lang="en">MOANIN'</strong>
+                            <p class="rw_track_artist" lang="en">ART BLAKEY &amp; THE JAZZ MESSENGERS</p>
+                            <p class="rw_track_year" lang="en">1958</p>
+                        </div>
+                    </div>
+                    <div class="rw_track_content">
+                        <div class="rw_track_heading">
+                            <strong data-ko="수록곡">TRACKLIST</strong>
+                            <span class="rw_track_count" lang="en"></span>
+                        </div>
+                        <ol class="rw_track_list" tabindex="0" aria-label="Album tracks">
+                        </ol>
+                        <p class="rw_track_footer" lang="en">THE FINEST IN JAZZ SINCE 1939.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/common.js?v=20261117-nav1024"></script>
+        <script src="./js/sub3_1.js?v=20261117-previous"></script>
+        <button class="top_move" type="button" aria-label="Back to top" hidden>
+            <img src="./images/top_btn.png" alt="" width="60" height="60">
+        </button>
+    </body>
+</html>

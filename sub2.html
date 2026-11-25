@@ -1,0 +1,916 @@
+<!DOCTYPE HTML>
+<html data-theme="dark" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Artists | Blue Note Records</title>
+        <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="./app_icon.png" rel="apple-touch-icon-precomposed">
+        <link href="./startup.png" rel="apple-touch-startup-image">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+        <link href="./css/swiper.min.css" rel="stylesheet">
+        <link href="./css/aos.css?v=20261118-3" rel="stylesheet">
+        <link href="./css/common.css?v=20261118-aos4" rel="stylesheet">
+        <link href="./css/sub2.css?v=20261116-format1" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/41c9e9a1a8.js"></script>
+    </head>
+
+    <body class="artists_page">
+        <!--
+        번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다. 예: <span data-ko="소개">ABOUT</span> 자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다. 이미지
+        설명은 alt에 영어, data-ko-alt에 한글을 작성합니다.
+        -->
+        <div id="skipNav">
+            <a data-ko="본문 바로가기" href="#content">Skip to content</a>
+            <a data-ko="메뉴 바로가기" href="#gnb">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button aria-controls="gnb" aria-expanded="false" aria-label="Open menu" class="menu_open menu_ham" type="button">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav aria-labelledby="gnbTitle" id="gnb">
+                        <h2 class="hidden" data-ko="네비게이션영역" id="gnbTitle">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2" aria-current="page">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div aria-label="Theme and language settings" class="header_options" role="group">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button aria-label="Switch to light mode" aria-pressed="false" class="theme_toggle" type="button">
+                            <span aria-hidden="true" class="theme_track"></span>
+                            <span aria-hidden="true" class="theme_thumb"><span class="theme_grip"></span></span>
+                        </button>
+                        <span aria-hidden="true" class="options_divider"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div aria-label="Language" class="language_options" role="group">
+                            <div class="language_buttons">
+                                <button aria-label="English" aria-pressed="true" class="language_button" data-language="en" lang="en" type="button">
+                                    EN
+                                </button>
+                                <button aria-label="한국어" aria-pressed="false" class="language_button" data-language="ko" lang="ko" type="button">
+                                    KR
+                                </button>
+                            </div>
+                            <span aria-hidden="true" class="language_marker"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <!-- SUB 02 / ARTISTS: 기존 #content 안에 섹션만 추가 -->
+                    <div class="sub_hero">
+                        <img class="sub_hero_image sub_hero_desktop" src="./images/sub/sub2_big.jpg" alt="A crowd facing a green-lit stage at an outdoor jazz festival at dusk" data-ko-alt="해 질 무렵 초록 조명이 켜진 야외 재즈 페스티벌 무대와 관객">
+                        <img class="sub_hero_image sub_hero_mobile" src="./images/sub/sub2_small.jpg" alt="A collage of jazz musicians in blue and orange against a black background" data-ko-alt="검은 배경 위에 파랑과 주황으로 배치된 재즈 음악가들의 콜라주">
+                        <div class="sub_hero_copy">
+                            <h2 lang="en">
+                                ARTISTS
+                            </h2>
+                            <p lang="en">THE PEOPLE WHO MAKE THE SOUND.</p>
+                        </div>
+                    </div>
+                    <section aria-labelledby="aw_wheel_heading" class="aw_wheel_section" id="artist_wheel">
+                        <div class="aw_wheel_sticky">
+                            <div class="aw_container aw_wheel_header">
+                                <h3 id="aw_wheel_heading" data-aos="fade-up">
+                                    <span class="eyebrow" data-ko="01 / 아티스트 소개">01 / INTRODUCTIONS</span>
+                                    <span class="title" data-ko="모든 음악가에게는 자신만의 소리가 있습니다.">EVERY ARTIST HAS A SOUND.</span>
+                                </h3>
+                            </div>
+                            <div class="aw_wheel_stage">
+                                <ul class="aw_cards">
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="0">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Art Blakey playing drums beneath a large cymbal" height="600" loading="lazy" src="./images/main/artist/Art_Blakey.jpg" width="600" data-ko-alt="커다란 심벌 아래에서 드럼을 연주하는 아트 블레이키">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="01 / 드럼">01 / DRUMS</span>
+                                                <strong class="aw_artist_name" lang="en">ART BLAKEY</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="아트 블레이키의 드럼에는 밴드 전체를 이끌어가는 강렬한 에너지가 담겨 있습니다. 재즈 메신저스를 이끌며 하드밥의 전성기를 만들어냈고, 수많은 젊은 음악가들이 성장할 수 있는 무대도 마련했습니다. 대표작 'Moanin’'에는 그의 폭발적인 리듬과 밴드 특유의 생동감이 고스란히 담겨 있습니다."
+                                                >
+                                                    Art Blakey brought extraordinary energy to the drums, driving every performance with a powerful sense of swing. As the leader of the Jazz Messengers, he helped shape hard bop while giving younger musicians a place to develop their voices. His recordings, especially 'Moanin’', capture the excitement, intensity, and collective spirit that made his band legendary.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="재즈 메신저스를 이끈 드러머로, 하드밥의 강렬한 에너지를 상징하는 음악가입니다."> The driving force behind the Jazz Messengers and a defining figure in hard bop. </p>
+                                                <span class="aw_card_role" data-ko="드럼">DRUMS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="1">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Bud Powell seated at a piano and looking toward the camera" height="600" loading="lazy" src="./images/main/artist/Bud_Powell.jpg" width="600"
+                                                    data-ko-alt="피아노 앞에 앉아 카메라 쪽을 바라보는 버드 파월"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker piano" data-ko="02 / 피아노">02 / PIANO</span>
+                                                <strong class="aw_artist_name" lang="en">BUD POWELL</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="버드 파월은 비밥의 언어를 피아노에 정착시킨 선구적인 음악가입니다. 빠르고 유려한 오른손 프레이즈와 자유로운 리듬은 당시 재즈 피아노에 새로운 방향을 제시했습니다. 놀라운 연주 기교 속에서도 음악적인 감정과 긴장감을 잃지 않았으며, 그의 영향은 오늘날 재즈 피아노에서도 뚜렷하게 이어지고 있습니다."
+                                                >
+                                                    Bud Powell helped establish the language of bebop piano with his dazzling right-hand lines and remarkable rhythmic freedom. His playing brought the speed, complexity, and improvisational spirit of bebop into a new pianistic form. Beneath the technical brilliance was a deeply expressive musician whose influence can still be heard in jazz piano today.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="유려한 비밥 프레이즈로 현대 재즈 피아노의 방향을 제시한 선구자입니다."> A bebop pioneer whose fluid lines transformed modern jazz piano. </p>
+                                                <span class="aw_card_role" data-ko="피아노">PIANO</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="2">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Dexter Gordon smiling with his saxophone" height="600" loading="lazy" src="./images/main/artist/Dexter_Gordon.jpg" width="600" data-ko-alt="색소폰을 들고 미소 짓는 덱스터 고든">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker sax" data-ko="03 / 색소폰">03 / SAXOPHONE</span>
+                                                <strong class="aw_artist_name" lang="en">DEXTER GORDON</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="덱스터 고든의 테너 색소폰은 넉넉한 음색과 여유로운 스윙이 매력적입니다. 박자보다 살짝 뒤에서 따라오는 듯한 프레이징은 마치 누군가 이야기를 들려주는 것처럼 자연스럽습니다. 블루노트의 대표작 'Go!'에서는 뛰어난 연주 실력뿐 아니라 음악을 편안하게 풀어내는 그의 깊은 관록을 느낄 수 있습니다."
+                                                >
+                                                    Dexter Gordon had a tenor saxophone sound that was big, warm, and full of personality. His relaxed phrasing often seemed to sit just behind the beat, giving every line an easy, conversational swing. On recordings such as 'Go!', he balanced technical command with a natural storytelling quality that made his playing feel unmistakably human.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="넉넉한 톤과 여유로운 스윙 감각을 지닌 테너 색소폰의 거장입니다."> A tenor saxophone giant with a generous tone and unhurried sense of swing. </p>
+                                                <span class="aw_card_role" data-ko="색소폰">SAXOPHONE</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="3">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Freddie Hubbard raising his trumpet during a performance" height="600" loading="lazy" src="./images/main/artist/Freddie_Hubbard.jpg" width="600"
+                                                    data-ko-alt="공연 중 트럼펫을 들어 올려 연주하는 프레디 허버드"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker trumpet" data-ko="04 / 트럼펫">04 / TRUMPET</span>
+                                                <strong class="aw_artist_name" lang="en">FREDDIE HUBBARD</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="프레디 허버드는 뛰어난 기교와 대담한 즉흥연주로 주목받은 트럼펫 연주자입니다. 선명한 음색과 넓은 음역을 자유롭게 활용하면서도 음악적인 표현력을 놓치지 않았습니다. 'Open Sesame'와 'Hub-Tones' 같은 초기 블루노트 음반에는 젊은 연주자의 폭발적인 에너지와 뛰어난 음악적 감각이 생생하게 담겨 있습니다."
+                                                >
+                                                    Freddie Hubbard combined extraordinary trumpet technique with a powerful musical imagination. His bright tone, wide range, and fearless improvisations made him one of the most exciting players of his generation. Early Blue Note recordings such as 'Open Sesame' and 'Hub-Tones' capture the energy of a musician equally capable of dazzling virtuosity and deeply expressive playing.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="넓은 음역과 뛰어난 즉흥연주로 주목받은 트럼펫 연주자입니다."> A brilliant trumpeter celebrated for precision, range and striking improvisation. </p>
+                                                <span class="aw_card_role" data-ko="트럼펫">TRUMPET</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="4">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Grant Green smiling while holding an electric guitar" height="600" loading="lazy" src="./images/main/artist/Grant_Green.jpg" width="600" data-ko-alt="일렉트릭 기타를 들고 미소 짓는 그랜트 그린">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="05 / 기타">05 / GUITAR</span>
+                                                <strong class="aw_artist_name" lang="en">GRANT GREEN</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="그랜트 그린은 화려한 코드 연주보다 선명한 멜로디와 블루스의 감각을 앞세운 기타리스트입니다. 간결한 음 하나하나에 특유의 리듬과 표현력이 살아 있어, 복잡한 연주 없이도 깊은 인상을 남깁니다. 하드밥부터 소울 재즈와 펑크까지 자유롭게 넘나들며 블루노트에 자신만의 그루브를 남겼습니다."
+                                                >
+                                                    Grant Green built his signature guitar sound around clear melodies, blues feeling, and an effortless sense of groove. His single-note lines could be simple and direct, yet they always carried a strong musical personality. Moving comfortably between hard bop, soul jazz, and funk, he gave Blue Note some of its most inviting and rhythmically infectious recordings.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="블루스에 뿌리를 둔 간결하고 선율적인 연주로 사랑받는 기타리스트입니다."> A guitarist known for a direct, lyrical sound rooted in the blues. </p>
+                                                <span class="aw_card_role" data-ko="기타">GUITAR</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="5">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Gregory Porter smiling in a dark suit, bow tie and cap" height="600" loading="lazy" src="./images/main/artist/Gregory_Porter.jpg" width="600"
+                                                    data-ko-alt="어두운 정장과 나비넥타이, 모자를 착용하고 미소 짓는 그레고리 포터"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="06 / 보컬">06 / VOCALS</span>
+                                                <strong class="aw_artist_name" lang="en">GREGORY PORTER</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="그레고리 포터는 깊고 풍부한 바리톤 음색으로 듣는 사람의 마음을 움직이는 보컬리스트입니다. 재즈와 소울, 가스펠의 영향을 자연스럽게 녹여내며 일상의 감정과 이야기를 진솔하게 노래합니다. 'Liquid Spirit'에서는 전통적인 재즈 보컬의 매력을 지키면서도 현대적인 감각을 잃지 않는 그의 음악을 들을 수 있습니다."
+                                                >
+                                                    Gregory Porter brings warmth, depth, and unmistakable emotion to every performance. His rich baritone voice carries the influence of jazz, soul, and gospel, while his songwriting often speaks to everyday life with honesty and compassion. Albums such as 'Liquid Spirit' show how he connects the traditions of vocal jazz with a sound that feels entirely contemporary.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="풍부한 바리톤 음색으로 재즈와 소울을 오늘의 음악으로 연결합니다."> A rich, expressive baritone voice bringing jazz and soul into the present. </p>
+                                                <span class="aw_card_role" data-ko="보컬">VOCALS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="6">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Herbie Hancock looking over his shoulder while seated at a piano" height="600" loading="eager" src="./images/main/artist/Herbie_Hancock.jpg" width="600"
+                                                    data-ko-alt="피아노 앞에 앉아 어깨 너머를 바라보는 허비 행콕"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker piano" data-ko="07 / 피아노">07 / PIANO</span>
+                                                <strong class="aw_artist_name" lang="en">HERBIE HANCOCK</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="허비 행콕은 기존의 틀에 머무르지 않고 끊임없이 새로운 소리를 찾아온 피아니스트입니다. 독창적인 화성과 자유로운 리듬, 뛰어난 멜로디 감각으로 현대 재즈의 표현 영역을 넓혔습니다. 블루노트에서 발표한 'Empyrean Isles'와 'Maiden Voyage'는 그의 음악적 상상력이 빛나는 대표작입니다."
+                                                >
+                                                    Herbie Hancock has always approached the piano with curiosity and a willingness to explore. His inventive harmonies, playful rhythms, and gift for melody helped push jazz into new territory. Albums such as 'Empyrean Isles' and 'Maiden Voyage' remain defining moments in the Blue Note catalogue, revealing a musician constantly searching for new possibilities.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="재즈의 화성과 리듬에 새로운 가능성을 열어온 피아니스트이자 작곡가입니다."> A pianist and composer whose harmonic imagination expanded the possibilities of jazz. </p>
+                                                <span class="aw_card_role" data-ko="피아노">PIANO</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="7">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Horace Silver smiling behind a piano" height="600" loading="lazy" src="./images/main/artist/Horace_Silver.jpg" width="600" data-ko-alt="피아노 뒤에서 미소 짓는 호레이스 실버">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker piano" data-ko="08 / 피아노">08 / PIANO</span>
+                                                <strong class="aw_artist_name" lang="en">HORACE SILVER</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="호레이스 실버는 블루스와 가스펠의 감성을 하드밥에 녹여낸 피아니스트이자 작곡가입니다. 경쾌한 리듬과 쉽게 잊히지 않는 멜로디는 그의 음악을 더욱 특별하게 만들었습니다. 대표곡 'Song for My Father'에는 재즈 특유의 세련된 화성과 누구나 자연스럽게 몸을 맡길 수 있는 그루브가 공존합니다."
+                                                >
+                                                    Horace Silver gave hard bop a sound that was impossible to mistake. Drawing on blues, gospel, and infectious rhythms, his piano playing and compositions brought warmth and energy to modern jazz. Pieces like 'Song for My Father' show his remarkable ability to turn a memorable groove into music that feels both sophisticated and immediately accessible.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="하드밥 특유의 그루브와 소울을 음악에 담아낸 피아니스트입니다."> A pianist whose compositions gave hard bop its unmistakable soul and groove. </p>
+                                                <span class="aw_card_role" data-ko="피아노">PIANO</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="8">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Joe Henderson lifting his saxophone toward an overhead microphone" height="600" loading="lazy" src="./images/main/artist/Joe_Henderson.jpg" width="600"
+                                                    data-ko-alt="머리 위 마이크를 향해 색소폰을 들어 연주하는 조 헨더슨"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker sax" data-ko="09 / 색소폰">09 / SAXOPHONE</span>
+                                                <strong class="aw_artist_name" lang="en">JOE HENDERSON</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="조 헨더슨의 색소폰 연주에는 치밀한 구성과 자유로운 상상력이 함께 담겨 있습니다. 복잡한 즉흥연주를 펼치다가도 간결한 프레이즈 하나로 분위기를 바꾸는 능력이 뛰어났습니다. 'Page One'과 'Inner Urge'에서는 새로운 음악적 가능성을 탐구하면서도 자신만의 뚜렷한 색깔을 지켜온 그의 연주를 만날 수 있습니다."
+                                                >
+                                                    Joe Henderson developed a tenor saxophone voice that was thoughtful, adventurous, and immediately recognizable. His improvisations move between intricate ideas and strikingly simple phrases, always maintaining a strong sense of direction. Albums such as 'Page One' and 'Inner Urge' reveal a musician who could explore complex musical territory without losing his distinctive sense of expression.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="탐구적인 연주와 뚜렷한 개성을 지닌 색소포니스트입니다."> A thoughtful, adventurous saxophonist with an instantly recognizable sound. </p>
+                                                <span class="aw_card_role" data-ko="색소폰">SAXOPHONE</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="9">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Kenny Burrell holding a hollow-body guitar and looking to the side" height="600" loading="lazy" src="./images/main/artist/Kenny_Burrell.jpg" width="600"
+                                                    data-ko-alt="할로우바디 기타를 들고 옆을 바라보는 케니 버렐"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="10 / 기타">10 / GUITAR</span>
+                                                <strong class="aw_artist_name" lang="en">KENNY BURRELL</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="케니 버렐은 블루스의 깊은 감성과 재즈의 세련된 화성을 조화롭게 들려주는 기타리스트입니다. 따뜻한 음색과 절제된 프레이징, 편안한 스윙이 그의 연주를 더욱 매력적으로 만듭니다. 대표작 'Midnight Blue'에서는 화려한 기교를 앞세우지 않고도 멜로디와 리듬만으로 깊은 분위기를 만들어내는 그의 음악을 만날 수 있습니다."
+                                                >
+                                                    Kenny Burrell is celebrated for a guitar sound that blends blues feeling with the elegance of jazz. His warm tone, tasteful phrasing, and understated swing give his music an easy sense of confidence. On albums such as 'Midnight Blue', he shows how a simple melodic idea, played with the right touch, can be every bit as compelling as technical brilliance.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="블루스의 감성과 세련된 재즈 화성을 조화롭게 들려주는 기타리스트입니다."> An elegant guitarist balancing blues feeling and sophisticated jazz harmony. </p>
+                                                <span class="aw_card_role" data-ko="기타">GUITAR</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="10">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Lee Morgan leaning forward while playing the trumpet" height="600" loading="lazy" src="./images/main/artist/Lee_Morgan.jpg" width="600" data-ko-alt="몸을 앞으로 기울여 트럼펫을 연주하는 리 모건">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker trumpet" data-ko="11 / 트럼펫">11 / TRUMPET</span>
+                                                <strong class="aw_artist_name" lang="en">LEE MORGAN</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="리 모건은 화려한 기교와 강렬한 음색으로 하드밥 시대를 빛낸 트럼펫 연주자입니다. 거침없이 몰아치는 즉흥연주 속에서도 선율의 아름다움을 놓치지 않았습니다. 대표작 'The Sidewinder'에서는 특유의 힘 있는 연주에 중독성 있는 그루브를 더하며 블루노트의 대표적인 사운드를 만들어냈습니다."
+                                                >
+                                                    Lee Morgan was a brilliant trumpeter whose bold sound and effortless melodic sense made him a standout figure of hard bop. His playing could be fiery and virtuosic one moment, then surprisingly lyrical the next. With 'The Sidewinder', he brought a powerful groove to the Blue Note catalogue and created one of the label’s most recognizable recordings.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="화려한 표현과 뛰어난 선율 감각으로 하드밥 시대를 대표한 트럼펫 연주자입니다."> A fiery trumpeter whose melodic flair helped define the hard-bop era. </p>
+                                                <span class="aw_card_role" data-ko="트럼펫">TRUMPET</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="11">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Lou Donaldson standing with his saxophone on a dark stage" height="600" loading="lazy" src="./images/main/artist/Lou_Donaldson.jpg" width="600"
+                                                    data-ko-alt="어두운 무대에서 색소폰을 들고 서 있는 루 도널드슨"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker sax" data-ko="12 / 색소폰">12 / SAXOPHONE</span>
+                                                <strong class="aw_artist_name" lang="en">LOU DONALDSON</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="루 도널드슨은 블루스의 감각이 살아 있는 알토 색소폰 연주로 사랑받은 음악가입니다. 따뜻한 음색과 여유로운 프레이징, 자연스러운 스윙으로 자신만의 개성을 드러냈습니다. 하드밥에서 소울 재즈까지 폭넓게 활동하며 블루노트의 전성기를 대표하는 친근하면서도 깊이 있는 사운드를 만들어냈습니다."
+                                                >
+                                                    Lou Donaldson brought an unmistakable blues feeling to the alto saxophone. His warm tone, relaxed phrasing, and natural sense of swing made his music instantly recognizable. From hard bop to soul jazz, he created recordings full of character and groove, becoming one of the defining voices of Blue Note’s classic years.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="블루스의 감각을 살린 알토 색소폰 연주로 블루노트의 색채를 더했습니다."> An alto saxophonist whose blues-infused sound became a Blue Note signature. </p>
+                                                <span class="aw_card_role" data-ko="색소폰">SAXOPHONE</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="12">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Miles Davis seated with one knee raised, playing the trumpet" height="600" loading="eager" src="./images/main/artist/miles_davis.jpg" width="600"
+                                                    data-ko-alt="한쪽 무릎을 세우고 앉아 트럼펫을 연주하는 마일스 데이비스"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker trumpet" data-ko="13 / 트럼펫">13 / TRUMPET</span>
+                                                <strong class="aw_artist_name" lang="en">MILES DAVIS</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="마일스 데이비스는 절제된 연주만으로도 강렬한 인상을 남긴 트럼펫 연주자입니다. 음과 음 사이의 여백까지 음악으로 만드는 감각은 그만의 독보적인 표현 방식이 되었습니다. 블루노트에 남긴 초기 녹음에서는 훗날 재즈의 흐름을 바꿔놓을 음악가의 새로운 시도와 가능성을 엿볼 수 있습니다."
+                                                >
+                                                    Miles Davis changed the sound of jazz with a trumpet style that was as expressive as it was restrained. Rather than filling every moment with notes, he knew how to make silence part of the music. His early Blue Note recordings capture a young artist already developing the unmistakable voice that would influence generations of musicians.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="현대 재즈의 언어를 바꾸는 데 기여한 트럼펫 연주자. 강렬하면서도 절제된 연주로 자신만의 음악 세계를 구축했습니다.">
+                                                    A singular voice on trumpet whose recordings helped shape the language of modern jazz.
+                                                </p>
+                                                <span class="aw_card_role" data-ko="트럼펫">TRUMPET</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="13">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Norah Jones smiling at a piano microphone" height="600" loading="eager" src="./images/main/artist/Norah_Jones.jpg" width="600" data-ko-alt="피아노 앞 마이크를 향해 미소 짓는 노라 존스">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="14 / 보컬">14 / VOCALS</span>
+                                                <strong class="aw_artist_name" lang="en">NORAH JONES</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="노라 존스의 음악에는 듣는 사람을 편안하게 만드는 따뜻함이 있습니다. 담백한 목소리와 부드러운 피아노 연주에 재즈, 소울, 컨트리의 감성을 자연스럽게 녹여냅니다. 데뷔 앨범 'Come Away with Me'는 화려한 기교 없이도 깊은 여운을 남기는 그녀만의 음악을 세계에 알렸습니다."
+                                                >
+                                                    Norah Jones has a way of making every song feel personal. Her warm, understated voice and gentle piano playing move naturally between jazz, soul, country, and pop. With 'Come Away with Me', she introduced a quietly intimate sound that reached listeners far beyond the jazz world, proving that simplicity can leave a lasting impression.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="재즈의 감성과 섬세한 송라이팅을 자연스럽게 연결하는 보컬리스트입니다."> A distinctive voice connecting jazz sensibility with intimate contemporary songwriting. </p>
+                                                <span class="aw_card_role" data-ko="보컬">VOCALS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="14">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Paul Chambers leaning into his double bass" height="600" loading="lazy" src="./images/main/artist/Paul_Chambers.jpg" width="600" data-ko-alt="더블베이스에 몸을 기울여 연주하는 폴 체임버스">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="15 / 베이스">15 / BASS</span>
+                                                <strong class="aw_artist_name" lang="en">PAUL CHAMBERS</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="폴 챔버스는 정교한 워킹 베이스로 수많은 명연주의 중심을 지킨 베이시스트입니다. 안정적인 리듬 속에서도 선율의 흐름을 놓치지 않았으며, 다른 연주자들의 즉흥연주를 자연스럽게 뒷받침했습니다. 자신의 솔로에서도 뛰어난 음악성을 보여주었고, 그의 단단하면서도 유연한 연주는 현대 재즈 베이스의 중요한 기준이 되었습니다."
+                                                >
+                                                    Paul Chambers was a master of the walking bass, giving countless jazz recordings their sense of movement and balance. His lines were precise yet melodic, supporting the music without ever sounding mechanical. Whether accompanying a soloist or stepping forward with a bass solo of his own, he brought a quiet authority that helped define the sound of modern jazz.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="정교한 워킹 베이스로 하드밥 사운드의 중심을 잡아준 베이시스트입니다."> A foundational bassist whose walking lines remain central to the sound of hard bop. </p>
+                                                <span class="aw_card_role" data-ko="베이스">BASS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="15">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Robert Glasper framing his face with both hands" height="600" loading="lazy" src="./images/main/artist/Robert_Glasper.jpg" width="600" data-ko-alt="양손으로 얼굴 주위에 프레임을 만드는 로버트 글래스퍼">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker piano" data-ko="16 / 피아노">16 / PIANO</span>
+                                                <strong class="aw_artist_name" lang="en">ROBERT GLASPER</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="로버트 글래스퍼는 재즈와 힙합, R&amp;B의 경계를 자유롭게 넘나드는 피아니스트입니다. 탄탄한 재즈 연주를 바탕으로 현대적인 비트와 다양한 음악적 감각을 결합해 자신만의 사운드를 만들어왔습니다. 'Black Radio'를 비롯한 작업들은 재즈가 오늘날의 대중음악과 어떻게 자연스럽게 연결될 수 있는지를 보여줍니다."
+                                                >
+                                                    Robert Glasper has built a musical world where jazz, hip-hop, R&amp;B, and contemporary production meet naturally. His piano playing draws on a deep jazz foundation, but he has never been interested in keeping the music within one genre. Projects such as 'Black Radio' opened new conversations between jazz and popular music, bringing fresh audiences into the sound.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="재즈와 힙합, R&amp;B를 넘나들며 새로운 사운드를 만드는 피아니스트입니다."> A boundary-crossing pianist weaving jazz with hip-hop, R&amp;B and modern production. </p>
+                                                <span class="aw_card_role" data-ko="피아노">PIANO</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="16">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img alt="Ron Carter smiling beside the neck of his double bass" height="600" loading="lazy" src="./images/main/artist/Ron_Carter.jpg" width="600" data-ko-alt="더블베이스의 넥 곁에서 미소 짓는 론 카터">
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="17 / 베이스">17 / BASS</span>
+                                                <strong class="aw_artist_name" lang="en">RON CARTER</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="론 카터의 베이스는 음악의 중심을 단단하게 잡아주면서도 결코 경직되지 않습니다. 정확한 리듬과 풍부한 선율 감각으로 다른 연주자들의 움직임에 유연하게 반응합니다. 단순히 박자를 지탱하는 역할을 넘어, 밴드 전체의 흐름을 만들어가는 베이시스트로 현대 재즈에 깊은 영향을 남겼습니다."
+                                                >
+                                                    Ron Carter is one of the most influential bassists in modern jazz, known for his remarkable sense of time and melodic imagination. His playing gives a band a firm foundation while leaving room for the music to breathe and change direction. Equally at home supporting a soloist or shaping the conversation, he brings balance and character to every ensemble.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="정교한 리듬과 선율적인 베이스 연주로 수많은 녹음에 참여한 음악가입니다."> An influential bassist whose melodic playing and precise time shaped countless recordings. </p>
+                                                <span class="aw_card_role" data-ko="베이스">BASS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="17">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Thelonious Monk pointing to the side while seated at a piano" height="600" loading="lazy" src="./images/main/artist/Thelonious_Monk.jpg" width="600"
+                                                    data-ko-alt="피아노 앞에 앉아 옆을 가리키는 셀로니어스 몽크"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker piano" data-ko="18 / 피아노">18 / PIANO</span>
+                                                <strong class="aw_artist_name" lang="en">THELONIOUS MONK</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="델로니어스 몽크의 피아노는 첫 소절만 들어도 알아챌 수 있을 만큼 독특합니다. 예상 밖의 화성과 불규칙한 리듬, 의도적인 침묵까지 자신만의 표현으로 활용했습니다. 기존의 연주 방식에 얽매이지 않으면서도 재치와 긴장감을 놓치지 않았고, 그 결과 누구도 쉽게 흉내 낼 수 없는 음악 세계를 완성했습니다."
+                                                >
+                                                    Thelonious Monk sounded like no one else. His unusual harmonies, sharp rhythmic accents, and unexpected pauses turned even the simplest melodies into something entirely his own. As both a pianist and composer, he challenged the conventions of jazz while creating music filled with humor, tension, and an unmistakable sense of individuality.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="독창적인 화성과 리듬으로 자신만의 음악 언어를 만든 피아니스트입니다."> An original pianist and composer with a bold, unmistakably individual musical language. </p>
+                                                <span class="aw_card_role" data-ko="피아노">PIANO</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="18">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Tony Williams holding drumsticks beneath a studio microphone" height="600" loading="lazy" src="./images/main/artist/Tony_Williams.jpg" width="600"
+                                                    data-ko-alt="스튜디오 마이크 아래에서 드럼스틱을 든 토니 윌리엄스"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker other" data-ko="19 / 드럼">19 / DRUMS</span>
+                                                <strong class="aw_artist_name" lang="en">TONY WILLIAMS</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="토니 윌리엄스는 드럼이 단순히 박자를 유지하는 악기가 아니라는 사실을 연주로 증명했습니다. 예측하기 어려운 리듬과 과감한 악센트로 밴드 전체에 새로운 긴장감을 불어넣었습니다. 마일스 데이비스와의 활동부터 블루노트의 'Life Time'에 이르기까지, 그는 재즈 드럼의 표현 가능성을 끊임없이 확장했습니다."
+                                                >
+                                                    Tony Williams changed the way drummers could interact with a jazz ensemble. His restless rhythms, surprising accents, and fearless approach to improvisation challenged traditional ideas of time and swing. From his early work with Miles Davis to adventurous Blue Note recordings like 'Life Time', he helped open the door to a new generation of rhythmic experimentation.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="혁신적인 리듬 감각으로 재즈 드럼의 가능성을 확장한 음악가입니다."> A groundbreaking drummer whose restless creativity changed the rhythm of jazz. </p>
+                                                <span class="aw_card_role" data-ko="드럼">DRUMS</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li aria-hidden="true" class="aw_card" data-artist-index="19">
+                                        <div class="aw_card_inner">
+                                            <div class="aw_photo">
+                                                <img
+                                                    alt="Wayne Shorter holding a saxophone against a dark background" height="600" loading="lazy" src="./images/main/artist/Wayne_Shorter.jpg" width="600"
+                                                    data-ko-alt="어두운 배경 앞에서 색소폰을 들고 있는 웨인 쇼터"
+                                                >
+                                            </div>
+                                            <div class="aw_card_content">
+                                                <span class="aw_card_kicker sax" data-ko="20 / 색소폰">20 / SAXOPHONE</span>
+                                                <strong class="aw_artist_name" lang="en">WAYNE SHORTER</strong>
+                                                <span aria-hidden="true" class="aw_card_rule"></span>
+                                                <p
+                                                    class="aw_description_pc"
+                                                    data-ko="웨인 쇼터의 음악은 익숙한 길을 쉽게 따라가지 않습니다. 예측하기 어려운 멜로디와 독특한 화성, 섬세한 감정 표현으로 자신만의 음악 세계를 구축했습니다. 'Night Dreamer'와 'Speak No Evil' 같은 블루노트 음반에서는 포스트밥의 경계를 넓혀간 그의 대담한 상상력을 만날 수 있습니다."
+                                                >
+                                                    Wayne Shorter was one of jazz’s most imaginative saxophonists and composers. His melodies often take unexpected turns, creating a sense of mystery without losing their emotional pull. Through Blue Note albums such as 'Night Dreamer' and 'Speak No Evil', he developed a distinctive musical world that helped redefine the possibilities of post-bop.
+                                                </p>
+                                                <p class="aw_description_short" data-ko="포스트밥의 표현 영역을 넓힌 창의적인 색소포니스트이자 작곡가입니다."> An inventive saxophonist and composer who broadened the vocabulary of post-bop. </p>
+                                                <span class="aw_card_role" data-ko="색소폰">SAXOPHONE</span>
+                                                <a class="aw_card_link" href="#artist_roster"> <span data-ko="아티스트 목록 보기">EXPLORE ALL ARTISTS</span> <span aria-hidden="true">→</span> </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="aw_container aw_wheel_controls">
+                                <div class="aw_wheel_toolbar">
+                                    <button aria-label="Previous artist" class="aw_move aw_prev" data-ko-label="이전 아티스트" type="button">
+                                        ←
+                                    </button>
+                                    <p aria-live="off" class="aw_current_name" lang="en">ART BLAKEY</p>
+                                    <button aria-label="Next artist" class="aw_move aw_next" data-ko-label="다음 아티스트" type="button">
+                                        →
+                                    </button>
+                                </div>
+                                <ol aria-label="Artist navigation" class="aw_progress">
+                                    <li>
+                                        <button aria-label="ART BLAKEY" aria-pressed="false" class="aw_progress_button" data-artist-jump="0" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="BUD POWELL" aria-pressed="false" class="aw_progress_button" data-artist-jump="1" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="DEXTER GORDON" aria-pressed="false" class="aw_progress_button" data-artist-jump="2" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="FREDDIE HUBBARD" aria-pressed="false" class="aw_progress_button" data-artist-jump="3" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="GRANT GREEN" aria-pressed="false" class="aw_progress_button" data-artist-jump="4" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="GREGORY PORTER" aria-pressed="false" class="aw_progress_button" data-artist-jump="5" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="HERBIE HANCOCK" aria-pressed="false" class="aw_progress_button" data-artist-jump="6" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="HORACE SILVER" aria-pressed="false" class="aw_progress_button" data-artist-jump="7" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="JOE HENDERSON" aria-pressed="false" class="aw_progress_button" data-artist-jump="8" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="KENNY BURRELL" aria-pressed="false" class="aw_progress_button" data-artist-jump="9" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="LEE MORGAN" aria-pressed="false" class="aw_progress_button" data-artist-jump="10" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="LOU DONALDSON" aria-pressed="false" class="aw_progress_button" data-artist-jump="11" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="MILES DAVIS" aria-pressed="false" class="aw_progress_button" data-artist-jump="12" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="NORAH JONES" aria-pressed="false" class="aw_progress_button" data-artist-jump="13" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="PAUL CHAMBERS" aria-pressed="false" class="aw_progress_button" data-artist-jump="14" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="ROBERT GLASPER" aria-pressed="false" class="aw_progress_button" data-artist-jump="15" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="RON CARTER" aria-pressed="false" class="aw_progress_button" data-artist-jump="16" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="THELONIOUS MONK" aria-pressed="false" class="aw_progress_button" data-artist-jump="17" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="TONY WILLIAMS" aria-pressed="false" class="aw_progress_button" data-artist-jump="18" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button aria-label="WAYNE SHORTER" aria-pressed="false" class="aw_progress_button" data-artist-jump="19" type="button">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                </ol>
+                                <p aria-live="off" class="aw_fraction">01 / 20</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section aria-labelledby="aw_roster_heading" class="aw_directory" id="artist_roster">
+                        <div class="aw_container">
+                            <h3 id="aw_roster_heading" data-aos="fade-up">
+                                <span class="eyebrow" data-ko="02 / 전체 아티스트">02 / THE ROSTER</span>
+                                <span class="title"> <span data-ko="스무 개의 개성,">TWENTY VOICES.</span><br> <span data-ko="하나의 블루노트.">ONE BLUE NOTE.</span> </span>
+                            </h3>
+                            <p class="aw_directory_description" data-aos="fade">
+                                <span data-ko="악기도, 활동한 시대도, 음악을 풀어내는 방식도 모두 달랐습니다.">Different instruments, different generations, and no two voices alike.</span><br class="aw_english_break"> <span data-ko="저마다의 개성이 모여 블루노트만의 색깔을 만들었고, 그 소리는 지금도 새로운 음악으로 이어지고 있습니다.">Each artist brought something unique to Blue Note, shaping a musical legacy that continues to inspire </span><span class="aw_copy_keep" data-ko="">new sounds today.</span>
+                            </p>
+                            <div class="aw_roster_grid">
+                                <div class="aw_roster_group" data-aos="fade-right">
+                                    <strong class="aw_instrument piano" data-ko="피아노">PIANO</strong>
+                                    <ul>
+                                        <li>
+                                            <button data-artist-jump="1" type="button">
+                                                <span lang="en">BUD POWELL</span>
+                                                <span class="aw_roster_role" data-ko="피아노">PIANO</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="6" type="button">
+                                                <span lang="en">HERBIE HANCOCK</span>
+                                                <span class="aw_roster_role" data-ko="피아노">PIANO</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="7" type="button">
+                                                <span lang="en">HORACE SILVER</span>
+                                                <span class="aw_roster_role" data-ko="피아노">PIANO</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="15" type="button">
+                                                <span lang="en">ROBERT GLASPER</span>
+                                                <span class="aw_roster_role" data-ko="피아노">PIANO</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="17" type="button">
+                                                <span lang="en">THELONIOUS MONK</span>
+                                                <span class="aw_roster_role" data-ko="피아노">PIANO</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aw_roster_group" data-aos="fade-left">
+                                    <strong class="aw_instrument sax" data-ko="색소폰">SAXOPHONE</strong>
+                                    <ul>
+                                        <li>
+                                            <button data-artist-jump="2" type="button">
+                                                <span lang="en">DEXTER GORDON</span>
+                                                <span class="aw_roster_role" data-ko="색소폰">SAXOPHONE</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="8" type="button">
+                                                <span lang="en">JOE HENDERSON</span>
+                                                <span class="aw_roster_role" data-ko="색소폰">SAXOPHONE</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="11" type="button">
+                                                <span lang="en">LOU DONALDSON</span>
+                                                <span class="aw_roster_role" data-ko="색소폰">SAXOPHONE</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="19" type="button">
+                                                <span lang="en">WAYNE SHORTER</span>
+                                                <span class="aw_roster_role" data-ko="색소폰">SAXOPHONE</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aw_roster_group" data-aos="fade-right">
+                                    <strong class="aw_instrument trumpet" data-ko="트럼펫">TRUMPET</strong>
+                                    <ul>
+                                        <li>
+                                            <button data-artist-jump="3" type="button">
+                                                <span lang="en">FREDDIE HUBBARD</span>
+                                                <span class="aw_roster_role" data-ko="트럼펫">TRUMPET</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="10" type="button">
+                                                <span lang="en">LEE MORGAN</span>
+                                                <span class="aw_roster_role" data-ko="트럼펫">TRUMPET</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="12" type="button">
+                                                <span lang="en">MILES DAVIS</span>
+                                                <span class="aw_roster_role" data-ko="트럼펫">TRUMPET</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aw_roster_group" data-aos="fade-left">
+                                    <strong class="aw_instrument other" data-ko="밴드를 완성하는 사람들">THE REST OF THE BAND</strong>
+                                    <ul>
+                                        <li>
+                                            <button data-artist-jump="0" type="button">
+                                                <span lang="en">ART BLAKEY</span>
+                                                <span class="aw_roster_role" data-ko="드럼">DRUMS</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="4" type="button">
+                                                <span lang="en">GRANT GREEN</span>
+                                                <span class="aw_roster_role" data-ko="기타">GUITAR</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="5" type="button">
+                                                <span lang="en">GREGORY PORTER</span>
+                                                <span class="aw_roster_role" data-ko="보컬">VOCALS</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="9" type="button">
+                                                <span lang="en">KENNY BURRELL</span>
+                                                <span class="aw_roster_role" data-ko="기타">GUITAR</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="13" type="button">
+                                                <span lang="en">NORAH JONES</span>
+                                                <span class="aw_roster_role" data-ko="보컬">VOCALS</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="14" type="button">
+                                                <span lang="en">PAUL CHAMBERS</span>
+                                                <span class="aw_roster_role" data-ko="베이스">BASS</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="16" type="button">
+                                                <span lang="en">RON CARTER</span>
+                                                <span class="aw_roster_role" data-ko="베이스">BASS</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button data-artist-jump="18" type="button">
+                                                <span lang="en">TONY WILLIAMS</span>
+                                                <span class="aw_roster_role" data-ko="드럼">DRUMS</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며, Blue Note Records의 공식 웹사이트가 아닙니다. 사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" rel="noopener noreferrer" target="_blank" title="Spotify (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-spotify"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" rel="noopener noreferrer" target="_blank" title="Apple Music (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-apple"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" rel="noopener noreferrer" target="_blank" title="Twitter (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-twitter"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" rel="noopener noreferrer" target="_blank" title="Facebook (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-facebook"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" rel="noopener noreferrer" target="_blank" title="Instagram (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-instagram"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" rel="noopener noreferrer" target="_blank" title="YouTube (새 창)">
+                                <i aria-hidden="true" class="fa-brands fa-youtube"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/aos.js?v=20261118-2"></script>
+        <script src="./js/common.js?v=20261118-aos4"></script>
+        <script src="./js/sub2.js?v=20261111-25"></script>
+        <button class="top_move" type="button" aria-label="Back to top" hidden>
+            <img src="./images/top_btn.png" alt="" width="60" height="60">
+        </button>
+    </body>
+</html>

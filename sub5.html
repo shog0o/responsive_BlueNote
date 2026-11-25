@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Videos | Blue Note Records</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+        <link rel="apple-touch-startup-image" href="./startup.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link href="./css/aos.css?v=20261118-3" rel="stylesheet">
+        <link rel="stylesheet" href="./css/common.css?v=20261118-aos4">
+        <link rel="stylesheet" href="./css/sub5.css?v=20261116-format1">
+        <script src="https://kit.fontawesome.com/41c9e9a1a8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="videos_page">
+        <!-- 번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다.
+        예: <span data-ko="소개">ABOUT</span>
+        자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다.
+        이미지 설명은 alt에 영어, data-ko-alt에 한글을 작성합니다. -->
+        <div id="skipNav">
+            <a href="#content" data-ko="본문 바로가기">Skip to content</a>
+            <a href="#gnb" data-ko="메뉴 바로가기">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button class="menu_open menu_ham" type="button" aria-controls="gnb" aria-expanded="false" aria-label="Open menu">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav id="gnb" aria-labelledby="gnbTitle">
+                        <h2 id="gnbTitle" class="hidden" data-ko="네비게이션영역">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5" aria-current="page">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div class="header_options" role="group" aria-label="Theme and language settings">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button class="theme_toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                            <span class="theme_track" aria-hidden="true"></span>
+                            <span class="theme_thumb" aria-hidden="true"><span class="theme_grip"></span></span>
+                        </button>
+                        <span class="options_divider" aria-hidden="true"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div class="language_options" role="group" aria-label="Language">
+                            <div class="language_buttons">
+                                <button class="language_button" type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">
+                                    EN
+                                </button>
+                                <button class="language_button" type="button" data-language="ko" lang="ko" aria-label="한국어" aria-pressed="false">
+                                    KR
+                                </button>
+                            </div>
+                            <span class="language_marker" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <!-- VIDEOS hero -->
+                    <div class="sub_hero">
+                        <img class="sub_hero_image sub_hero_desktop" src="./images/sub/sub5_big.jpg" alt="Norah Jones seated at a piano in a warmly lit recording studio" data-ko-alt="따뜻한 조명의 녹음 스튜디오에서 피아노 앞에 앉은 노라 존스">
+                        <img class="sub_hero_image sub_hero_mobile" src="./images/sub/sub5_small.jpg" alt="A saxophonist bending forward over his instrument in black and white" data-ko-alt="흑백으로 담긴 색소폰 위로 몸을 깊이 숙인 연주자">
+                        <div class="sub_hero_copy">
+                            <h2 lang="en">
+                                VIDEOS
+                            </h2>
+                            <p lang="en">BEYOND THE SOUND.</p>
+                        </div>
+                    </div>
+                    <section class="video_collection" aria-labelledby="videoCollectionTitle">
+                        <div class="vc_inner">
+                            <div class="vc_intro">
+                                <h3 id="videoCollectionTitle" data-aos="fade-up">
+                                    <span class="vc_eyebrow" data-ko="01 / 영상 컬렉션">01 / VIDEO COLLECTION</span>
+                                    <span class="vc_title" data-ko="움직임으로 만나는 재즈.">JAZZ IN MOTION.</span>
+                                </h3>
+                                <div class="vc_intro_copy" data-aos="fade-left">
+                                    <p data-ko="무대에서 스튜디오까지, 재즈에 생명을 불어넣는 순간들을 만나보세요. 음악에 담긴 예술성과 에너지, 그 뒤에 숨겨진 이야기를 발견해 보세요.">
+                                        From the stage to the studio, discover the moments that bring jazz to life. Witness the artistry, the energy and the stories behind the music.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="vc_toolbar">
+                                <span class="vc_range" lang="en" aria-live="polite">01—03 / 08</span>
+                                <div class="vc_navigation">
+                                    <button class="vc_prev" type="button" aria-label="Previous videos" aria-controls="videoCollection">
+                                        <img src="./images/sub5/previous.svg" alt="" width="24" height="24">
+                                    </button>
+                                    <button class="vc_next" type="button" aria-label="Next videos" aria-controls="videoCollection">
+                                        <img src="./images/sub5/next.svg" alt="" width="24" height="24">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="vc_slider" id="videoCollection">
+                                <ul class="vc_track swiper-wrapper">
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="1" data-video-id="hEMlvzkN9o4" data-video-title="GABRIELLE CAVASSA — Prisoner of Love" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_01.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="뮤직비디오">MUSIC VIDEOS</span>
+                                            <span class="vc_artist" lang="en">GABRIELLE CAVASSA</span>
+                                            <span class="vc_song" lang="en">Prisoner of Love</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="2" data-video-id="LTptGqn53VE" data-video-title="NORAH JONES — Staring at the Wall" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_02.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="뮤직비디오">MUSIC VIDEOS</span>
+                                            <span class="vc_artist" lang="en">NORAH JONES</span>
+                                            <span class="vc_song" lang="en">Staring at the Wall</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="3" data-video-id="GbZTPrndbMk" data-video-title="WAYNE SHORTER — Smilin&#x27; Through (Live)" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_03.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="공연 아카이브">ARCHIVE PERFORMANCES</span>
+                                            <span class="vc_artist" lang="en">WAYNE SHORTER</span>
+                                            <span class="vc_song" lang="en">Smilin&#x27; Through (Live)</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="4" data-video-id="gnW8nuRmMbY" data-video-title="MELISSA ALDANA — A Story (Live)" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_04.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="라이브 세션">LIVE SESSIONS</span>
+                                            <span class="vc_artist" lang="en">MELISSA ALDANA</span>
+                                            <span class="vc_song" lang="en">A Story (Live)</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="5" data-video-id="9nYe4ASvC5M" data-video-title="AARON PARKS — Ashé (Live)" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_05.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="라이브 세션">LIVE SESSIONS</span>
+                                            <span class="vc_artist" lang="en">AARON PARKS</span>
+                                            <span class="vc_song" lang="en">Ashé (Live)</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button class="vc_video" type="button" data-video-slot="6" data-video-id="v2kVzdEnuYQ" data-video-title="JOEL ROSS — equinox (Live)" aria-haspopup="dialog" aria-controls="videoModal" data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_06.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="라이브 세션">LIVE SESSIONS</span>
+                                            <span class="vc_artist" lang="en">JOEL ROSS</span>
+                                            <span class="vc_song" lang="en">equinox (Live)</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button
+                                            class="vc_video" type="button" data-video-slot="7" data-video-id="IMGfk83k9s4" data-video-title="DONALD BYRD — Black Byrd (Live at Montreux, 1973)" aria-haspopup="dialog"
+                                            aria-controls="videoModal"
+                                         data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_07.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="공연 아카이브">ARCHIVE PERFORMANCES</span>
+                                            <span class="vc_artist" lang="en">DONALD BYRD</span>
+                                            <span class="vc_song" lang="en">Black Byrd (Live at Montreux, 1973)</span>
+                                        </button>
+                                    </li>
+                                    <li class="vc_card swiper-slide">
+                                        <button
+                                            class="vc_video" type="button" data-video-slot="8" data-video-id="-vvkvr9EwKY" data-video-title="JOHN COLTRANE — Behind the Scenes: Pressing Blue Train" aria-haspopup="dialog"
+                                            aria-controls="videoModal"
+                                         data-aos="fade">
+                                            <span class="vc_still">
+                                                <img src="./images/sub5/video_08.jpg" alt="" width="480" height="360" loading="lazy"><span class="vc_play" aria-hidden="true"><span class="vc_play_triangle"></span></span>
+                                            </span>
+                                            <span class="vc_category" data-ko="녹음 현장">BEHIND THE RECORDING</span>
+                                            <span class="vc_artist" lang="en">JOHN COLTRANE</span>
+                                            <span class="vc_song" lang="en">Behind the Scenes: Pressing Blue Train</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="vc_progress" aria-hidden="true">
+                                <span></span>
+                            </div>
+                            <div class="vc_rule" aria-hidden="true">
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며,
+                                Blue Note Records의 공식 웹사이트가 아닙니다.
+                                사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" target="_blank" rel="noopener noreferrer" title="Spotify (새 창)">
+                                <i class="fa-brands fa-spotify" aria-hidden="true"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" target="_blank" rel="noopener noreferrer" title="Apple Music (새 창)">
+                                <i class="fa-brands fa-apple" aria-hidden="true"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" target="_blank" rel="noopener noreferrer" title="Twitter (새 창)">
+                                <i class="fa-brands fa-twitter" aria-hidden="true"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" target="_blank" rel="noopener noreferrer" title="Facebook (새 창)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" target="_blank" rel="noopener noreferrer" title="Instagram (새 창)">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" target="_blank" rel="noopener noreferrer" title="YouTube (새 창)">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <dialog id="videoModal" class="vc_modal" aria-labelledby="videoModalTitle">
+            <div class="vc_modal_panel">
+                <div class="vc_modal_header">
+                    <p id="videoModalTitle" lang="en"></p>
+                    <button class="vc_modal_close" type="button" aria-label="Close video" autofocus>
+                        ×
+                    </button>
+                </div>
+                <div class="vc_modal_player">
+                </div>
+                <div class="vc_modal_controls">
+                    <button class="vc_modal_prev" type="button">
+                        <span aria-hidden="true">←</span>
+                        <span data-ko="이전 영상">PREVIOUS</span>
+                    </button>
+                    <span class="vc_modal_count" lang="en" aria-live="polite"></span>
+                    <button class="vc_modal_next" type="button">
+                        <span data-ko="다음 영상">NEXT</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+                <a class="vc_modal_youtube" href="https://www.youtube.com/watch?v=hEMlvzkN9o4" target="_blank" rel="noopener noreferrer" data-ko="유튜브에서 보기 (새 창)">Watch on YouTube (opens in a new tab)</a>
+            </div>
+        </dialog>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/aos.js?v=20261118-2"></script>
+        <script src="./js/common.js?v=20261118-aos4"></script>
+        <script src="./js/sub5.js?v=20261113-7"></script>
+        <button class="top_move" type="button" aria-label="Back to top" hidden>
+            <img src="./images/top_btn.png" alt="" width="60" height="60">
+        </button>
+    </body>
+</html>

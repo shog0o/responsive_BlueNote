@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Playlists | Blue Note Records</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+        <link rel="apple-touch-startup-image" href="./startup.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link href="./css/aos.css?v=20261118-3" rel="stylesheet">
+        <link rel="stylesheet" href="./css/common.css?v=20261118-aos4">
+        <link rel="stylesheet" href="./css/sub4.css?v=20261116-format1">
+        <script src="https://kit.fontawesome.com/41c9e9a1a8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="playlists_page">
+        <!-- 번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다.
+        예: <span data-ko="소개">ABOUT</span>
+        자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다.
+        이미지 설명은 alt에 영어, data-ko-alt에 한글을 작성합니다. -->
+        <div id="skipNav">
+            <a href="#content" data-ko="본문 바로가기">Skip to content</a>
+            <a href="#gnb" data-ko="메뉴 바로가기">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button class="menu_open menu_ham" type="button" aria-controls="gnb" aria-expanded="false" aria-label="Open menu">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav id="gnb" aria-labelledby="gnbTitle">
+                        <h2 id="gnbTitle" class="hidden" data-ko="네비게이션영역">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4" aria-current="page">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div class="header_options" role="group" aria-label="Theme and language settings">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button class="theme_toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                            <span class="theme_track" aria-hidden="true"></span>
+                            <span class="theme_thumb" aria-hidden="true"><span class="theme_grip"></span></span>
+                        </button>
+                        <span class="options_divider" aria-hidden="true"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div class="language_options" role="group" aria-label="Language">
+                            <div class="language_buttons">
+                                <button class="language_button" type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">
+                                    EN
+                                </button>
+                                <button class="language_button" type="button" data-language="ko" lang="ko" aria-label="한국어" aria-pressed="false">
+                                    KR
+                                </button>
+                            </div>
+                            <span class="language_marker" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <div class="sub_hero">
+                        <img class="sub_hero_image sub_hero_desktop" src="./images/sub/sub4_big.jpg" alt="A pianist leaning into the keys of a grand piano in black and white" data-ko-alt="그랜드피아노 건반 위로 몸을 기울여 연주하는 피아니스트">
+                        <img class="sub_hero_image sub_hero_mobile" src="./images/sub/sub4_small.png" alt="A blue-toned trumpeter holding his instrument with his eyes closed" data-ko-alt="눈을 감고 트럼펫을 든 연주자를 푸른색으로 표현한 모습">
+                        <div class="sub_hero_copy">
+                            <h2 lang="en">
+                                PLAYLISTS
+                            </h2>
+                            <p lang="en">THE LISTENING ROOM.</p>
+                        </div>
+                    </div>
+                    <section class="listening_room">
+                        <div class="listen_inner">
+                            <h3 data-aos="fade-up">
+                                <span class="eyebrow" data-ko="01 / 리스닝 룸">01 / THE LISTENING ROOM</span>
+                                <span class="title" data-ko="기분은 달라도, 오늘도 재즈.">A MOOD FOR EVERY MOMENT.</span>
+                            </h3>
+                            <p
+                                class="listen_intro listen_intro_pc"
+                                data-ko="시대를 빛낸 명곡부터 오늘날의 새로운 사운드까지, 어떤 하루에도 어울리는 재즈가 있습니다. 기분 좋은 하루를 시작하고 싶을 때, 리듬에 몸을 맡기고 싶을 때, 혹은 조용한 선율과 함께 하루를 마무리하고 싶을 때. 일상의 모든 순간에 블루노트의 음악이 함께합니다. 익숙한 음악 속에서 새로운 즐거움을 발견하고, 잠시 재즈에 머물러 보세요."
+                             data-aos="fade">
+                                From timeless classics to the sounds of today, there's a little jazz for every kind of day. Whether you're looking for something to lift your spirits, a rhythm to get lost in, or a quiet melody to unwind with, Blue Note brings together music for all of life's moments. Find your groove, discover something unexpected, and spend a little time with Blue Note.
+                            </p>
+                            <p class="listen_intro listen_intro_tablet" data-ko="시대를 빛낸 재즈 명곡부터 오늘날의 새로운 사운드까지, 블루노트의 음악을 만나보세요." data-aos="fade">
+                                From timeless jazz classics to the sounds of today, Blue Note offers endless possibilities for discovery.
+                            </p>
+                            <p class="listen_intro listen_intro_mobile" data-ko="시대를 넘어 이어지는 블루노트의 음악." data-aos="fade"> Timeless classics and new sounds. Discover the world of Blue Note. </p>
+                            <ul class="listen_choices">
+                                <li>
+                                    <button class="listen_choice active" type="button" aria-pressed="true" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/main/playlist/playlist_01.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">01 / PLAYLIST</span> <strong lang="en">BLUE NOTE: CLASSIC HITS</strong> </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="listen_choice" type="button" aria-pressed="false" data-aos="fade-up" data-aos-delay="50">
+                                        <img src="./images/main/playlist/playlist_02.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">02 / PLAYLIST</span> <strong lang="en">HARD BOP</strong> </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="listen_choice" type="button" aria-pressed="false" data-aos="fade-up" data-aos-delay="100">
+                                        <img src="./images/main/playlist/playlist_03.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">03 / PLAYLIST</span> <strong lang="en">JAZZ VOCALS</strong> </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="listen_choice" type="button" aria-pressed="false" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/main/playlist/playlist_04.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">04 / PLAYLIST</span> <strong lang="en">MOST SAMPLED</strong> </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="listen_choice" type="button" aria-pressed="false" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/main/playlist/playlist_05.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">05 / PLAYLIST</span> <strong lang="en">CALM</strong> </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="listen_choice" type="button" aria-pressed="false" data-aos="fade-up" data-aos-delay="50">
+                                        <img src="./images/main/playlist/playlist_06.jpg" alt="" width="72" height="72">
+                                        <span class="listen_choice_copy"> <span class="listen_choice_number" lang="en">06 / PLAYLIST</span> <strong lang="en">JAZZ NOW!</strong> </span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="listen_visualizer">
+                                <p class="listen_equalizer_title hidden" lang="en">BLUE NOTE: CLASSIC HITS</p>
+                                <div class="listen_equalizer" aria-hidden="true">
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                    <div class="listen_equalizer_bar">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listen_stage">
+                                <p class="listen_station" lang="en">NOW LISTENING / 01</p>
+                                <div class="listen_stage_body">
+                                    <div class="listen_artwork">
+                                        <img class="listen_cover" src="./images/main/playlist/playlist_01.jpg" alt="BLUE NOTE: CLASSIC HITS playlist cover" data-ko-alt="BLUE NOTE: CLASSIC HITS 플레이리스트 커버" width="400" height="400">
+                                        <p class="listen_artwork_caption" lang="en">BLUE NOTE RECORDS / CURATED PLAYLIST</p>
+                                    </div>
+                                    <div class="listen_details">
+                                        <strong class="listen_title" lang="en">BLUE NOTE: CLASSIC HITS</strong>
+                                        <p class="listen_subtitle" data-ko="한 시대를 빛낸 사운드.">THE SOUND THAT DEFINED AN ERA.</p>
+                                        <p class="listen_description listen_description_pc" data-ko="블루노트라는 이름을 재즈의 상징으로 만든 음악들입니다. 오랫동안 사랑받아 온 멜로디와 시대를 앞서간 즉흥연주에는 오늘날까지 이어지는 재즈의 깊은 매력이 담겨 있습니다.">
+                                            The recordings that made Blue Note a name synonymous with jazz. From unforgettable melodies to groundbreaking improvisations, these timeless classics capture the spirit of an era whose influence can still be heard today.
+                                        </p>
+                                        <p class="listen_description listen_description_tablet" data-ko="블루노트의 전성기를 빛낸 명연주들입니다. 잊을 수 없는 멜로디와 자유로운 즉흥연주 속에서 재즈의 깊은 매력을 느낄 수 있습니다.">
+                                            The timeless recordings that defined Blue Note. Unforgettable melodies and groundbreaking improvisations capture the spirit of jazz's golden years.
+                                        </p>
+                                        <p class="listen_description listen_description_mobile" data-ko="블루노트만의 사운드를 만들어 온 시대의 명곡들."> Timeless recordings that capture the unmistakable sound of Blue Note. </p>
+                                    </div>
+                                    <div class="listen_playback">
+                                        <div class="listen_player_area">
+                                            <div class="listen_player" hidden>
+                                                <div id="spotifyPlayer">
+                                                </div>
+                                            </div>
+                                            <div class="listen_player_empty">
+                                                <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+                                                <strong lang="en">YOUR NEXT LISTEN.</strong>
+                                                <p data-ko="플레이리스트를 준비하고 있습니다.">Your playlist will be here soon.</p>
+                                            </div>
+                                        </div>
+                                        <div class="listen_services" role="group" aria-label="Listen on music services">
+                                            <p class="listen_services_label" lang="en">OPEN IN</p>
+                                            <a class="listen_spotify" href="https://open.spotify.com/playlist/03v08073YFtriJYto8uO1K" target="_blank" rel="noopener noreferrer">
+                                                <img src="./images/main/playlist/logo_spotify_onlight.svg?v=20261112-2" alt="Spotify" width="125" height="40"><span class="listen_service_arrow" aria-hidden="true">↗</span><span class="hidden" lang="en"> (opens in a new tab)</span>
+                                            </a>
+                                            <a class="listen_youtube" href="https://www.youtube.com/playlist?list=PLEz_mLoNZMeR-imfsTqEfKQ3ALVIPqbAe" target="_blank" rel="noopener noreferrer">
+                                                <img src="./images/main/playlist/logo_youtube_onblue.svg?v=2" alt="YouTube" width="125" height="40"><span class="listen_service_arrow" aria-hidden="true">↗</span><span class="hidden" lang="en"> (opens in a new tab)</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="listen_footer" lang="en"><span class="listen_number">01 / 06</span> · <span class="listen_footer_title">CLASSIC HITS</span></p>
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며,
+                                Blue Note Records의 공식 웹사이트가 아닙니다.
+                                사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" target="_blank" rel="noopener noreferrer" title="Spotify (새 창)">
+                                <i class="fa-brands fa-spotify" aria-hidden="true"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" target="_blank" rel="noopener noreferrer" title="Apple Music (새 창)">
+                                <i class="fa-brands fa-apple" aria-hidden="true"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" target="_blank" rel="noopener noreferrer" title="Twitter (새 창)">
+                                <i class="fa-brands fa-twitter" aria-hidden="true"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" target="_blank" rel="noopener noreferrer" title="Facebook (새 창)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" target="_blank" rel="noopener noreferrer" title="Instagram (새 창)">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" target="_blank" rel="noopener noreferrer" title="YouTube (새 창)">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/aos.js?v=20261118-2"></script>
+        <script src="./js/common.js?v=20261118-aos4"></script>
+        <script src="./js/sub4.js?v=20261116-alt1"></script>
+        <button class="top_move" type="button" aria-label="Back to top" hidden>
+            <img src="./images/top_btn.png" alt="" width="60" height="60">
+        </button>
+    </body>
+</html>

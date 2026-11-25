@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallery | Blue Note Records</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="./app_icon.png">
+        <link rel="apple-touch-startup-image" href="./startup.png">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="./css/swiper.min.css">
+        <link href="./css/aos.css?v=20261118-3" rel="stylesheet">
+        <link rel="stylesheet" href="./css/common.css?v=20261118-aos4">
+        <link rel="stylesheet" href="./css/sub6.css?v=20261116-caption1">
+        <script src="https://kit.fontawesome.com/41c9e9a1a8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="gallery_page">
+        <!-- 번역 작성법: 태그 안에는 영어, data-ko 속성에는 한글을 작성합니다.
+        예: <span data-ko="소개">ABOUT</span>
+        자식 태그가 있는 부모 대신 실제 문구가 들어 있는 태그에 적용합니다.
+        이미지 설명은 alt에 영어, data-ko-alt에 한글을 작성합니다. -->
+        <div id="skipNav">
+            <a href="#content" data-ko="본문 바로가기">Skip to content</a>
+            <a href="#gnb" data-ko="메뉴 바로가기">Skip to navigation</a>
+        </div>
+        <div id="wrap">
+            <header id="headerArea">
+                <div class="header_inner">
+                    <h1 class="logo">
+                        <a href="./index.html">Blue Note Records</a>
+                    </h1>
+                    <button class="menu_open menu_ham" type="button" aria-controls="gnb" aria-expanded="false" aria-label="Open menu">
+                        <span aria-hidden="true"></span>
+                    </button>
+                    <nav id="gnb" aria-labelledby="gnbTitle">
+                        <h2 id="gnbTitle" class="hidden" data-ko="네비게이션영역">
+                            Main navigation
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a href="./sub1.html?num=1">
+                                        <span class="menu_number" aria-hidden="true">01</span>
+                                        <span class="menu_label" data-ko="소개">ABOUT</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub2.html?num=2">
+                                        <span class="menu_number" aria-hidden="true">02</span>
+                                        <span class="menu_label" data-ko="아티스트">ARTISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub3.html?num=3">
+                                        <span class="menu_number" aria-hidden="true">03</span>
+                                        <span class="menu_label" data-ko="앨범">ALBUMS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub4.html?num=4">
+                                        <span class="menu_number" aria-hidden="true">04</span>
+                                        <span class="menu_label" data-ko="플레이리스트">PLAYLISTS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub5.html?num=5">
+                                        <span class="menu_number" aria-hidden="true">05</span>
+                                        <span class="menu_label" data-ko="영상">VIDEOS</span>
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a href="./sub6.html?num=6" aria-current="page">
+                                        <span class="menu_number" aria-hidden="true">06</span>
+                                        <span class="menu_label" data-ko="갤러리">GALLERY</span>
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- 테마·언어 전환 버튼: 동작과 설정 저장은 js/common.js에서 처리합니다. -->
+                    <div class="header_options" role="group" aria-label="Theme and language settings">
+                        <!-- 세로 페이더로 다크·라이트 전환함 -->
+                        <button class="theme_toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                            <span class="theme_track" aria-hidden="true"></span>
+                            <span class="theme_thumb" aria-hidden="true"><span class="theme_grip"></span></span>
+                        </button>
+                        <span class="options_divider" aria-hidden="true"></span>
+                        <!-- 언어를 각각 선택함. 선택 상태는 common.js에서 갱신함 -->
+                        <div class="language_options" role="group" aria-label="Language">
+                            <div class="language_buttons">
+                                <button class="language_button" type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">
+                                    EN
+                                </button>
+                                <button class="language_button" type="button" data-language="ko" lang="ko" aria-label="한국어" aria-pressed="false">
+                                    KR
+                                </button>
+                            </div>
+                            <span class="language_marker" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <article id="content">
+                    <!-- GALLERY hero -->
+                    <div class="sub_hero">
+                        <img class="sub_hero_image sub_hero_desktop" src="./images/sub/sub6_big.jpeg" alt="A drummer wearing glasses, playing behind a drum kit in black and white" data-ko-alt="흑백으로 담긴 안경을 쓴 드러머의 드럼 연주">
+                        <img class="sub_hero_image sub_hero_mobile" src="./images/sub/sub6_small.jpg" alt="A close-up of a hand pressing the strings of a double bass" data-ko-alt="더블베이스의 현을 짚는 손을 가까이 담은 모습">
+                        <div class="sub_hero_copy">
+                            <h2 lang="en">
+                                GALLERY
+                            </h2>
+                            <p lang="en">JAZZ, THROUGH THE LENS.</p>
+                        </div>
+                    </div>
+                    <section class="gallery_archive" aria-labelledby="galleryArchiveTitle">
+                        <div class="ga_inner">
+                            <div class="ga_intro">
+                                <h3 id="galleryArchiveTitle" data-aos="fade-up">
+                                    <span class="ga_eyebrow" data-ko="01 / 사진 아카이브">01 / PHOTO ARCHIVE</span>
+                                    <span class="ga_title" data-ko="사진으로 만나는 블루노트.">BLUE NOTE, IN FOCUS.</span>
+                                </h3>
+                                <p class="ga_description" data-ko="위대한 음악은 소리만 남기지 않습니다. 오래 기억할 얼굴과 장소, 그리고 순간을 남깁니다. 녹음실의 친밀한 풍경부터 무대의 뜨거운 에너지까지, 음반 너머의 블루노트 이야기를 사진으로 만나보세요." data-aos="fade">
+                                    Every great recording leaves more than a sound. It leaves faces, places and moments worth remembering. From the intimacy of recording studios to the energy of the stage, these images tell the story of Blue Note beyond the records.
+                                </p>
+                            </div>
+                            <p class="ga_count" data-ko="24 / 이미지">24 / IMAGES</p>
+                            <ul class="ga_grid">
+                                <li class="ga_sizer" aria-hidden="true">
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img
+                                            src="./images/sub6/gall_01.jpg" width="600" height="600" alt="Lou Donaldson, known as Sweet Poppa Lou, holding his saxophone on stage"
+                                            data-ko-alt="스위트 파파 루라는 애칭으로 불리는 색소포니스트 루 도널드슨의 무대 위 모습" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">01</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 442">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img
+                                            src="./images/sub6/gall_02.jpg" width="4886" height="3707" alt="Horace Silver receiving an award from Blue Note Records commemorating a decade with the label"
+                                            data-ko-alt="블루노트 레코드에서의 10년간의 활동을 기념하는 공로상을 수상하는 호레이스 실버" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">02</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 398">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img src="./images/sub6/gall_03.jpg" width="1280" height="720" alt="A still from Norah Jones&#39; Staring at the Wall music video" data-ko-alt="노라 존스의 Staring at the Wall 뮤직비디오 스틸컷" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">03</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/sub6/gall_04.jpg" width="1200" height="1200" alt="Album cover of Dexter Gordon&#39;s Go!" data-ko-alt="덱스터 고든의 Go! 앨범 커버" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">04</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 480">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/sub6/gall_05.jpg" width="1600" height="944" alt="Herbie Hancock at Rudy Van Gelder Studio on 24 December 1964" data-ko-alt="1964년 12월 24일, 루디 반 겔더 스튜디오에서 촬영한 허비 행콕" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">05</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 258">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img
+                                            src="./images/sub6/gall_06.jpg" width="640" height="480" alt="Hank Mobley and Alfred Lion during the Soul Station recording session"
+                                            data-ko-alt="Soul Station 녹음 세션에서 함께한 행크 모블리와 알프레드 라이언" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">06</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 430">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img
+                                            src="./images/sub6/gall_07.jpg" width="529" height="500" alt="Maya Delilah leaning against a pool table in promotional artwork for Been Here Before"
+                                            data-ko-alt="Been Here Before 홍보 이미지 속 당구대에 기대어 있는 마야 딜라일라" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">07</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 354">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/sub6/gall_08.jpg" width="798" height="800" alt="Paul Chambers playing double bass at Van Gelder Studio in 1957" data-ko-alt="1957년 반 겔더 스튜디오에서 더블베이스를 연주하는 폴 챔버스" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">08</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 456">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img
+                                            src="./images/sub6/gall_09.jpg" width="900" height="900" alt="Cover of Blue Note: Uncompromising Expression, an illustrated history of the label"
+                                            data-ko-alt="블루노트 레코드의 역사를 담은 화보집 Blue Note: Uncompromising Expression의 표지" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">09</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 398">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img
+                                            src="./images/sub6/gall_10.jpg" width="600" height="600" alt="A black-and-white portrait of jazz saxophonist and composer Wayne Shorter" data-ko-alt="재즈 색소포니스트이자 작곡가인 웨인 쇼터의 흑백 초상"
+                                            loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">10</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img
+                                            src="./images/sub6/gall_11.jpg" width="600" height="600" alt="Albert Ammons and Meade Lux Lewis at Blue Note Records&#39; historic first recording session on 6 January 1939"
+                                            data-ko-alt="1939년 1월 6일, 블루노트 레코드의 역사적인 첫 녹음 세션에 참여한 앨버트 암몬스와 미드 럭스 루이스" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">11</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/sub6/gall_12.jpg" width="2048" height="2048" alt="Album cover of Sonny Clark&#39;s Cool Struttin&#39;" data-ko-alt="소니 클라크의 Cool Struttin&#39; 앨범 커버" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">12</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 232">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/sub6/gall_13.jpg" width="600" height="600" alt="Grant Green playing his electric guitar in a black-and-white photograph" data-ko-alt="일렉트릭 기타를 연주하는 그랜트 그린의 흑백 사진" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">13</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 438">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img src="./images/sub6/gall_14.jpg" width="4288" height="2848" alt="A Wayne Shorter vinyl record spinning on a turntable" data-ko-alt="턴테이블 위에서 재생되는 웨인 쇼터의 바이닐 레코드" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">14</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 354">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img
+                                            src="./images/sub6/gall_15.jpg" width="1600" height="800" alt="Gregory Porter beside a swimming pool in artwork for his 2020 album All Rise"
+                                            data-ko-alt="그레고리 포터의 2020년 앨범 All Rise 아트워크 속 수영장을 배경으로 한 모습" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">15</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/sub6/gall_16.jpg" width="600" height="600" alt="A close-up of jazz bassist Ron Carter playing his double bass" data-ko-alt="더블베이스를 연주하는 재즈 베이시스트 론 카터의 클로즈업" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">16</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 426">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/sub6/gall_17.jpg" width="474" height="266" alt="Miles Davis playing the trumpet in a sleeveless shirt" data-ko-alt="민소매 차림으로 트럼펫을 연주하는 마일스 데이비스" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">17</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img src="./images/sub6/gall_18.jpg" width="600" height="600" alt="Freddie Hubbard playing the trumpet in a formal suit" data-ko-alt="정장 차림으로 트럼펫을 연주하는 프레디 허바드" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">18</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img
+                                            src="./images/sub6/gall_19.jpg" width="1200" height="1190" alt="Sonny Clark seated at a grand piano at Bell Sound Studios in January 1960"
+                                            data-ko-alt="1960년 1월, 벨 사운드 스튜디오에서 그랜드 피아노 앞에 앉은 소니 클라크" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">19</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 374">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img
+                                            src="./images/sub6/gall_20.jpg" width="1872" height="2048" alt="Alfred Lion at the Blue Note Records office in New York in October 1956"
+                                            data-ko-alt="1956년 10월, 뉴욕 블루노트 레코드 사무실의 알프레드 라이언" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">20</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="0">
+                                        <img src="./images/sub6/gall_21.jpg" width="600" height="600" alt="Art Blakey playing drums beneath a large cymbal" data-ko-alt="커다란 심벌 아래에서 드럼을 연주하는 아트 블레이키" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">21</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 460">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="50">
+                                        <img
+                                            src="./images/sub6/gall_22.jpg" width="500" height="500" alt="Hank Mobley during a 1957 Blue Note recording session, photographed by Francis Wolff"
+                                            data-ko-alt="1957년 블루노트 녹음 세션에서 프랜시스 울프가 촬영한 행크 모블리" loading="lazy"
+                                        >
+                                        <span class="ga_photo_index" aria-hidden="true">22</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item" style="--photo-ratio: 344 / 344">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="100">
+                                        <img src="./images/sub6/gall_23.jpg" width="1200" height="1200" alt="Album cover of Herbie Hancock&#39;s Maiden Voyage" data-ko-alt="허비 행콕의 Maiden Voyage 앨범 커버" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">23</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                                <li class="ga_item ga_wide" style="--photo-ratio: 708 / 420">
+                                    <button class="ga_photo" type="button" aria-haspopup="dialog" aria-controls="galleryModal" data-aos="fade-up" data-aos-delay="150">
+                                        <img src="./images/sub6/gall_26.jpg" width="1200" height="1845" alt="Thelonious Monk in a 1957 photograph by Lee Friedlander" data-ko-alt="1957년 사진작가 리 프리랜들러가 촬영한 텔로니어스 몽크" loading="lazy">
+                                        <span class="ga_photo_index" aria-hidden="true">24</span>
+                                        <span class="ga_expand" aria-hidden="true">↗</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="ga_rule" aria-hidden="true">
+                            </div>
+                        </div>
+                    </section>
+
+                </article>
+            </main>
+
+            <footer id="footerArea">
+                <div class="footer_inner">
+                    <div class="footer_brand">
+                        <a class="footer_logo" href="./index.html" lang="en">BLUE NOTE RECORDS</a>
+                        <p class="footer_meta" lang="en">RECORDS / ESTABLISHED 1939</p>
+                        <p class="footer_description" data-ko="본 사이트는 비상업적 학습 및 포트폴리오 목적으로 제작되었으며,
+                                Blue Note Records의 공식 웹사이트가 아닙니다.
+                                사용된 콘텐츠의 저작권은 각 권리자에게 있습니다.">
+                            This website was created for non-commercial educational and portfolio purposes and is not the official Blue Note Records website. All content belongs to its respective copyright holders.
+                        </p>
+                    </div>
+                    <div class="footer_links">
+                        <p class="footer_label footer_follow" lang="en">FOLLOW / LISTEN</p>
+                        <div class="footer_socials">
+                            <a href="https://bluenote.lnk.to/Spotify" target="_blank" rel="noopener noreferrer" title="Spotify (새 창)">
+                                <i class="fa-brands fa-spotify" aria-hidden="true"></i> <span lang="en">SPOTIFY<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://bluenote.lnk.to/AppleMusic" target="_blank" rel="noopener noreferrer" title="Apple Music (새 창)">
+                                <i class="fa-brands fa-apple" aria-hidden="true"></i> <span lang="en">APPLE MUSIC<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://twitter.com/bluenoterecords" target="_blank" rel="noopener noreferrer" title="Twitter (새 창)">
+                                <i class="fa-brands fa-twitter" aria-hidden="true"></i> <span lang="en">TWITTER<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="https://www.facebook.com/bluenote" target="_blank" rel="noopener noreferrer" title="Facebook (새 창)">
+                                <i class="fa-brands fa-facebook" aria-hidden="true"></i> <span lang="en">FACEBOOK<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.instagram.com/bluenoterecords/" target="_blank" rel="noopener noreferrer" title="Instagram (새 창)">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i> <span lang="en">INSTAGRAM<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                            <a href="http://www.youtube.com/bluenote" target="_blank" rel="noopener noreferrer" title="YouTube (새 창)">
+                                <i class="fa-brands fa-youtube" aria-hidden="true"></i> <span lang="en">YOUTUBE<span class="hidden"> (opens in a new tab)</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+        <dialog class="ga_modal" id="galleryModal" aria-label="Photo viewer">
+            <div class="ga_modal_header">
+                <span class="ga_modal_count" aria-live="polite"></span>
+                <button class="ga_close" type="button" aria-label="Close photograph" autofocus>
+                    ×
+                </button>
+            </div>
+            <figure>
+                <img class="ga_full_image" src="./images/sub6/gall_01.jpg" alt="Lou Donaldson, known as Sweet Poppa Lou, holding his saxophone on stage" data-ko-alt="스위트 파파 루라는 애칭으로 불리는 색소포니스트 루 도널드슨의 무대 위 모습">
+                <figcaption class="ga_caption" id="galleryCaption" aria-live="polite" data-ko="스위트 파파 루라는 애칭으로 불리는 색소포니스트 루 도널드슨의 무대 위 모습">
+                    Lou Donaldson, known as Sweet Poppa Lou, holding his saxophone on stage
+                </figcaption>
+            </figure>
+            <div class="ga_modal_controls">
+                <button class="ga_prev" type="button" aria-label="Previous photograph">
+                    ←
+                </button>
+                <button class="ga_next" type="button" aria-label="Next photograph">
+                    →
+                </button>
+            </div>
+        </dialog>
+        <script src="./js/jquery-1.12.4.min.js"></script>
+        <script src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="./js/swiper.min.js"></script>
+        <script src="./js/aos.js?v=20261118-2"></script>
+        <script src="./js/common.js?v=20261118-aos4"></script>
+        <script src="./js/masonry.pkgd.min.js"></script>
+        <script src="./js/imagesloaded.pkgd.js"></script>
+        <script src="./js/gallery_data.js?v=20261116-1"></script>
+        <script src="./js/sub6.js?v=20261118-gather1"></script>
+        <button class="top_move" type="button" aria-label="Back to top" hidden>
+            <img src="./images/top_btn.png" alt="" width="60" height="60">
+        </button>
+    </body>
+</html>
